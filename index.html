@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Portfolio</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body
+    class="dark-mode-transition bg-white dark:bg-gray-900 text-gray-800 dark:text-white"
+  >
+    <nav
+      class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-md z-50"
+    >
+      <div class="container mx-auto flex items-center justify-between p-4">
+        <a href="#" class="text-2xl font-bold text-green-600">Portfolio</a>
+        <div class="hidden md:flex gap-6">
+          <a
+            href="#about"
+            class="nav-link hover:text-green-600 transition-colors"
+            >About</a
+          >
+          <a
+            href="#projects"
+            class="nav-link hover:text-green-600 transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="nav-link hover:text-green-600 transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            class="nav-link hover:text-green-600 transition-colors"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <button id="themeToggle" class="text-xl">
+            <i class="fas fa-moon dark:fa-sun"></i>
+          </button>
+          <button id="mobileMenuBtn" class="md:hidden text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- New Mobile Sidebar -->
+    <div
+      id="mobileSidebar"
+      class="fixed top-0 right-0 w-[300px] h-full bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+    >
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-xl font-bold text-green-600">Menu</h2>
+          <button
+            id="closeSidebarBtn"
+            class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+          >
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <div class="flex flex-col gap-6">
+          <a href="#about" class="mobile-nav-link nav-link">
+            <i class="fas fa-user mr-3"></i>
+            About
+          </a>
+          <a href="#projects" class="mobile-nav-link nav-link">
+            <i class="fas fa-code mr-3"></i>
+            Projects
+          </a>
+          <a href="#skills" class="mobile-nav-link nav-link">
+            <i class="fas fa-tools mr-3"></i>
+            Skills
+          </a>
+          <a href="#contact" class="mobile-nav-link nav-link">
+            <i class="fas fa-envelope mr-3"></i>
+            Contact
+          </a>
+        </div>
+
+        <!-- Social Links in Sidebar -->
+        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+          <h3
+            class="text-gray-600 dark:text-gray-400 mb-4 text-sm font-semibold"
+          >
+            CONNECT WITH ME
+          </h3>
+          <div class="flex gap-4">
+            <a href="#" class="sidebar-social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="sidebar-social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="sidebar-social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div
+      id="sidebarOverlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+    ></div>
+
+    <section
+      id="hero"
+      class="min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-50 dark:bg-gray-900"
+    >
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12"
+      >
+        <div class="md:w-1/2 text-center md:text-left space-y-8 fadeIn">
+          <div class="space-y-4">
+            <p
+              class="text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase"
+            >
+              Welcome to my portfolio
+            </p>
+            <h1
+              class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white"
+            >
+              Hi, I'm
+              <span class="relative inline-block">
+                <span class="text-blue-600 dark:text-blue-400"
+                  >Akkal Dhami</span
+                >
+                <span
+                  class="absolute bottom-0 left-0 w-full h-2 bg-blue-600/20 dark:bg-blue-400/20 -rotate-2"
+                ></span>
+              </span>
+            </h1>
+          </div>
+
+          <div class="typewriter">
+            <span
+              class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium"
+            ></span>
+          </div>
+
+          <p
+            class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl"
+          >
+            Passionate about crafting exceptional digital experiences through
+            clean code and innovative solutions. Let's turn your ideas into
+            reality.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start"
+          >
+            <a
+              href="#contact"
+              class="group flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+            >
+              <span class="text-[18px]">Let's Connect</span>
+              <i
+                class="fas fa-arrow-right transition-transform group-hover:translate-x-1"
+              ></i>
+            </a>
+
+            <a
+              href="#"
+              class="group flex items-center gap-2 px-8 py-3 border-2 border-blue-600 dark:border-blue-600 text-blue-600 dark:text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300"
+            >
+              <span>Download CV</span>
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+
+          <div class="pt-8">
+            <div class="flex gap-6">
+              <a href="#" class="social-link" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="#" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-link" title="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:w-1/2 flex justify-center">
+          <div class="profile-image-container relative group">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-500"
+            ></div>
+            <div class="profile-image-border relative">
+              <img
+                src="./assets/image/alexander-hipp-iEEBWgY_6lA-unsplash.jpg"
+                alt="Profile"
+                class="rounded-full w-64 h-64 object-cover shadow-lg transition-all duration-300 group-hover:scale-105 relative z-10"
+              />
+              <div
+                class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/20 group-hover:to-purple-600/20 transition-all duration-300 z-20"
+              ></div>
+            </div>
+
+            <!-- Floating Elements -->
+            <div
+              class="absolute -top-4 -right-4 w-12 h-12 bg-blue-600/10 rounded-full blur-sm animate-float-slow"
+            ></div>
+            <div
+              class="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-600/10 rounded-full blur-sm animate-float-slower"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 overflow-hidden"
+    >
+      <div class="container mx-auto px-4">
+        <div class="section-heading-container" data-text="ABOUT">
+          <h2 class="section-heading text-4xl font-bold">About Me</h2>
+        </div>
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left Column - Image -->
+            <div class="relative max-w-[500px] mx-auto">
+              <div class="rounded-2xl overflow-hidden shadow-xl group">
+                <img
+                  src="./assets/image/alexander-hipp-iEEBWgY_6lA-unsplash.jpg"
+                  alt="Profile"
+                  class="w-full h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+
+                <!-- Image Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <!-- Decorative elements -->
+                <div
+                  class="absolute -z-10 -bottom-4 -right-4 w-full h-full bg-red-500/20 rounded-2xl transition-all duration-300 group-hover:translate-x-2 group-hover:translate-y-2"
+                ></div>
+                <div
+                  class="absolute -z-20 -bottom-8 -right-8 w-full h-full bg-blue-500/20 rounded-2xl transition-all duration-300 group-hover:translate-x-4 group-hover:translate-y-4"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Right Column - Content -->
+            <div>
+              <p class="text-gray-600 dark:text-gray-400 mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                nulla nibh, tincidunt sit amet sapien quis, elementum molestie
+                tellus. Pellentesque habitant morbi tristique senectus et netus
+                et malesuada fames ac turpis egestas. Mauris eleifend magna id
+                ante convallis mattis. Quisque in sem tristique, dictum sapien
+                et, accumsan libero.
+              </p>
+
+              <!-- Tabs -->
+              <div class="mb-8">
+                <div
+                  class="flex gap-8 mb-8 border-b border-gray-200 dark:border-gray-700"
+                >
+                  <button
+                    class="tab-btn text-xl font-semibold relative text-gray-900 dark:text-white pb-4 tab-active"
+                    data-tab="skills"
+                  >
+                    Skills
+                  </button>
+                  <button
+                    class="tab-btn text-xl font-semibold relative text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white pb-4"
+                    data-tab="experience"
+                  >
+                    Experience
+                  </button>
+                  <button
+                    class="tab-btn text-xl font-semibold relative text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white pb-4"
+                    data-tab="education"
+                  >
+                    Education
+                  </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div id="skills" class="tab-content active">
+                  <div class="space-y-8">
+                    <!-- Frontend Development -->
+                    <div class="group">
+                      <div class="flex items-center gap-4 mb-2">
+                        <i
+                          class="fas fa-laptop-code text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        ></i>
+                        <h3
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        >
+                          Frontend Development
+                        </h3>
+                      </div>
+                      <p class="text-gray-700 dark:text-gray-300 pl-10">
+                        HTML, CSS, JavaScript, Tailwind CSS
+                      </p>
+                    </div>
+
+                    <!-- Backend Development -->
+                    <div class="group">
+                      <div class="flex items-center gap-4 mb-2">
+                        <i
+                          class="fas fa-server text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        ></i>
+                        <h3
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        >
+                          Backend Development
+                        </h3>
+                      </div>
+                      <p class="text-gray-700 dark:text-gray-300 pl-10">
+                        Node.js, Express.js
+                      </p>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="group">
+                      <div class="flex items-center gap-4 mb-2">
+                        <i
+                          class="fas fa-database text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        ></i>
+                        <h3
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        >
+                          Database
+                        </h3>
+                      </div>
+                      <p class="text-gray-700 dark:text-gray-300 pl-10">
+                        MongoDB, MySQL
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="experience" class="tab-content hidden">
+                  <div class="space-y-8">
+                    <div class="group">
+                      <div class="flex items-center gap-4 mb-2">
+                        <i
+                          class="fas fa-briefcase text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        ></i>
+                        <h3
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        >
+                          Senior Developer
+                        </h3>
+                      </div>
+                      <div class="pl-10">
+                        <p class="text-gray-700 dark:text-gray-300">
+                          2020 - Present
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400">
+                          Leading development teams and architecting solutions.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group">
+                      <div class="flex items-center gap-4 mb-2">
+                        <i
+                          class="fas fa-laptop-code text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        ></i>
+                        <h3
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        >
+                          Full Stack Developer
+                        </h3>
+                      </div>
+                      <div class="pl-10">
+                        <p class="text-gray-700 dark:text-gray-300">
+                          2018 - 2020
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400">
+                          Developed and maintained web applications.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="education" class="tab-content hidden">
+                  <div class="space-y-8">
+                    <div class="group">
+                      <div class="flex items-center gap-4 mb-2">
+                        <i
+                          class="fas fa-graduation-cap text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        ></i>
+                        <h3
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        >
+                          Master's in Computer Science
+                        </h3>
+                      </div>
+                      <div class="pl-10">
+                        <p class="text-gray-700 dark:text-gray-300">
+                          2016 - 2018
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400">
+                          University Name
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group">
+                      <div class="flex items-center gap-4 mb-2">
+                        <i
+                          class="fas fa-user-graduate text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        ></i>
+                        <h3
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                        >
+                          Bachelor's in Computer Science
+                        </h3>
+                      </div>
+                      <div class="pl-10">
+                        <p class="text-gray-700 dark:text-gray-300">
+                          2012 - 2016
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400">
+                          University Name
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="section-heading-container" data-text="PROJECTS">
+          <h2 class="section-heading text-4xl font-bold">My Projects</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden"
+          >
+            <img
+              src="./assets/image/image.png"
+              alt="Project 1"
+              class="w-full"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                A full-stack e-commerce solution built with React and Node.js.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <div class="tech-tag" data-tooltip="HTML5">
+                  <i class="fab fa-html5"></i>
+                </div>
+                <div class="tech-tag" data-tooltip="CSS3">
+                  <i class="fab fa-css3-alt"></i>
+                </div>
+                <div class="tech-tag" data-tooltip="JavaScript">
+                  <i class="fab fa-js"></i>
+                </div>
+                <div class="tech-tag" data-tooltip="React">
+                  <i class="fab fa-react"></i>
+                </div>
+                <div class="tech-tag" data-tooltip="Node.js">
+                  <i class="fab fa-node-js"></i>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <a
+                  target="_blank"
+                  href="https://nepkart.vercel.app/"
+                  class="flex items-center border-2 border-transparent gap-2 bg-blue-600 text-white px-4 py-2 rounded hover:border-blue-600 hover:bg-transparent transition-colors"
+                >
+                  <span>Live Demo</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center border-2 border-blue-600 gap-2 text-white px-4 py-2 rounded hover:border-blue-600 hover:border-transparent hover:bg-blue-600 transition-colors"
+                >
+                  <span>View Code</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="section-heading-container" data-text="SKILLS">
+          <h2 class="section-heading text-4xl font-bold">
+            Skills & Technologies
+          </h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div
+            class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg text-center bg-[url(./assets/image/Screenshot 2025-01-29 151258.png)] bg-cover bg-center bg-no-repeat"
+          >
+            <i class="fab fa-html5 text-4xl text-green-600 mb-4"></i>
+            <h3 class="text-xl font-bold">HTML5</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="section-heading-container" data-text="CONTACT">
+          <h2 class="section-heading text-4xl font-bold">Get In Touch</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Left Column - Contact Info -->
+          <div>
+            <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-8">
+              Feel free to reach out for collaborations, opportunities, or just
+              to say hello! I'll get back to you as soon as possible.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                >
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Name</h3>
+                  <p class="text-gray-600 dark:text-gray-300">Akkal Dhami</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                >
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Address</h3>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    Kathmandu, Nepal
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                >
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Email</h3>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    akkaldhami21@gmail.com
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="pt-8">
+              <div class="flex gap-6">
+                <a href="#" class="social-link" title="Email">
+                  <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" class="social-link" title="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link" title="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link" title="Twitter">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Message Form -->
+          <div>
+            <h2 class="text-4xl font-bold mb-6">Message me</h2>
+            <form id="contactForm" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    class="block mb-2 font-semibold text-gray-700 dark:text-gray-200"
+                    >Name</label
+                  >
+                  <div class="relative">
+                    <input
+                      type="text"
+                      name="name"
+                      class="w-full p-3 rounded bg-gray-50 dark:bg-gray-700 border-2 border-transparent focus:border-blue-600 focus:outline-none transition-colors focus:bg-transparent"
+                      placeholder="Enter your name"
+                    />
+                    <div class="error-icon mt-1.5 text-sm text-red-500"></div>
+                  </div>
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 font-semibold text-gray-700 dark:text-gray-200"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    class="w-full p-3 rounded bg-gray-50 dark:bg-gray-700 border-2 border-transparent focus:border-blue-600 focus:outline-none transition-colors focus:bg-transparent"
+                    placeholder="Enter your email"
+                  />
+                  <span class="text-red-500 text-sm mt-2 hidden"></span>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block mb-2 font-semibold text-gray-700 dark:text-gray-200"
+                  >Message</label
+                >
+                <textarea
+                  name="message"
+                  rows="5"
+                  class="w-full p-3 rounded bg-gray-50 dark:bg-gray-700 border-2 border-transparent focus:border-blue-600 focus:outline-none transition-colors resize-none focus:bg-transparent"
+                  placeholder="Your message here..."
+                ></textarea>
+                <span class="text-red-500 text-sm mt-1.5 hidden"></span>
+              </div>
+
+              <div class="flex justify-center w-full">
+                <button
+                  type="submit"
+                  class="bg-blue-600 border-0 outline-none flex items-center justify-center space-x-2 px-8 w-full py-3.5 rounded hover:bg-blue-500 transition-colors focus:outline-none text-white flex items-center gap-2 group relative overflow-hidden"
+                >
+                  <span class="submit-text space-x-2 flex items-center gap-2">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                  </span>
+                  <div
+                    class="loading-state hidden absolute inset-0 flex items-center justify-center bg-blue-600"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span>Sending Message...</span>
+                      <div
+                        class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
+                      ></div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Updated Toast Container -->
+    <div id="toast" class="toast">
+      <span class="toast-icon"></span>
+      <span class="toast-message"></span>
+      <span class="toast-close">&times;</span>
+      <div class="toast-progress">
+        <div class="toast-progress-bar"></div>
+      </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p>&copy; 2024 Akkal Dhami | All rights reserved.</p>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-green-600 transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-green-600 transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hidden hover:bg-blue-500 transition-all duration-300 flex items-center justify-center"
+      aria-label="Scroll to top"
+    >
+      <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // Remove active class from all buttons
+            tabBtns.forEach((b) => {
+              b.classList.remove("tab-active");
+              b.classList.add("text-gray-600", "dark:text-gray-400");
+              b.classList.remove("text-gray-900", "dark:text-white");
+            });
+
+            // Add active class to clicked button
+            btn.classList.add("tab-active");
+            btn.classList.remove("text-gray-600", "dark:text-gray-400");
+            btn.classList.add("text-gray-900", "dark:text-white");
+
+            // Hide all tab contents
+            tabContents.forEach((content) => {
+              content.classList.add("hidden");
+            });
+
+            // Show selected tab content
+            const tabId = btn.getAttribute("data-tab");
+            document.getElementById(tabId).classList.remove("hidden");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
