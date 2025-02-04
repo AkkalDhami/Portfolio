@@ -805,12 +805,9 @@ input.form-input-error:focus {
   animation: float-slower 8s ease-in-out infinite;
 }
 
-/* Update typewriter animation for smoother effect */
-.typewriter span {
-  border-right: 3px solid #3b82f6;
-  padding-right: 5px;
-  animation: typing 3.5s steps(40, end), blink 1s step-end infinite;
-}
+
+
+
 
 /* Add smooth transition for social links */
 .social-link {
