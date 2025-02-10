@@ -24,7 +24,9 @@
     <nav
       class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-md z-50"
     >
-      <div class="container mx-auto flex items-center justify-between p-4">
+      <div
+        class="container max-w-[1200px] mx-auto flex items-center justify-between p-4"
+      >
         <a href="#" class="text-2xl font-bold text-green-600">Portfolio</a>
         <div class="hidden md:flex gap-6">
           <a
@@ -123,7 +125,7 @@
 
     <section
       id="hero"
-      class="min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-50 dark:bg-gray-900"
+      class="max-w-[1200px] min-h-screen mx-auto flex items-center justify-center pt-20 overflow-hidden"
     >
       <div
         class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12"
@@ -192,7 +194,7 @@
           </div>
 
           <div class="pt-8">
-            <div class="flex gap-6">
+            <div class="flex justify-center md:justify-start gap-6">
               <a href="#" class="social-link" title="Email">
                 <i class="fas fa-envelope"></i>
               </a>
@@ -209,19 +211,19 @@
           </div>
         </div>
 
-        <div class="md:w-1/2 flex justify-center">
+        <div class="md:w-1/2 flex justify-center mb-12">
           <div class="profile-image-container relative group">
             <div
-              class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-500"
+              class="absolute inset-0 bg-gradient-to-br from-blue-600/90 to-purple-600/90 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"
             ></div>
             <div class="profile-image-border relative">
-              <img
+              <img style="box-shadow: 0px 0px 108px -17px rgba(8, 82, 229, 0.75);"
                 src="./assets/image/alexander-hipp-iEEBWgY_6lA-unsplash.jpg"
                 alt="Profile"
-                class="rounded-full w-64 h-64 object-cover shadow-lg transition-all duration-300 group-hover:scale-105 relative z-10"
+                class="rounded-full w-[300px] h-[300px] object-cover shadow-lg transition-all duration-300 group-hover:scale-105 relative z-10"
               />
               <div
-                class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/20 group-hover:to-purple-600/20 transition-all duration-300 z-20"
+                class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/90 group-hover:to-purple-600/80 transition-all duration-300 z-20"
               ></div>
             </div>
 
@@ -239,9 +241,9 @@
 
     <section
       id="about"
-      class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 overflow-hidden"
+      class="py-20 bg-gray-100 dark:bg-gray-800 transition-colors duration-300 overflow-hidden"
     >
-      <div class="container mx-auto px-4">
+      <div class="container max-w-[1200px] mx-auto px-4">
         <div class="section-heading-container" data-text="ABOUT">
           <h2 class="section-heading text-4xl font-bold">About Me</h2>
         </div>
@@ -256,11 +258,9 @@
                   class="w-full h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
 
-                <!-- Image Overlay -->
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
-                <!-- Decorative elements -->
                 <div
                   class="absolute -z-10 -bottom-4 -right-4 w-full h-full bg-red-500/20 rounded-2xl transition-all duration-300 group-hover:translate-x-2 group-hover:translate-y-2"
                 ></div>
@@ -313,10 +313,10 @@
                     <div class="group">
                       <div class="flex items-center gap-4 mb-2">
                         <i
-                          class="fas fa-laptop-code text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="fas fa-laptop-code text-2xl text-blue-500 dark:text-blue-400 transition-colors"
                         ></i>
                         <h3
-                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold transition-colors"
                         >
                           Frontend Development
                         </h3>
@@ -330,10 +330,10 @@
                     <div class="group">
                       <div class="flex items-center gap-4 mb-2">
                         <i
-                          class="fas fa-server text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="fas fa-server text-2xl text-blue-500 dark:text-blue-400 transition-colors"
                         ></i>
                         <h3
-                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold transition-colors"
                         >
                           Backend Development
                         </h3>
@@ -347,10 +347,10 @@
                     <div class="group">
                       <div class="flex items-center gap-4 mb-2">
                         <i
-                          class="fas fa-database text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="fas fa-database text-2xl text-blue-500 dark:text-blue-400 transition-colors"
                         ></i>
                         <h3
-                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold transition-colors"
                         >
                           Database
                         </h3>
@@ -367,10 +367,10 @@
                     <div class="group">
                       <div class="flex items-center gap-4 mb-2">
                         <i
-                          class="fas fa-briefcase text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="fas fa-briefcase text-2xl text-blue-500 dark:text-blue-400 transition-colors"
                         ></i>
                         <h3
-                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold transition-colors"
                         >
                           Senior Developer
                         </h3>
@@ -387,10 +387,10 @@
                     <div class="group">
                       <div class="flex items-center gap-4 mb-2">
                         <i
-                          class="fas fa-laptop-code text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="fas fa-laptop-code text-2xl text-blue-500 dark:text-blue-400 transition-colors"
                         ></i>
                         <h3
-                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold transition-colors"
                         >
                           Full Stack Developer
                         </h3>
@@ -412,10 +412,10 @@
                     <div class="group">
                       <div class="flex items-center gap-4 mb-2">
                         <i
-                          class="fas fa-graduation-cap text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="fas fa-graduation-cap text-2xl text-blue-500 dark:text-blue-400 transition-colors"
                         ></i>
                         <h3
-                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold transition-colors"
                         >
                           Master's in Computer Science
                         </h3>
@@ -432,10 +432,10 @@
                     <div class="group">
                       <div class="flex items-center gap-4 mb-2">
                         <i
-                          class="fas fa-user-graduate text-2xl text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="fas fa-user-graduate text-2xl text-blue-500 dark:text-blue-400 transition-colors"
                         ></i>
                         <h3
-                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors"
+                          class="text-blue-500 dark:text-blue-400 text-lg font-semibold transition-colors"
                         >
                           Bachelor's in Computer Science
                         </h3>
@@ -458,7 +458,9 @@
       </div>
     </section>
 
-    <section id="projects" class="py-20">
+
+
+    <section id="projects" class="py-20 max-w-[1200px] mx-auto">
       <div class="container mx-auto px-4">
         <div class="section-heading-container" data-text="PROJECTS">
           <h2 class="section-heading text-4xl font-bold">My Projects</h2>
@@ -518,7 +520,7 @@
     </section>
 
     <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-800">
-      <div class="container mx-auto px-4">
+      <div class="container max-w-[1200px] mx-auto px-4">
         <div class="section-heading-container" data-text="SKILLS">
           <h2 class="section-heading text-4xl font-bold">
             Skills & Technologies
@@ -588,8 +590,15 @@
             <div
               class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-b-full bg-[#f1f1f1] group-hover:scale-105 opacity-90 transition-all"
             >
-            <img src="./assets/image/icons8-git-48.png" class="w-[40px]" alt="git logo">
-            <img src="./assets/image/icons8-github-32.png" alt="github logo">
+              <img
+                src="./assets/image/icons8-git-48.png"
+                class="w-[40px]"
+                alt="git logo"
+              />
+              <img
+                src="./assets/image/icons8-github-32.png"
+                alt="github logo"
+              />
             </div>
             <h3 class="text-xl relative z-40 mt-6 text-[#ffffff] font-bold">
               <span class="text-orange-500">Git &</span> Github
@@ -631,7 +640,11 @@
             <div
               class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-b-full bg-[#f1f1f1] group-hover:scale-105 opacity-90 transition-all"
             >
-              <img src="./assets/image/MongoDB_Logo.svg.png" class="w-[80px]" alt="monogdbLogo logo" />
+              <img
+                src="./assets/image/MongoDB_Logo.svg.png"
+                class="w-[80px]"
+                alt="monogdbLogo logo"
+              />
             </div>
             <h3 class="text-xl relative z-40 mt-6 text-[#0ecf45] font-bold">
               MongoDB
@@ -641,7 +654,7 @@
       </div>
     </section>
 
-    <section id="contact" class="py-20">
+    <section id="contact" class="py-20 max-w-[1200px] mx-auto">
       <div class="container mx-auto px-4">
         <div class="section-heading-container" data-text="CONTACT">
           <h2 class="section-heading text-4xl font-bold">Get In Touch</h2>
@@ -776,7 +789,7 @@
                   <div
                     class="loading-state hidden absolute inset-0 items-center justify-center bg-blue-600"
                   >
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center pointer-events-none gap-2">
                       <span>Sending Message...</span>
                       <div
                         class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
