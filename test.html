@@ -85,6 +85,186 @@
         </div>
     </div>
 
+    <section
+  id="hero"
+  class="min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-50 dark:bg-gray-900"
+>
+  <div
+    class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12 fadeIn"
+  >
+    <div class="md:w-1/2 text-center md:text-left space-y-8">
+      <div class="space-y-4">
+        <p class="text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase animate-fadeIn">
+          Welcome to my portfolio
+        </p>
+        <h1
+          class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white animate-slideUp"
+        >
+          Hi, I'm
+          <span class="relative inline-block">
+            <span class="text-blue-600 dark:text-blue-400">Akkal Dhami</span>
+            <span
+              class="absolute bottom-0 left-0 w-full h-2 bg-blue-600/20 dark:bg-blue-400/20 -rotate-2"
+            ></span>
+          </span>
+        </h1>
+      </div>
+
+      <!-- Typing effect -->
+      <div class="typewriter">
+        <span
+          class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium"
+        >
+          I am
+          <span class="text-blue-600 dark:text-blue-400 typewriter-text"
+            >Frontend Developer</span
+          >
+        </span>
+      </div>
+
+      <p
+        class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl animate-fadeIn"
+      >
+        Passionate about crafting exceptional digital experiences through clean
+        code and innovative solutions. Let's turn your ideas into reality.
+      </p>
+
+      <div
+        class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start"
+      >
+        <a
+          href="#contact"
+          class="group flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 animate-fadeIn"
+        >
+          <span class="text-[18px]">Let's Connect</span>
+          <i
+            class="fas fa-arrow-right transition-transform group-hover:translate-x-1"
+          ></i>
+        </a>
+
+        <a
+          href="#"
+          class="group flex items-center gap-2 px-8 py-3 border-2 border-blue-600 dark:border-blue-600 text-blue-600 dark:text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 animate-fadeIn"
+        >
+          <span>Download CV</span>
+          <i class="fas fa-download"></i>
+        </a>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="pt-8 animate-fadeIn">
+        <div class="flex gap-6">
+          <a href="#" class="social-link hover:scale-110 transition" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="#" class="social-link hover:scale-110 transition" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-link hover:scale-110 transition" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="social-link hover:scale-110 transition" title="Twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Image with Glow and Floating Elements -->
+    <div class="md:w-1/2 flex justify-center">
+      <div class="profile-image-container relative group animate-fadeIn">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-500"
+        ></div>
+        <div class="profile-image-border relative">
+          <img
+            src="./assets/image/alexander-hipp-iEEBWgY_6lA-unsplash.jpg"
+            alt="Profile"
+            class="rounded-full w-64 h-64 object-cover shadow-lg transition-all duration-300 group-hover:scale-110 relative z-10"
+          />
+          <div
+            class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/20 group-hover:to-purple-600/20 transition-all duration-300 z-20"
+          ></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div
+          class="absolute -top-4 -right-4 w-12 h-12 bg-blue-600/10 rounded-full blur-sm animate-float"
+        ></div>
+        <div
+          class="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-600/10 rounded-full blur-sm animate-float"
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Animations -->
+<style>
+  /* Typing Effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .typewriter-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    animation: typing 3s steps(15) infinite alternate;
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Slide Up Animation */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-slideUp {
+    animation: slideUp 1s ease-out;
+  }
+</style>
+
     <script>
         const quotes = [
             // Easy quotes
