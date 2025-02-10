@@ -274,6 +274,7 @@ contactForm.addEventListener("submit", async (e) => {
         // Animate the transition
         submitText.classList.add("hide");
         loadingState.classList.remove("hidden");
+        loadingState.classList.add("flex");
         setTimeout(() => {
             loadingState.classList.add("show");
         }, 10);
@@ -378,3 +379,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
