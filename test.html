@@ -1,403 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advanced Speed Typing Test</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 min-h-screen flex items-center justify-center p-4">
-    <div class="container mx-auto p-6 max-w-4xl">
-        <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
-            <div class="flex items-center justify-center gap-3 mb-8">
-                <h1 class="text-5xl font-bold text-center text-gray-800">⌨️ Type Master</h1>
-                <span class="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-3 py-1 rounded-full text-sm">Pro</span>
-            </div>
-
-            <!-- Enhanced Stats Section -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-xl text-center shadow-sm border border-purple-100">
-                    <h2 class="text-lg font-semibold text-gray-700"><i class="fas fa-clock mr-2"></i>Time</h2>
-                    <p id="time" class="text-3xl font-bold text-purple-600">60s</p>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-xl text-center shadow-sm border border-purple-100">
-                    <h2 class="text-lg font-semibold text-gray-700"><i class="fas fa-tachometer-alt mr-2"></i>WPM</h2>
-                    <p id="wpm" class="text-3xl font-bold text-purple-600">0</p>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-xl text-center shadow-sm border border-purple-100">
-                    <h2 class="text-lg font-semibold text-gray-700"><i class="fas fa-bullseye mr-2"></i>Accuracy</h2>
-                    <p id="accuracy" class="text-3xl font-bold text-purple-600">0%</p>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-xl text-center shadow-sm border border-purple-100">
-                    <h2 class="text-lg font-semibold text-gray-700"><i class="fas fa-keyboard mr-2"></i>Characters</h2>
-                    <p id="chars" class="text-3xl font-bold text-purple-600">0</p>
-                </div>
-            </div>
-
-            <!-- Difficulty Selection -->
-            <div class="flex justify-center gap-4 mb-6">
-                <button data-time="30" class="time-btn px-4 py-2 rounded-lg text-gray-600 hover:bg-purple-100 transition-colors">30s</button>
-                <button data-time="60" class="time-btn px-4 py-2 rounded-lg text-white bg-purple-600">60s</button>
-                <button data-time="120" class="time-btn px-4 py-2 rounded-lg text-gray-600 hover:bg-purple-100 transition-colors">120s</button>
-            </div>
-
-            <!-- Text Display Section -->
-            <div class="mb-6">
-                <div class="relative">
-                    <p id="quote" class="text-xl leading-relaxed text-gray-600 mb-4 min-h-[100px] p-6 bg-gray-50 rounded-xl border border-gray-200"></p>
-                    <div id="difficulty" class="absolute top-2 right-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
-                        Medium
-                    </div>
-                </div>
-                <textarea
-                    id="input"
-                    class="w-full p-4 text-xl border-2 border-gray-300 rounded-xl focus:outline-none focus:border-purple-500 transition-colors"
-                    rows="3"
-                    placeholder="Start typing here..."
-                    disabled
-                ></textarea>
-            </div>
-
-            <!-- Control Buttons -->
-            <div class="flex justify-center gap-4">
-                <button
-                    id="start"
-                    class="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all font-semibold flex items-center gap-2"
-                >
-                    <i class="fas fa-play"></i> Start Test
-                </button>
-                <button
-                    id="reset"
-                    class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all font-semibold flex items-center gap-2"
-                >
-                    <i class="fas fa-redo"></i> Reset
-                </button>
-            </div>
-
-            <!-- High Scores -->
-            <div class="mt-8 pt-6 border-t border-gray-200">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">High Scores</h2>
-                <div id="highScores" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- High scores will be inserted here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section
-  id="hero"
-  class="min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-50 dark:bg-gray-900"
->
-  <div
-    class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12 fadeIn"
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 min-h-screen flex items-center justify-center p-4"
   >
-    <div class="md:w-1/2 text-center md:text-left space-y-8">
-      <div class="space-y-4">
-        <p class="text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase animate-fadeIn">
-          Welcome to my portfolio
-        </p>
-        <h1
-          class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white animate-slideUp"
-        >
-          Hi, I'm
-          <span class="relative inline-block">
-            <span class="text-blue-600 dark:text-blue-400">Akkal Dhami</span>
-            <span
-              class="absolute bottom-0 left-0 w-full h-2 bg-blue-600/20 dark:bg-blue-400/20 -rotate-2"
-            ></span>
-          </span>
-        </h1>
-      </div>
-
-      <!-- Typing effect -->
-      <div class="typewriter">
-        <span
-          class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium"
-        >
-          I am
-          <span class="text-blue-600 dark:text-blue-400 typewriter-text"
-            >Frontend Developer</span
+    <div class="container mx-auto p-6 max-w-4xl">
+      <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
+        <div class="flex items-center justify-center gap-3 mb-8">
+          <h1 class="text-5xl font-bold text-center text-gray-800">
+            ⌨️ Type Master
+          </h1>
+          <span
+            class="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-3 py-1 rounded-full text-sm"
+            >Pro</span
           >
-        </span>
-      </div>
-
-      <p
-        class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl animate-fadeIn"
-      >
-        Passionate about crafting exceptional digital experiences through clean
-        code and innovative solutions. Let's turn your ideas into reality.
-      </p>
-
-      <div
-        class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start"
-      >
-        <a
-          href="#contact"
-          class="group flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 animate-fadeIn"
-        >
-          <span class="text-[18px]">Let's Connect</span>
-          <i
-            class="fas fa-arrow-right transition-transform group-hover:translate-x-1"
-          ></i>
-        </a>
-
-        <a
-          href="#"
-          class="group flex items-center gap-2 px-8 py-3 border-2 border-blue-600 dark:border-blue-600 text-blue-600 dark:text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 animate-fadeIn"
-        >
-          <span>Download CV</span>
-          <i class="fas fa-download"></i>
-        </a>
-      </div>
-
-      <!-- Social Icons -->
-      <div class="pt-8 animate-fadeIn">
-        <div class="flex gap-6">
-          <a href="#" class="social-link hover:scale-110 transition" title="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="#" class="social-link hover:scale-110 transition" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="#" class="social-link hover:scale-110 transition" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="#" class="social-link hover:scale-110 transition" title="Twitter">
-            <i class="fa-brands fa-twitter"></i>
-          </a>
         </div>
-      </div>
-    </div>
 
-    <!-- Profile Image with Glow and Floating Elements -->
-    <div class="md:w-1/2 flex justify-center">
-      <div class="profile-image-container relative group animate-fadeIn">
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-500"
-        ></div>
-        <div class="profile-image-border relative">
-          <img
-            src="./assets/image/alexander-hipp-iEEBWgY_6lA-unsplash.jpg"
-            alt="Profile"
-            class="rounded-full w-64 h-64 object-cover shadow-lg transition-all duration-300 group-hover:scale-110 relative z-10"
-          />
+        <!-- Enhanced Stats Section -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <div
-            class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/20 group-hover:to-purple-600/20 transition-all duration-300 z-20"
-          ></div>
+            class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-xl text-center shadow-sm border border-purple-100"
+          >
+            <h2 class="text-lg font-semibold text-gray-700">
+              <i class="fas fa-clock mr-2"></i>Time
+            </h2>
+            <p id="time" class="text-3xl font-bold text-purple-600">60s</p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-xl text-center shadow-sm border border-purple-100"
+          >
+            <h2 class="text-lg font-semibold text-gray-700">
+              <i class="fas fa-tachometer-alt mr-2"></i>WPM
+            </h2>
+            <p id="wpm" class="text-3xl font-bold text-purple-600">0</p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-xl text-center shadow-sm border border-purple-100"
+          >
+            <h2 class="text-lg font-semibold text-gray-700">
+              <i class="fas fa-bullseye mr-2"></i>Accuracy
+            </h2>
+            <p id="accuracy" class="text-3xl font-bold text-purple-600">0%</p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-xl text-center shadow-sm border border-purple-100"
+          >
+            <h2 class="text-lg font-semibold text-gray-700">
+              <i class="fas fa-keyboard mr-2"></i>Characters
+            </h2>
+            <p id="chars" class="text-3xl font-bold text-purple-600">0</p>
+          </div>
         </div>
 
-        <!-- Floating Elements -->
-        <div
-          class="absolute -top-4 -right-4 w-12 h-12 bg-blue-600/10 rounded-full blur-sm animate-float"
-        ></div>
-        <div
-          class="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-600/10 rounded-full blur-sm animate-float"
-        ></div>
+        <!-- Difficulty Selection -->
+        <div class="flex justify-center gap-4 mb-6">
+          <button
+            data-time="30"
+            class="time-btn px-4 py-2 rounded-lg text-gray-600 hover:bg-purple-100 transition-colors"
+          >
+            30s
+          </button>
+          <button
+            data-time="60"
+            class="time-btn px-4 py-2 rounded-lg text-white bg-purple-600"
+          >
+            60s
+          </button>
+          <button
+            data-time="120"
+            class="time-btn px-4 py-2 rounded-lg text-gray-600 hover:bg-purple-100 transition-colors"
+          >
+            120s
+          </button>
+        </div>
+
+        <!-- Text Display Section -->
+        <div class="mb-6">
+          <div class="relative">
+            <p
+              id="quote"
+              class="text-xl leading-relaxed text-gray-600 mb-4 min-h-[100px] p-6 bg-gray-50 rounded-xl border border-gray-200"
+            ></p>
+            <div
+              id="difficulty"
+              class="absolute top-2 right-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm"
+            >
+              Medium
+            </div>
+          </div>
+          <textarea
+            id="input"
+            class="w-full p-4 text-xl border-2 border-gray-300 rounded-xl focus:outline-none focus:border-purple-500 transition-colors"
+            rows="3"
+            placeholder="Start typing here..."
+            disabled
+          ></textarea>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="flex justify-center gap-4">
+          <button
+            id="start"
+            class="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all font-semibold flex items-center gap-2"
+          >
+            <i class="fas fa-play"></i> Start Test
+          </button>
+          <button
+            id="reset"
+            class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all font-semibold flex items-center gap-2"
+          >
+            <i class="fas fa-redo"></i> Reset
+          </button>
+        </div>
+
+        <!-- High Scores -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">High Scores</h2>
+          <div id="highScores" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- High scores will be inserted here -->
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Custom Animations -->
-<style>
-  /* Typing Effect */
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  .typewriter-text {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid;
-    animation: typing 3s steps(15) infinite alternate;
-  }
+    <!-- Custom Animations -->
+    <style>
+      /* Typing Effect */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      .typewriter-text {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid;
+        animation: typing 3s steps(15) infinite alternate;
+      }
 
-  /* Floating Animation */
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
+      /* Floating Animation */
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
 
-  /* Fade In Animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 1s ease-in-out;
-  }
+      /* Fade In Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 1s ease-in-out;
+      }
 
-  /* Slide Up Animation */
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .animate-slideUp {
-    animation: slideUp 1s ease-out;
-  }
-</style>
+      /* Slide Up Animation */
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-slideUp {
+        animation: slideUp 1s ease-out;
+      }
+    </style>
 
     <script>
-        const quotes = [
-            // Easy quotes
-            "The quick brown fox jumps over the lazy dog.",
-            "To be or not to be, that is the question.",
-            "All that glitters is not gold.",
-            // Medium quotes
-            "Success is not final, failure is not fatal: it is the courage to continue that counts.",
-            "Life is like riding a bicycle. To keep your balance, you must keep moving.",
-            "In three words I can sum up everything I've learned about life: it goes on.",
-            // Hard quotes
-            "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle.",
-            "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.",
-            "The future belongs to those who believe in the beauty of their dreams, and take action to make them reality."
-        ];
+      const quotes = [
+        // Easy quotes
+        "The quick brown fox jumps over the lazy dog.",
+        "To be or not to be, that is the question.",
+        "All that glitters is not gold.",
+        // Medium quotes
+        "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+        "In three words I can sum up everything I've learned about life: it goes on.",
+        // Hard quotes
+        "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle.",
+        "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.",
+        "The future belongs to those who believe in the beauty of their dreams, and take action to make them reality.",
+      ];
 
-        const textElement = document.getElementById("quote");
-        const inputElement = document.getElementById("input");
-        const wpmElement = document.getElementById("wpm");
-        const resetButton = document.getElementById("reset");
-        let timeLeft = 60;
-        let interval;
-        let startTime;
-        let text = "";
-        let charCount = 0;
-        let highScores = JSON.parse(localStorage.getItem('typeTestHighScores')) || [];
-        let selectedTime = 60;
+      const textElement = document.getElementById("quote");
+      const inputElement = document.getElementById("input");
+      const wpmElement = document.getElementById("wpm");
+      const resetButton = document.getElementById("reset");
+      let timeLeft = 60;
+      let interval;
+      let startTime;
+      let text = "";
+      let charCount = 0;
+      let highScores =
+        JSON.parse(localStorage.getItem("typeTestHighScores")) || [];
+      let selectedTime = 60;
 
-        function startGame() {
-            const difficulty = Math.floor(Math.random() * 3);
-            const startIndex = difficulty * 3;
-            text = quotes[startIndex + Math.floor(Math.random() * 3)];
-            textElement.textContent = text;
-            inputElement.value = "";
-            timeLeft = selectedTime;
-            document.getElementById('time').textContent = timeLeft + 's';
-            charCount = 0;
-            document.getElementById('chars').textContent = '0';
-            updateHighScores();
-            clearInterval(interval);
-            inputElement.disabled = false;
-            startTime = null;
+      function startGame() {
+        const difficulty = Math.floor(Math.random() * 3);
+        const startIndex = difficulty * 3;
+        text = quotes[startIndex + Math.floor(Math.random() * 3)];
+        textElement.textContent = text;
+        inputElement.value = "";
+        timeLeft = selectedTime;
+        document.getElementById("time").textContent = timeLeft + "s";
+        charCount = 0;
+        document.getElementById("chars").textContent = "0";
+        updateHighScores();
+        clearInterval(interval);
+        inputElement.disabled = false;
+        startTime = null;
+      }
+
+      function updateTimer() {
+        timeLeft--;
+        document.getElementById("time").textContent = timeLeft + "s";
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          inputElement.disabled = true;
         }
+      }
 
-        function updateTimer() {
-            timeLeft--;
-            document.getElementById('time').textContent = timeLeft + 's';
-            if (timeLeft <= 0) {
-                clearInterval(interval);
-                inputElement.disabled = true;
-            }
+      function calculateResults() {
+        const words = inputElement.value.trim().split(/\s+/).length;
+        const timeSpent = 60 - timeLeft;
+        const wpm = Math.round((words / timeSpent) * 60);
+        const accuracy = calculateAccuracy(text, inputElement.value);
+
+        wpmElement.textContent = wpm;
+        document.getElementById("accuracy").textContent = accuracy + "%";
+
+        // Save high score
+        if (timeLeft === 0) {
+          saveHighScore(wpm, accuracy);
         }
+      }
 
-        function calculateResults() {
-            const words = inputElement.value.trim().split(/\s+/).length;
-            const timeSpent = 60 - timeLeft;
-            const wpm = Math.round((words / timeSpent) * 60);
-            const accuracy = calculateAccuracy(text, inputElement.value);
-            
-            wpmElement.textContent = wpm;
-            document.getElementById('accuracy').textContent = accuracy + "%";
-            
-            // Save high score
-            if (timeLeft === 0) {
-                saveHighScore(wpm, accuracy);
-            }
-        }
+      function saveHighScore(wpm, accuracy) {
+        highScores.push({
+          wpm,
+          accuracy,
+          date: new Date().toLocaleDateString(),
+          time: selectedTime,
+        });
+        highScores.sort((a, b) => b.wpm - a.wpm);
+        highScores = highScores.slice(0, 5);
+        localStorage.setItem("typeTestHighScores", JSON.stringify(highScores));
+        updateHighScores();
+      }
 
-        function saveHighScore(wpm, accuracy) {
-            highScores.push({
-                wpm,
-                accuracy,
-                date: new Date().toLocaleDateString(),
-                time: selectedTime
-            });
-            highScores.sort((a, b) => b.wpm - a.wpm);
-            highScores = highScores.slice(0, 5);
-            localStorage.setItem('typeTestHighScores', JSON.stringify(highScores));
-            updateHighScores();
-        }
-
-        function updateHighScores() {
-            const highScoresDiv = document.getElementById('highScores');
-            highScoresDiv.innerHTML = highScores
-                .map((score, index) => `
+      function updateHighScores() {
+        const highScoresDiv = document.getElementById("highScores");
+        highScoresDiv.innerHTML = highScores
+          .map(
+            (score, index) => `
                     <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
                         <div class="flex items-center gap-3">
-                            <span class="text-2xl font-bold ${index === 0 ? 'text-yellow-500' : 'text-gray-400'}">#${index + 1}</span>
+                            <span class="text-2xl font-bold ${
+                              index === 0 ? "text-yellow-500" : "text-gray-400"
+                            }">#${index + 1}</span>
                             <div>
-                                <p class="font-semibold text-gray-800">${score.wpm} WPM</p>
-                                <p class="text-sm text-gray-600">Accuracy: ${score.accuracy}% | ${score.date}</p>
+                                <p class="font-semibold text-gray-800">${
+                                  score.wpm
+                                } WPM</p>
+                                <p class="text-sm text-gray-600">Accuracy: ${
+                                  score.accuracy
+                                }% | ${score.date}</p>
                             </div>
                         </div>
                     </div>
-                `)
-                .join('');
+                `
+          )
+          .join("");
+      }
+
+      function calculateAccuracy(original, typed) {
+        const originalLength = original.length;
+        const correctLength = typed.length;
+        const correctChars = typed
+          .split("")
+          .filter((c, i) => c === original[i]).length;
+        return ((correctChars / correctLength) * 100).toFixed(2);
+      }
+
+      inputElement.addEventListener("input", () => {
+        if (!startTime) {
+          startTime = new Date();
+          interval = setInterval(updateTimer, 1000);
         }
+        const typedText = inputElement.value;
+        charCount = typedText.length;
+        document.getElementById("chars").textContent = charCount;
+        calculateResults();
+      });
 
-        function calculateAccuracy(original, typed) {
-            const originalLength = original.length;
-            const correctLength = typed.length;
-            const correctChars = typed.split('').filter((c, i) => c === original[i]).length;
-            return ((correctChars / correctLength) * 100).toFixed(2);
-        }
+      resetButton.addEventListener("click", startGame);
 
-        inputElement.addEventListener("input", () => {
-            if (!startTime) {
-                startTime = new Date();
-                interval = setInterval(updateTimer, 1000);
-            }
-            const typedText = inputElement.value;
-            charCount = typedText.length;
-            document.getElementById('chars').textContent = charCount;
-            calculateResults();
+      document.querySelectorAll(".time-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".time-btn").forEach((b) => {
+            b.classList.remove("bg-purple-600", "text-white");
+            b.classList.add("text-gray-600");
+          });
+          btn.classList.add("bg-purple-600", "text-white");
+          btn.classList.remove("text-gray-600");
+          selectedTime = parseInt(btn.dataset.time);
+          timeLeft = selectedTime;
+          document.getElementById("time").textContent = timeLeft + "s";
         });
+      });
 
-        resetButton.addEventListener("click", startGame);
-
-        document.querySelectorAll('.time-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.time-btn').forEach(b => {
-                    b.classList.remove('bg-purple-600', 'text-white');
-                    b.classList.add('text-gray-600');
-                });
-                btn.classList.add('bg-purple-600', 'text-white');
-                btn.classList.remove('text-gray-600');
-                selectedTime = parseInt(btn.dataset.time);
-                timeLeft = selectedTime;
-                document.getElementById('time').textContent = timeLeft + 's';
-            });
-        });
-
-        startGame();
+      startGame();
     </script>
-</body>
+  </body>
 </html>
