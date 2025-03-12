@@ -1,3 +1,147 @@
+.button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ea580c;
+  color: #ea580c;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 4px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background: inherit;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: 5px 5px 2px 0px #675c5c17;
+}
+
+.button-57 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  font-size: 16px;
+  transform: translateY(220%) translateX(-50%);
+  height: 22px;
+  line-height: 20px;
+}
+
+.button-57:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ea580c;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+/* CSS */
+.social-button {
+  appearance: none;
+  background-color: inherit;
+  border: .5px solid #ec570d;
+  box-sizing: border-box;
+  /* color: #ffffff; */
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  height: 52px;
+  width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  opacity: 1;
+  outline: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+    background-color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+    color 100ms cubic-bezier(0.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.social-button:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #ef552a;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+ 
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.social-button:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.social-button:after {
+  background-color: #ffffff;
+}
+
+
+.social-button span {
+  z-index: 1;
+  position: relative;
+  color: #ea580c;
+  font-size: 20px;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.social-button:hover span {
+  color: #ffffff;
+}
+
 @keyframes typing {
   from {
     width: 0;
@@ -28,7 +172,6 @@
   animation: fadeIn 1s ease-out;
 }
 
-
 .mobile-menu {
   display: none;
   transition: transform 0.3s ease-in-out;
@@ -49,8 +192,6 @@
 .skill-card {
   transition: all 0.3s ease;
 }
-
-
 
 .dark-mode-transition {
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -96,7 +237,7 @@
 }
 
 .toast.error .toast-icon {
-  color: #f44336;
+  color: red;
 }
 
 .toast-message {
@@ -149,7 +290,7 @@
 }
 
 .toast.error .toast-progress-bar {
-  background-color: #f44336;
+  background-color: red;
 }
 
 .toast-progress-bar {
@@ -200,7 +341,7 @@
 }
 
 .form-input-error {
-  border: 2px solid #f44336;
+  border: 2px solid red;
   animation: shake 0.5s ease-in-out;
 }
 
@@ -227,8 +368,6 @@
     transform: translateY(-10px);
   }
 }
-
-
 
 /* Update primary color throughout the site */
 .text-green-600 {
@@ -378,8 +517,6 @@ textarea {
   transition: all 0.3s ease;
 }
 
-
-
 /* Add these new styles */
 .error-icon {
   animation: fadeIn 0.3s ease-in-out;
@@ -471,11 +608,9 @@ button[type="submit"]:disabled {
   animation: pulse 2s infinite;
 }
 
-
-
 .dark #backToTop:hover {
   background-color: #e1790a;
-  box-shadow: 0 8px 20px rgba(96, 165, 250, 0.3);
+  box-shadow: 0 8px 20px rgba(234, 75, 7, 0.3);
 }
 
 /* Updated Section Heading Styles with Better Mobile Responsiveness */
@@ -634,8 +769,6 @@ button[type="submit"]:disabled {
   color: #339933;
 }
 
-
-
 /* Updated tooltip styles */
 .tech-tag::before {
   content: attr(data-tooltip);
@@ -643,7 +776,7 @@ button[type="submit"]:disabled {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #1f2937;
+  background: #ea580c;
   color: white;
   padding: 6px 12px;
   border-radius: 6px;
@@ -665,7 +798,7 @@ button[type="submit"]:disabled {
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid transparent;
-  border-top: 5px solid #1f2937;
+  border-top: 5px solid #ea580c;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -682,15 +815,6 @@ button[type="submit"]:disabled {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(-5px);
-}
-
-/* Dark mode tooltip */
-.dark .tech-tag::before {
-  background: #e1790a;
-}
-
-.dark .tech-tag::after {
-  border-top-color: #e1790a;
 }
 
 @keyframes tooltipBounce {
@@ -739,15 +863,13 @@ button[type="submit"]:disabled {
   }
 }
 
-
-
- input.form-input-error:focus {
+input.form-input-error:focus {
   border-color: #ef4444;
-} 
+}
 
 .dark input:focus {
   border-color: #60a5fa;
-} 
+}
 
 .dark input.form-input-error:focus {
   border-color: #ef4444;
@@ -780,10 +902,6 @@ button[type="submit"]:disabled {
 .animate-float-slower {
   animation: float-slower 8s ease-in-out infinite;
 }
-
-
-
-
 
 /* Add smooth transition for social links */
 .social-link {
@@ -833,41 +951,25 @@ button[type="submit"]:disabled {
 
 .dark .mobile-nav-link:hover {
   background-color: #374151;
-  color: #60a5fa;
+  color: #ea580c;
 }
 
 /* Active link styles */
 .mobile-nav-link.active {
   background-color: #ebf5ff;
-  color: #e1790a;
+  color: #ea580c;
 }
 
 .dark .mobile-nav-link.active {
-  background-color: #1e3a8a;
-  color: #60a5fa;
+  background-color: #ea580c;
+  color: #ffffff;
 }
 
-/* Hide scrollbar when sidebar is open */
 body.sidebar-open {
   overflow: hidden;
 }
 
 .nav-link.active {
-  color: #166da3; /* green-600 */
-  position: relative;
+  color: #ffffff;
+  background-color: #ea580c;
 }
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #e1790a;
-  transform: scaleX(1);
-  transition: transform 0.3s ease;
-}
-
-
-
