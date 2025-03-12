@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .cell {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+      .cell:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+      .winner {
+        animation: winner-glow 0.8s infinite alternate;
+      }
+      @keyframes winner-glow {
+        from {
+          color: #ffeb3b;
+          text-shadow: 0px 0px 10px #ffeb3b;
+        }
+        to {
+          color: #ffffff;
+          text-shadow: 0px 0px 20px #ffeb3b;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen"
+  >
+    <h1 class="text-4xl font-extrabold mb-6 text-yellow-400">
+      Tic-Tac-Toe AI 🤖
+    </h1>
+    <div
+      class="grid grid-cols-3 gap-3 p-4 bg-gray-800 rounded-lg shadow-xl"
+      id="board"
+    >
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="0"
+      ></button>
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="1"
+      ></button>
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="2"
+      ></button>
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="3"
+      ></button>
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="4"
+      ></button>
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="5"
+      ></button>
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="6"
+      ></button>
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="7"
+      ></button>
+      <button
+        class="cell bg-gray-700 rounded flex items-center justify-center"
+        data-index="8"
+      ></button>
+    </div>
+    <p id="status" class="mt-4 text-xl font-semibold"></p>
+    <button
+      id="reset"
+      class="mt-6 px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg shadow-lg"
+    >
+      Restart Game 🔄
+    </button>
+    <div class="mt-6 bg-gray-800 p-5 rounded shadow-lg w-64 text-center">
+      <h2 class="text-2xl font-semibold text-yellow-400">Leaderboard 🏆</h2>
+      <ul id="leaderboard" class="list-decimal pl-5 mt-2"></ul>
+    </div>
+
+    <script>
+      const board = document.getElementById("board");
+      const cells = document.querySelectorAll(".cell");
+      const statusText = document.getElementById("status");
+      const resetBtn = document.getElementById("reset");
+      const leaderboardList = document.getElementById("leaderboard");
+      let boardState = Array(9).fill(null);
+      let currentPlayer = "X";
+      let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+      function updateLeaderboard(winner) {
+        leaderboard.push(winner);
+        localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+        renderLeaderboard();
+      }
+
+      function renderLeaderboard() {
+        leaderboardList.innerHTML = leaderboard
+          .map(
+            (player) => `<li class='text-yellow-300 font-bold'>${player}</li>`
+          )
+          .join("");
+      }
+
+      function checkWinner() {
+        const winPatterns = [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 3, 6],
+          [1, 4, 7],
+          [2, 5, 8],
+          [0, 4, 8],
+          [2, 4, 6],
+        ];
+        for (let pattern of winPatterns) {
+          const [a, b, c] = pattern;
+          if (
+            boardState[a] &&
+            boardState[a] === boardState[b] &&
+            boardState[a] === boardState[c]
+          ) {
+            statusText.textContent = `${boardState[a]} wins! 🎉`;
+            updateLeaderboard(boardState[a]);
+            pattern.forEach((index) => cells[index].classList.add("winner"));
+            return true;
+          }
+        }
+        if (!boardState.includes(null)) {
+          statusText.textContent = "It's a draw! 🤝";
+          return true;
+        }
+        return false;
+      }
+
+      function aiMove() {
+        let emptyCells = boardState
+          .map((val, idx) => (val === null ? idx : null))
+          .filter((val) => val !== null);
+        if (emptyCells.length > 0) {
+          let move = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+          boardState[move] = "O";
+          cells[move].textContent = "O";
+          if (!checkWinner()) currentPlayer = "X";
+        }
+      }
+
+      function handleClick(e) {
+        let index = e.target.dataset.index;
+        if (!boardState[index] && currentPlayer === "X") {
+          boardState[index] = "X";
+          e.target.textContent = "X";
+          if (!checkWinner()) {
+            currentPlayer = "O";
+            setTimeout(aiMove, 500);
+          }
+        }
+      }
+
+      function resetGame() {
+        boardState.fill(null);
+        cells.forEach((cell) => {
+          cell.textContent = "";
+          cell.classList.remove("winner");
+        });
+        statusText.textContent = "";
+        currentPlayer = "X";
+      }
+
+      cells.forEach((cell) => cell.addEventListener("click", handleClick));
+      resetBtn.addEventListener("click", resetGame);
+      renderLeaderboard();
+    </script>
+  </body>
+</html>
