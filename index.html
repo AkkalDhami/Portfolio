@@ -7,6 +7,7 @@
   <title>Developer Portfolio</title>
   <link rel="stylesheet" href="./src/output.css" />
   <link rel="stylesheet" href="./css/prism.css" />
+  <link rel="stylesheet" href="./css/toggle.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./js/prism.js" defer></script>
   <script>
@@ -27,23 +28,33 @@
     <div class="container max-w-[1200px] mx-auto flex items-center justify-between p-4">
       <a href="./index.html" class="text-2xl font-bold text-orange-500">Portfolio</a>
       <div class="hidden md:flex gap-6">
-        <a href="#about" class="nav-link hover:text-green-600 transition-colors">About</a>
-        <a href="#projects" class="nav-link hover:text-green-600 transition-colors">Projects</a>
-        <a href="#skills" class="nav-link hover:text-green-600 transition-colors">Skills</a>
-        <a href="#contact" class="nav-link hover:text-green-600 transition-colors">Contact</a>
+        <a href="#about" class="nav-link px-[0.75rem] py-[.5rem] rounded-lg transition-colors">About</a>
+        <a href="#projects" class="nav-link px-[0.75rem] py-[.5rem] rounded-lg transition-colors">Projects</a>
+        <a href="#skills" class="nav-link px-[0.75rem] py-[.5rem] rounded-lg transition-colors">Skills</a>
+        <a href="#contact" class="nav-link px-[0.75rem] py-[.5rem] rounded-lg transition-colors">Contact</a>
       </div>
+
       <div class="flex items-center gap-4">
-        <button id="themeToggle" class="text-xl">
+        <!-- From Uiverse.io by JkHuger -->
+
+        <label class="ui-switch" id="themeToggle">
+          <input type="checkbox">
+          <div class="slider">
+            <div class="circle"></div>
+          </div>
+        </label>
+
+        <!-- <button id="themeToggle" class="text-xl">
           <i class="fas fa-moon dark:fa-sun"></i>
-        </button>
+        </button> -->
         <button id="mobileMenuBtn" class="md:hidden text-xl">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </nav>
-
   <!-- New Mobile Sidebar -->
+
   <div id="mobileSidebar"
     class="fixed top-0 right-0 w-[300px] h-full bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
     <div class="p-6">
@@ -75,17 +86,17 @@
 
       <!-- Social Links in Sidebar -->
       <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-        <h3 class="text-gray-600 dark:text-gray-400 mb-4 text-sm font-semibold">
+        <h3 class="text-gray-600 dark:text-gray-400 mb-4 text-[18px] font-semibold">
           CONNECT WITH ME
         </h3>
         <div class="flex gap-4">
-          <a href="#" class="sidebar-social-link" aria-label="GitHub">
+          <a href="#" class="social-link" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="#" class="sidebar-social-link" aria-label="LinkedIn">
+          <a href="#" class="social-link" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="#" class="sidebar-social-link" aria-label="Twitter">
+          <a href="#" class="social-link" aria-label="Twitter">
             <i class="fab fa-twitter"></i>
           </a>
         </div>
@@ -128,32 +139,24 @@
         </p>
 
         <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-          <a href="#contact"
-            class="group flex items-center gap-2 px-8 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 dark:hover:bg-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/25">
-            <span class="text-[18px]">Let's Connect</span>
-            <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-          </a>
-
-          <a href="#"
-            class="group flex items-center gap-2 px-8 py-3 border-2 border-orange-600 dark:border-orange-600 text-orange-600 dark:text-orange-600 rounded-lg hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all duration-300">
-            <span>Download CV</span>
-            <i class="fas fa-download"></i>
-          </a>
+          <a href="#contact" class="button-57" role="button"><span class="text">Let's Connect &nbsp; <i
+                class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span><span>Connect with
+              me</span></a>
         </div>
 
-        <div class="pt-8">
+        <div class="mb-12 mt-6">
           <div class="flex justify-center md:justify-start gap-6">
-            <a href="#" class="social-link" title="Email">
-              <i class="fas fa-envelope"></i>
+            <a href="#" class="social-button" title="Email">
+              <span><i class="fas fa-envelope"></i></span>
             </a>
-            <a href="#" class="social-link" title="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
+            <a href="#" class="social-button" title="LinkedIn">
+              <span> <i class="fab fa-linkedin-in"></i></span>
             </a>
-            <a href="#" class="social-link" title="GitHub">
-              <i class="fab fa-github"></i>
+            <a href="#" class="social-button" title="GitHub">
+              <span> <i class="fab fa-github"></i></span>
             </a>
-            <a href="#" class="social-link" title="Twitter">
-              <i class="fa-brands fa-twitter"></i>
+            <a href="#" class="social-button" title="Twitter">
+              <span> <i class="fa-brands fa-twitter"></i></span>
             </a>
           </div>
         </div>
@@ -409,7 +412,7 @@
               <a href="#"
                 class="flex items-center border-2 border-orange-600 gap-2 text-gray-800 dark:text-white px-4 py-2 rounded hover:border-transparent dark:hover:bg-orange-600 hover:text-white hover:bg-orange-600 transition-colors">
                 <span>View Code</span>
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <i class="fa-solid fa-eye"></i>
               </a>
             </div>
           </div>
@@ -425,137 +428,8 @@
           Skills & Technologies
         </h2>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/html.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[80px] h-[80px]  sm:w-[90px] sm:h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <i class="fab fa-html5 text-[#e34f26] text-4xl sm:text-5xl"></i>
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#d63b10] font-bold">
-            HTML5
-          </h3>
-        </div>
+      <div id="skillsContainer" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/css.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <i class="fab fa-css3-alt text-[#1572b6] text-5xl"></i>
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#1572b6] font-bold">
-            CSS3
-          </h3>
-        </div>
-
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/js.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <i class="fab fa-js text-[#f7df1e] text-5xl"></i>
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#f7df1e] font-bold">
-            JavaScript
-          </h3>
-        </div>
-
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/tailwind.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <img src="./assets/image/tailwindcss.png" alt="tailwind logo" />
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#029db0] font-bold">
-            Tailwind CSS
-          </h3>
-        </div>
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/tailwind.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <img src="./assets/image/vscode.svg" class="w-[40px]" alt="tailwind logo" />
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#229adc] font-bold">
-            VS Code
-          </h3>
-        </div>
-
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/githubgraph.png')] bg-cover bg-right-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <img src="./assets/image/icons8-git-48.png" class="w-[60px]" alt="git logo" />
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#ffffff] font-bold">
-            <span class="text-orange-500">Git</span>
-          </h3>
-        </div>
-
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/githubgraph.png')] bg-cover bg-right-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <img src="./assets/image/icons8-github-32.png" class="w-[60px]" alt="github logo" />
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#ffffff] font-bold">
-            <span class="text-orange-500">Github</span>
-          </h3>
-        </div>
-
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/node.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <i class="fab fab fa-node-js text-[#339933] text-5xl"></i>
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#339933] font-bold">
-            Node.js
-          </h3>
-        </div>
-
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/express.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <img src="./assets/image/expressLoggo.png" alt="expressjs logo" />
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#fff] font-bold">
-            Express.js
-          </h3>
-        </div>
-
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/mongo.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <img src="./assets/image/logo-mysq.png" class="w-[60px]" alt="monogdbLogo logo" />
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 font-bold">
-            <span class="text-blue-400">My</span><span class="text-orange-500">SQL</span>
-          </h3>
-        </div>
-
-        <div
-          class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('./assets/image/mongo.png')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div
-            class="relative flex items-center justify-center z-10 w-[90px] h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
-            <img src="./assets/image/MongoDB_Logomark_SpringGreen.png" class="w-[30px]" alt="monogdbLogo logo" />
-          </div>
-          <h3 class="text-xl relative z-40 mt-6 text-[#0ecf45] font-bold">
-            MongoDB
-          </h3>
-        </div>
       </div>
     </div>
   </section>
@@ -612,17 +486,17 @@
           </div>
           <div class="pt-8">
             <div class="flex gap-6">
-              <a href="#" class="social-link" title="Email">
-                <i class="fas fa-envelope"></i>
+              <a href="#" class="social-button" title="Email">
+                <span><i class="fas fa-envelope"></i></span>
               </a>
-              <a href="#" class="social-link" title="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
+              <a href="#" class="social-button" title="LinkedIn">
+                <span> <i class="fab fa-linkedin-in"></i></span>
               </a>
-              <a href="https://github.com/AkkalDhami" class="social-link" title="GitHub">
-                <i class="fab fa-github"></i>
+              <a href="https://github.com/AkkalDhami" class="social-button" title="GitHub">
+                <span> <i class="fab fa-github"></i></span>
               </a>
-              <a href="#" class="social-link" title="Twitter">
-                <i class="fa-brands fa-twitter"></i>
+              <a href="#" class="social-button" title="Twitter">
+                <span> <i class="fa-brands fa-twitter"></i></span>
               </a>
             </div>
           </div>
@@ -661,11 +535,11 @@
 
             <div class="flex justify-center w-full">
               <button type="submit"
-                class="bg-orange-600 border-0 outline-none justify-center space-x-2 px-8 w-full py-3.5 rounded hover:bg-orange-500 transition-colors focus:outline-none text-white flex items-center gap-2 group relative overflow-hidden">
-                <span class="submit-text space-x-2 flex items-center gap-2">
+                class=" bg-orange-600 border-0 outline-none justify-center space-x-2 px-8 w-full py-3.5 rounded hover:bg-orange-500 transition-colors focus:outline-none text-white flex items-center gap-2 group relative overflow-hidden">
+                <div class="submit-text space-x-2 flex items-center gap-2">
                   <span>Send Message</span>
                   <i class="fas fa-paper-plane"></i>
-                </span>
+                </div>
                 <div class="loading-state hidden absolute inset-0 items-center justify-center bg-orange-600">
                   <div class="flex items-center pointer-events-none gap-2">
                     <span>Sending Message...</span>
@@ -673,6 +547,7 @@
                   </div>
                 </div>
               </button>
+
             </div>
           </form>
         </div>
@@ -694,65 +569,39 @@
     <div class="container mx-auto px-4">
       <div class="flex flex-col space-y-2 md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
-          <p>&copy; 2024 Akkal Dhami | All rights reserved.</p>
+          <p>&copy; 2025 Akkal Dhami | All rights reserved.</p>
         </div>
         <div class="flex gap-6 my-2.5">
-          <a href="#" class="social-link bg-transparent" title="Email">
-            <i class="fas fa-envelope"></i>
+          <a href="#" class="social-button" title="Email">
+            <span><i class="fas fa-envelope"></i></span>
           </a>
-          <a href="#" class="social-link bg-transparent" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
+          <a href="#" class="social-button" title="LinkedIn">
+            <span> <i class="fab fa-linkedin-in"></i></span>
           </a>
-          <a href="#" class="social-link bg-transparent" title="GitHub">
-            <i class="fab fa-github"></i>
+          <a href="#" class="social-button" title="GitHub">
+            <span> <i class="fab fa-github"></i></span>
           </a>
-          <a href="#" class="social-link bg-transparent" title="Twitter">
-            <i class="fa-brands fa-twitter"></i>
+          <a href="#" class="social-button" title="Twitter">
+            <span> <i class="fa-brands fa-twitter"></i></span>
           </a>
         </div>
         <div class="flex gap-4">
-          <a href="#" class="hover:text-green-600 transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-green-600 transition-colors">Terms of Service</a>
+          <a href="#" class="px-2 py-3 rounded transition-colors">Privacy Policy</a>
+          <a href="#" class="px-2 py-3 rounded transition-colors">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
   <button id="backToTop"
-    class="fixed bottom-8 right-8 bg-orange-600 text-white w-12 h-12 rounded-full shadow-lg hidden hover:bg-orange-500 transition-all duration-300 items-center justify-center"
+    class="social-button fixed bottom-8 right-8  text-white w-12 h-12 rounded-full shadow-lg hidden transition-all bg-transparent duration-300 items-center justify-center"
     aria-label="Scroll to top">
-    <i class="fas fa-arrow-up text-xl"></i>
+    <span> <i class="fas fa-arrow-up text-xl"></i></span>
   </button>
 
   <script src="./js/script.js"></script>
+  <script src="./js/project.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const tabBtns = document.querySelectorAll(".tab-btn");
-      const tabContents = document.querySelectorAll(".tab-content");
-
-      tabBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          tabBtns.forEach((b) => {
-            b.classList.remove("tab-active");
-            b.classList.add("text-gray-600", "dark:text-gray-400");
-            b.classList.remove("text-gray-900", "dark:text-white");
-          });
-
-          btn.classList.add("tab-active");
-          btn.classList.remove("text-gray-600", "dark:text-gray-400");
-          btn.classList.add("text-gray-900", "dark:text-white");
-
-          tabContents.forEach((content) => {
-            content.classList.add("hidden");
-          });
-
-          const tabId = btn.getAttribute("data-tab");
-          document.getElementById(tabId).classList.remove("hidden");
-        });
-      });
-    });
-  </script>
 </body>
 
 </html>
