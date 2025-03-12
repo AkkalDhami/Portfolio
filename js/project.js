@@ -69,7 +69,7 @@ let skills = [
     image: "../assets/image/mongo.png",
     title: 'Postman',
     color: "#f37036",
-    icon: '<img src="../assets/image/postman.svg" class="w-[60px]" alt="monogdbLogo logo" />',
+    icon: '<img src="../assets/image/postman.svg" class="w-[60px]" alt="postman logo" />',
   },
 ];
 
