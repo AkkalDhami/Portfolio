@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+      <!-- Search Form -->
+      <div class="mb-8">
+        <div class="flex gap-2">
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter GitHub username"
+            class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            onclick="fetchUserData()"
+            class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            Fetch
+          </button>
+        </div>
+      </div>
+
+      <!-- Profile Section -->
+      <div
+        id="profile"
+        class="hidden mb-8 bg-white p-6 rounded-lg shadow-md"
+      ></div>
+
+      <!-- Commit Graph -->
+      <div id="commit-graph" class="bg-white p-6 rounded-lg shadow-md"></div>
+
+      <!-- Tooltip -->
+      <div
+        id="tooltip"
+        class="hidden absolute bg-gray-800 text-white px-3 py-2 rounded text-sm"
+      ></div>
+    </div>
+
+    <script>
+      async function fetchUserData() {
+          const username = document.getElementById('username').value;
+          if (!username) return;
+
+          try {
+              // Fetch user data
+              const userRes = await fetch(`https://api.github.com/users/${username}`, {
+                  headers: { 'User-Agent': 'GitHubProfileViewer' }
+              });
+              const userData = await userRes.json();
+
+              // Fetch user events
+              const eventsRes = await fetch(`https://api.github.com/users/${username}/events/public`, {
+                  headers: { 'User-Agent': 'GitHubProfileViewer' }
+              });
+              const events = await eventsRes.json();
+
+              renderProfile(userData);
+              renderCommitGraph(processEvents(events));
+          } catch (error) {
+              console.error('Error fetching data:', error);
+              alert('Error fetching data. Please try again.');
+          }
+      }
+
+      function processEvents(events) {
+          const commitsPerDay = {};
+          const pushEvents = events.filter(event => event.type === 'PushEvent');
+
+          pushEvents.forEach(event => {
+              const date = new Date(event.created_at).toISOString().split('T')[0];
+              const commitCount = event.payload.size;
+              commitsPerDay[date] = (commitsPerDay[date] || 0) + commitCount;
+          });
+
+          return commitsPerDay;
+      }
+
+      function renderProfile(user) {
+          const profileDiv = document.getElementById('profile');
+          profileDiv.innerHTML = `
+              <div class="flex items-center gap-6">
+                  <img src="${user.avatar_url}" alt="Avatar" class="w-24 h-24 rounded-full">
+                  <div>
+                      <h2 class="text-2xl font-bold">${user.name || user.login}</h2>
+                      <p class="text-gray-600 mb-2">${user.bio || ''}</p>
+                      <div class="flex gap-4 text-gray-600">
+                          <span>🏅 Followers: ${user.followers}</span>
+                          <span>👥 Following: ${user.following}</span>
+                          <span>📦 Repos: ${user.public_repos}</span>
+                      </div>
+                  </div>
+              </div>
+          `;
+          profileDiv.classList.remove('hidden');
+      }
+
+      function renderCommitGraph(commitsPerDay) {
+          const graphDiv = document.getElementById('commit-graph');
+          graphDiv.innerHTML = '';
+
+          // Generate dates for last 52 weeks
+          const weeks = [];
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          const startDate = new Date(today);
+          startDate.setDate(startDate.getDate() - 364); // 52 weeks * 7 days
+
+          // Create all dates
+          const dates = [];
+          let currentDate = new Date(startDate);
+          while (currentDate <= today) {
+              dates.push(new Date(currentDate));
+              currentDate.setDate(currentDate.getDate() + 1);
+          }
+
+          // Split into weeks
+          for (let i = 0; i < dates.length; i += 7) {
+              weeks.push(dates.slice(i, i + 7));
+          }
+
+          // Create graph
+          const container = document.createElement('div');
+          container.className = 'flex gap-1';
+
+          weeks.forEach(week => {
+              const weekCol = document.createElement('div');
+              weekCol.className = 'flex flex-col gap-1';
+
+              week.forEach(date => {
+                  const dateStr = date.toISOString().split('T')[0];
+                  const commitCount = commitsPerDay[dateStr] || 0;
+
+                  const dayDiv = document.createElement('div');
+                  dayDiv.className = 'w-4 h-4 rounded-sm cursor-pointer';
+                  dayDiv.style.backgroundColor = getCommitColor(commitCount);
+
+                  dayDiv.dataset.date = dateStr;
+                  dayDiv.dataset.commits = commitCount;
+
+                  // Hover events
+                  dayDiv.addEventListener('mouseover', (e) => showTooltip(e, dateStr, commitCount));
+                  dayDiv.addEventListener('mouseout', hideTooltip);
+
+                  weekCol.appendChild(dayDiv);
+              });
+
+              container.appendChild(weekCol);
+          });
+
+          graphDiv.appendChild(container);
+      }
+
+      function getCommitColor(commits) {
+          if (commits === 0) return '#ebedf0';
+          if (commits < 4) return '#9be9a8';
+          if (commits < 7) return '#40c463';
+          return '#30a14e';
+      }
+
+      function showTooltip(event, date, commits) {
+          const tooltip = document.getElementById('tooltip');
+          tooltip.innerHTML = `${date}: ${commits} commit${commits !== 1 ? 's' : ''}`;
+          tooltip.style.display = 'block';
+          tooltip.style.left = `${event.pageX + 10}px`;
+          tooltip.style.top = `${event.pageY + 10}px`;
+      }
+
+      function hideTooltip() {
+          document.getElementById('tooltip').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>
