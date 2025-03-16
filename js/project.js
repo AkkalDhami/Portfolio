@@ -78,7 +78,7 @@ skills.forEach((skill) => {
   let skillCard = `
   <div class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('${skill.image}')] bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
   <div class="absolute inset-0 bg-black opacity-50"></div>
-  <div class="relative flex items-center justify-center z-10 w-[80px] h-[80px]  sm:w-[90px] sm:h-[90px] rounded-full bg-[#4e4848] group-hover:scale-105 opacity-90 transition-all">
+  <div class="language-icon relative flex items-center justify-center z-10 w-[80px] h-[80px]  sm:w-[90px] sm:h-[90px] rounded-full dark:bg-[#4e4848] bg-[#ffffff] group-hover:scale-105 opacity-90 transition-all">
   ${skill.icon} 
   </div>
   <h3 class="text-xl relative z-40 mt-6 text-[${skill.color}] font-bold">${skill.title}</h3>
@@ -86,8 +86,6 @@ skills.forEach((skill) => {
   `;
   skillsContainer.insertAdjacentHTML("beforeend", skillCard);
 });
-
-
 
 
 
