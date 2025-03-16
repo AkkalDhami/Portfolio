@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./src/output.css" />
   <link rel="stylesheet" href="./css/prism.css" />
   <link rel="stylesheet" href="./css/toggle.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./js/prism.js" defer></script>
   <script>
@@ -15,27 +16,25 @@
       darkMode: "class",
     };
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-    rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-<body class="dark-mode-transition bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-Nunito">
-  <nav class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-md z-50">
+<body class="dark-mode-transition bg-white dark:bg-[#0d160b] text-gray-800 dark:text-white">
+  <nav style="font-family: 'Poppins', sans-serif"
+    class="fixed top-0 left-0 w-full bg-white dark:bg-[#0d160b] dark:shadow-[0_2px_10px_rgba(250,250,250,0.5)] shadow-md z-50">
     <div class="container max-w-[1200px] mx-auto flex items-center justify-between p-4">
-      <a href="./index.html" class="text-2xl font-bold text-orange-500">Portfolio</a>
+      <a style="font-family: Nunito, sans-serif" href="/" class="text-2xl font-bold text-orange-500">Akkal
+        Dhami</a>
       <div class="hidden md:flex gap-6">
-        <a href="#about" class="nav-link px-[0.75rem] py-[.5rem] rounded-lg transition-colors">About</a>
-        <a href="#projects" class="nav-link px-[0.75rem] py-[.5rem] rounded-lg transition-colors">Projects</a>
-        <a href="#skills" class="nav-link px-[0.75rem] py-[.5rem] rounded-lg transition-colors">Skills</a>
-        <a href="#contact" class="nav-link px-[0.75rem] py-[.5rem] rounded-lg transition-colors">Contact</a>
+        <a href="#about" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">About</a>
+        <a href="#projects" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Projects</a>
+        <a href="#skills" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Skills</a>
+        <a href="#contact" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Contact</a>
       </div>
 
       <div class="flex items-center gap-4">
-        <!-- From Uiverse.io by JkHuger -->
 
         <label class="ui-switch" id="themeToggle">
           <input type="checkbox">
@@ -44,22 +43,19 @@
           </div>
         </label>
 
-        <!-- <button id="themeToggle" class="text-xl">
-          <i class="fas fa-moon dark:fa-sun"></i>
-        </button> -->
         <button id="mobileMenuBtn" class="md:hidden text-xl">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </nav>
-  <!-- New Mobile Sidebar -->
 
+  <!-- New Mobile Sidebar -->
   <div id="mobileSidebar"
-    class="fixed top-0 right-0 w-[300px] h-full bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    class="fixed top-0 right-0 w-[300px] h-full bg-white dark:bg-[#0d160b] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
     <div class="p-6">
       <div class="flex justify-between items-center mb-8">
-        <h2 class="text-xl font-bold text-green-600">Menu</h2>
+       
         <button id="closeSidebarBtn"
           class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors">
           <i class="fas fa-times text-2xl"></i>
@@ -86,18 +82,22 @@
 
       <!-- Social Links in Sidebar -->
       <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-        <h3 class="text-gray-600 dark:text-gray-400 mb-4 text-[18px] font-semibold">
+        <h3 class="text-emerald-600 dark:text-green-500 mb-4 text-[18px] font-semibold">
           CONNECT WITH ME
         </h3>
         <div class="flex gap-4">
-          <a href="#" class="social-link" aria-label="GitHub">
-            <i class="fab fa-github"></i>
+          <a data-aos="fade-up" data-aos-duration="1000" href="#" class="social-button" title="Email">
+            <span><i class="fas fa-envelope"></i></span>
           </a>
-          <a href="#" class="social-link" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
+          <a data-aos="fade-down" data-aos-duration="1200" href="#" class="social-button" title="LinkedIn">
+            <span> <i class="fab fa-linkedin-in"></i></span>
           </a>
-          <a href="#" class="social-link" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
+          <a data-aos="fade-up" data-aos-duration="1400" href="https://github.com/AkkalDhami" target="_blank"
+            class="social-button" title="GitHub">
+            <span> <i class="fab fa-github"></i></span>
+          </a>
+          <a data-aos="fade-down" data-aos-duration="1600" href="#" class="social-button" title="Twitter">
+            <span> <i class="fa-brands fa-twitter"></i></span>
           </a>
         </div>
       </div>
@@ -109,92 +109,107 @@
     class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40">
   </div>
 
-  <section id="hero" class="max-w-[1200px] min-h-screen mx-auto flex items-center justify-center pt-20 overflow-hidden">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-      <div class="md:w-1/2 text-center md:text-left space-y-8 fadeIn">
+  <section id="hero" class="max-w-[1400px] min-h-screen mx-auto flex items-center justify-center pt-20 overflow-hidden">
+    <div class="mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+      <div class=" text-center mt-6 md:text-left space-y-8 fadeIn">
         <div class="space-y-4">
-          <p class="text-orange-600 dark:text-orange-400 font-semibold tracking-wide uppercase">
+          <p data-aos="fade-down"
+            class="text-orange-600 text-[20px] dark:text-orange-500 font-semibold tracking-wide uppercase">
             Welcome to my portfolio
           </p>
-          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
-            Hi, I'm
+          <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
+            <span data-aos="fade-down" data-aos-duration="1800"> Hi, I'm</span>
             <span class="relative inline-block">
               <span class="text-orange-600 dark:text-orange-600">Akkal Dhami</span>
-              <span class="absolute bottom-0 left-0 w-full h-2 bg-orange-600/20 dark:bg-orange-400/20 -rotate-2"></span>
+              <!-- <span class="absolute bottom-0 left-0 w-full h-2 bg-orange-600/20 dark:bg-orange-400/20 -rotate-2"></span> -->
             </span>
           </h1>
         </div>
 
-        <div class="typewriter">
-          <span class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium">
+        <div class="typewriter" data-aos="zoom-in" data-aos-duration="1500">
+          <span class="text-2xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold">
             I am
-            <span class="text-orange-600 dark:text-orange-400 typewriter-text">Frontend Developer</span>
+            <span class="text-orange-600 dark:text-orange-600 typewriter-text">Frontend Developer</span>
           </span>
         </div>
 
-        <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl">
+        <p data-aos="fade-up" class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl">
           Passionate about crafting exceptional digital experiences through
           clean code and innovative solutions. Let's turn your ideas into
           reality.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-          <a href="#contact" class="button-57" role="button"><span class="text">Let's Connect &nbsp; <i
+        <div class="flex flex-col sm:items-start items-center gap-4 justify-center md:justify-start">
+          <a href="#contact" data-aos="fade-left" data-aos-duration="1200" class="button-57" role="button"><span
+              class="text">Let's Connect &nbsp; <i
                 class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span><span>Connect with
               me</span></a>
+
+
+          <!-- resume button -->
+          <a href="resume.pdf" data-aos="fade-right" data-aos-duration="1500" class="button-57" role="button"><span
+              class="text">Download Resume &nbsp; <i
+                class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span><span>Download
+              Resume</span></a>
         </div>
 
         <div class="mb-12 mt-6">
           <div class="flex justify-center md:justify-start gap-6">
-            <a href="#" class="social-button" title="Email">
+            <a data-aos="fade-up" data-aos-duration="1000" href="#" class="social-button" title="Email">
               <span><i class="fas fa-envelope"></i></span>
             </a>
-            <a href="#" class="social-button" title="LinkedIn">
+            <a data-aos="fade-down" data-aos-duration="1200" href="#" class="social-button" title="LinkedIn">
               <span> <i class="fab fa-linkedin-in"></i></span>
             </a>
-            <a href="#" class="social-button" title="GitHub">
+            <a data-aos="fade-up" data-aos-duration="1400" href="https://github.com/AkkalDhami" target="_blank"
+              class="social-button" title="GitHub">
               <span> <i class="fab fa-github"></i></span>
             </a>
-            <a href="#" class="social-button" title="Twitter">
+            <a data-aos="fade-down" data-aos-duration="1600" href="#" class="social-button" title="Twitter">
               <span> <i class="fa-brands fa-twitter"></i></span>
             </a>
           </div>
         </div>
       </div>
 
-      <div class="md:w-1/2 flex justify-center mb-12">
-        <div class="profile-image-container relative group">
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-orange-600/90 to-purple-600/90 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500">
+      <div class="flex justify-center mb-12 w-auto">
+        <div class="code-container flex flex-col">
+          <div class="code-lines gap-2 flex mb-4 items-center">
+            <span class="w-3 h-3 rounded-full bg-orange-600"></span>
+            <span class="w-3 h-3 rounded-full bg-blue-600"></span>
+            <span class="w-3 h-3 rounded-full bg-[#0ee52e]"></span>
           </div>
-          <div class="profile-image-border relative">
-            <img style="box-shadow: 0px 0px 108px -17px #f55e12f0"
-              src="./assets/image/alexander-hipp-iEEBWgY_6lA-unsplash.jpg" alt="Profile"
-              class="rounded-full w-[300px] h-[300px] object-cover shadow-lg transition-all duration-300 group-hover:scale-105 relative z-10" />
-            <div
-              class="absolute inset-0 rounded-full bg-gradient-to-r from-orange-600/0 to-purple-600/0 group-hover:from-orange-600/90 group-hover:to-purple-600/80 transition-all duration-300 z-20">
-            </div>
-          </div>
+          <pre class="cyber-theme"><span class="keyword">const</span> <span class="variable">about</span> <span class="array"><span class="wrapper">[</span></span>
+  <span class="object"><span class="wrapper">{</span></span>
+    <span class="property">name</span>: <span class="string">'Akkal Dhami'</span><span class="comma">,</span>
+    <span class="property">role</span>: <span class="string">'Frontend Developer'</span><span class="comma">,</span>
+    <span class="property">email</span>: <span class="string">'akkaldhami21@gmail.com'</span><span class="comma">,</span>
+    <span class="property">skills</span>: <span class="wrapper">{</span>
+        <span class="property">frontend</span>: <span class="array"><span class="wrapper">[</span></span><span class="array">'HTML'</span><span class="comma">,</span> <span class="array">'CSS'</span><span class="comma">,</span> <span class="array">'JavaScript'</span><span class="comma">,</span> <span class="array">'Tailwind CSS'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
+        <span class="property">backend</span>: <span class="array"><span class="wrapper">[</span></span><span class="array">'Node.js'</span><span class="comma">,</span> <span class="array">'Express.js'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
+        <span class="property">database</span>: <span class="array"><span class="wrapper">[</span></span><span class="array">'MongoDB'</span><span class="comma">,</span> <span class="array">'MySQL'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
+    <span class="wrapper">}</span><span class="comma">,</span>         
+    <span class="property">toolsIused</span>: <span class="wrapper">{</span>
+        <span class="string">'code editor'</span>: <span class="array"><span class="wrapper">[</span></span><span class="array">'VS Code'</span><span class="comma">,</span> <span class="array">'Windsurf'</span><span class="comma">,</span> <span class="array">'Cursor'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
+        <span class="string">'version control'</span>: <span class="array"><span class="wrapper">[</span></span><span class="array">'git'</span><span class="comma">,</span> <span class="array">'github'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
+        <span class="string">'API testing'</span>: <span class="array"><span class="wrapper">[</span></span><span class="array">'postman'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
+    <span class="wrapper">}</span><span class="comma">,</span>          
+    <span class="property">projects</span>: <span class="wrapper">{</span>
+        <span class="string"><a href="https://nepkart.vercel.app/" target="_blank">'NepKart'</a></span>: <span class="string">'<span class="highlight">E-commerce website</span>'</span><span class="comma">,</span>
+        <span class="string"><a href="https://dishhdashh.vercel.app/" target="_blank">'DishhDashh'</a></span>: <span class="string">'<span class="highlight">Food delivery website</span>'</span><span class="comma">,</span>
+    <span class="wrapper">}</span><span class="comma">,</span>       
+  <span class="object"><span class="wrapper">}</span></span><span class="comma">,</span>
+<span class="array"><span class="wrapper">]</span></span><span class="comma">;</span></pre>
 
-          <!-- Floating Elements -->
-          <div class="absolute -top-4 -right-4 w-12 h-12 bg-orange-600/10 rounded-full blur-sm animate-float-slow">
-          </div>
-          <div class="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-600/10 rounded-full blur-sm animate-float-slower">
-          </div>
         </div>
       </div>
-
-      <!-- <pre class=""><code class="language-js"> const About = {
-        name:"Akkal Dhami",
-        role:"Full Stack Developer"
-  }</code></pre> -->
     </div>
   </section>
 
-  <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800 transition-colors duration-300 overflow-hidden">
+  <section id="about" class="py-20 transition-colors duration-300 overflow-hidden">
     <div class="container max-w-[1200px] mx-auto px-4">
       <div class="section-heading-container" data-text="ABOUT">
-        <h2 class="section-heading text-4xl font-bold">About Me</h2>
+        <h2 data-aos="fade-down" class="section-heading text-4xl font-bold">About Me</h2>
       </div>
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -203,16 +218,6 @@
             <div class="rounded-2xl overflow-hidden shadow-xl group">
               <img src="./assets/image/alexander-hipp-iEEBWgY_6lA-unsplash.jpg" alt="Profile"
                 class="w-full h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-500" />
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              </div>
-              <div
-                class="absolute -z-10 -bottom-4 -right-4 w-full h-full bg-red-500/20 rounded-2xl transition-all duration-300 group-hover:translate-x-2 group-hover:translate-y-2">
-              </div>
-              <div
-                class="absolute -z-20 -bottom-8 -right-8 w-full h-full bg-orange-500/20 rounded-2xl transition-all duration-300 group-hover:translate-x-4 group-hover:translate-y-4">
-              </div>
             </div>
           </div>
 
@@ -231,7 +236,7 @@
             <div class="mb-8">
               <div class="flex gap-8 mb-8 border-b border-gray-200 dark:border-gray-700">
                 <button class="tab-btn text-xl font-semibold relative text-gray-900 dark:text-white pb-4 tab-active"
-                  data-tab="skills">
+                  data-tab="skill">
                   Skills
                 </button>
                 <button
@@ -247,7 +252,7 @@
               </div>
 
               <!-- Tab Content -->
-              <div id="skills" class="tab-content active">
+              <div id="skill" class="tab-content active">
                 <div class="space-y-8">
                   <!-- Frontend Development -->
                   <div class="group">
@@ -374,8 +379,8 @@
 
   <section id="projects" class="py-20 max-w-[1200px] mx-auto">
     <div class="container mx-auto px-4 relative">
-      <div class="section-heading-container" data-text="PROJECTS">
-        <h2 class="section-heading text-4xl font-bold">My Projects</h2>
+      <div data-aos="fade-up" class="section-heading-container" data-text="PROJECTS">
+        <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold">My Projects</h2>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -421,10 +426,10 @@
     </div>
   </section>
 
-  <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-800">
+  <section id="skills" class="py-20 ">
     <div class="container max-w-[1200px] mx-auto px-4">
       <div class="section-heading-container" data-text="SKILLS">
-        <h2 class="section-heading text-4xl font-bold">
+        <h2 data-aos="fade-up" class="section-heading text-4xl font-bold">
           Skills & Technologies
         </h2>
       </div>
@@ -437,21 +442,21 @@
   <section id="contact" class="py-20 max-w-[1200px] mx-auto">
     <div class="container mx-auto px-4">
       <div class="section-heading-container" data-text="CONTACT">
-        <h2 class="section-heading text-4xl font-bold">Get In Touch</h2>
+        <h2 data-aos="fade-down" class="section-heading text-4xl font-bold">Get In Touch</h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="grid md:grid-cols-2 gap-12 overflow-hidden">
         <!-- Left Column - Contact Info -->
         <div>
-          <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
-          <p class="text-gray-600 dark:text-gray-300 mb-8">
+          <h2 data-aos="fade-right" class="text-4xl font-bold mb-6">Contact Me</h2>
+          <p data-aos="zoom-in" class="text-gray-600 dark:text-gray-300 mb-8">
             Feel free to reach out for collaborations, opportunities, or just
             to say hello! I'll get back to you as soon as possible.
           </p>
 
           <div class="space-y-6">
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white">
+            <div data-aos="fade-up" class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
                 <i class="fas fa-user"></i>
               </div>
               <div>
@@ -460,8 +465,8 @@
               </div>
             </div>
 
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white">
+            <div data-aos="fade-up" class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
               <div>
@@ -472,8 +477,8 @@
               </div>
             </div>
 
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white">
+            <div data-aos="fade-up" class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
                 <i class="fas fa-envelope"></i>
               </div>
               <div>
@@ -483,75 +488,97 @@
                 </p>
               </div>
             </div>
+
+            <div data-aos="fade-up" class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Contact</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  +977-9828122071
+                </p>
+              </div>
+            </div>
           </div>
           <div class="pt-8">
             <div class="flex gap-6">
-              <a href="#" class="social-button" title="Email">
+              <a data-aos="fade-up" data-aos-duration="1000" href="#" class="social-button" title="Email">
                 <span><i class="fas fa-envelope"></i></span>
               </a>
-              <a href="#" class="social-button" title="LinkedIn">
+              <a data-aos="fade-down" data-aos-duration="1200" href="#" class="social-button" title="LinkedIn">
                 <span> <i class="fab fa-linkedin-in"></i></span>
               </a>
-              <a href="https://github.com/AkkalDhami" class="social-button" title="GitHub">
+              <a data-aos="fade-up" data-aos-duration="1400" href="https://github.com/AkkalDhami" class="social-button"
+                title="GitHub">
                 <span> <i class="fab fa-github"></i></span>
               </a>
-              <a href="#" class="social-button" title="Twitter">
+              <a data-aos="fade-down" data-aos-duration="1600" href="#" class="social-button" title="Twitter">
                 <span> <i class="fa-brands fa-twitter"></i></span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Right Column - Message Form -->
         <div>
-          <h2 class="text-4xl font-bold mb-6">Message me</h2>
-          <form id="contactForm" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label class="block mb-2 font-semibold text-gray-700 dark:text-gray-200">Name</label>
-                <div class="relative">
-                  <input type="text" name="name"
-                    class="w-full p-3 rounded bg-gray-50 dark:bg-gray-700 border-2 border-transparent focus:border-orange-600 focus:outline-none transition-colors focus:bg-transparent"
-                    placeholder="Enter your name" />
-                  <div class="error-icon mt-1.5 text-sm text-red-500"></div>
-                </div>
+          <div class="mb-1">
+            <h2 data-aos="fade-left" data-aos-duration="1000"
+              class="text-2xl sm:text-3xl font-bold  mb-2 aos-init aos-animate">
+              Message Me
+            </h2>
+            <p data-aos="zoom-in" data-aos-duration="1200"
+              class="text-gray-600 dark:text-gray-300 aos-init aos-animate">
+              I'm excited to connect with you! Please fill out the form below and get back to you as soon as possible.
+            </p>
+          </div>
+
+          <form data-aos="fade-down" action="#" class="py-3 px-2 rounded-xl transition-all aos-init aos-animate"
+            id="contactForm">
+
+            <!-- Name Input -->
+            <div class="mb-6 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000">
+              <label for="contactUserName" class="block dark:text-gray-200 text-gray-700 font-[600] mb-2">Full
+                Name</label>
+              <input type="text"
+                class="w-full text-[16px] p-3 sm:text-[18px] dark:bg-gray-900 dark:focus:bg-transparent bg-gray-50 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"
+                id="contactUserName" placeholder="John Doe">
+              <div id="contactUserNameError"
+                class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500">
               </div>
-              <div>
-                <label class="block mb-2 font-semibold text-gray-700 dark:text-gray-200">Email</label>
-                <input type="email" name="email"
-                  class="w-full p-3 rounded bg-gray-50 dark:bg-gray-700 border-2 border-transparent focus:border-orange-600 focus:outline-none transition-colors focus:bg-transparent"
-                  placeholder="Enter your email" />
-                <span class="text-red-500 text-sm mt-2 hidden"></span>
+            </div>
+
+            <!-- Email Input -->
+            <div class="mb-6 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+              <label for="contactEmail" class="block dark:text-gray-200  font-[600] text-gray-700 mb-2">Email
+                Address</label>
+              <input type="email"
+                class="w-full text-[16px] p-3 sm:text-[18px] dark:bg-gray-900 dark:focus:bg-transparent bg-gray-50 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"
+                id="contactEmail" placeholder="john@example.com">
+              <div id="contactEmailError"
+                class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500">
               </div>
             </div>
 
-            <div>
-              <label class="block mb-2 font-semibold text-gray-700 dark:text-gray-200">Message</label>
-              <textarea name="message" rows="5"
-                class="w-full p-3 rounded bg-gray-50 dark:bg-gray-700 border-2 border-transparent focus:border-orange-600 focus:outline-none transition-colors resize-none focus:bg-transparent"
-                placeholder="Your message here..."></textarea>
-              <span class="text-red-500 text-sm mt-1.5 hidden"></span>
+            <!-- Message Input -->
+            <div class="mb-6 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000">
+              <label for="message" class="block font-[600] dark:text-gray-200 text-gray-700 mb-2">Your Message</label>
+              <textarea placeholder="Type your message here..." id="message" rows="5"
+                class="w-full text-[16px] resize-none p-3 dark:bg-gray-900 dark:focus:bg-transparent bg-gray-50 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"></textarea>
+              <div id="messageError"
+                class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500">
+              </div>
             </div>
 
-            <div class="flex justify-center w-full">
-              <button type="submit"
-                class=" bg-orange-600 border-0 outline-none justify-center space-x-2 px-8 w-full py-3.5 rounded hover:bg-orange-500 transition-colors focus:outline-none text-white flex items-center gap-2 group relative overflow-hidden">
-                <div class="submit-text space-x-2 flex items-center gap-2">
-                  <span>Send Message</span>
-                  <i class="fas fa-paper-plane"></i>
-                </div>
-                <div class="loading-state hidden absolute inset-0 items-center justify-center bg-orange-600">
-                  <div class="flex items-center pointer-events-none gap-2">
-                    <span>Sending Message...</span>
-                    <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  </div>
-                </div>
-              </button>
-
-            </div>
+            <!-- Submit Button -->
+            <button data-aos="fade-up" type="submit" id="contactbutton"
+              class="w-full p-4 text-lg font-medium text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center gap-2 group aos-init">
+              <span>Send Message</span>
+              <i class="ri-send-plane-line group-hover:translate-x-1 transition-transform"></i>
+            </button>
           </form>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -565,23 +592,23 @@
     </div>
   </div>
 
-  <footer class="bg-gray-800 text-white py-8">
+  <footer class="py-8 border-t border-gray-400">
     <div class="container mx-auto px-4">
       <div class="flex flex-col space-y-2 md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <p>&copy; 2025 Akkal Dhami | All rights reserved.</p>
         </div>
         <div class="flex gap-6 my-2.5">
-          <a href="#" class="social-button" title="Email">
+          <a data-aos="fade-up" href="#" class="social-button" title="Email">
             <span><i class="fas fa-envelope"></i></span>
           </a>
-          <a href="#" class="social-button" title="LinkedIn">
+          <a data-aos="fade-up" href="#" class="social-button" title="LinkedIn">
             <span> <i class="fab fa-linkedin-in"></i></span>
           </a>
-          <a href="#" class="social-button" title="GitHub">
+          <a data-aos="fade-up" href="#" class="social-button" title="GitHub">
             <span> <i class="fab fa-github"></i></span>
           </a>
-          <a href="#" class="social-button" title="Twitter">
+          <a data-aos="fade-up" href="#" class="social-button" title="Twitter">
             <span> <i class="fa-brands fa-twitter"></i></span>
           </a>
         </div>
@@ -594,11 +621,19 @@
   </footer>
 
   <button id="backToTop"
-    class="social-button fixed bottom-8 right-8  text-white w-12 h-12 rounded-full shadow-lg hidden transition-all bg-transparent duration-300 items-center justify-center"
+    class="social-button fixed bottom-8 right-8  text-white w-12 h-12 rounded-full shadow-lg hidden transition-all z-40 bg-transparent duration-300 items-center justify-center"
     aria-label="Scroll to top">
     <span> <i class="fas fa-arrow-up text-xl"></i></span>
   </button>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: false,
+      offset: 50,
+    });
+  </script>
   <script src="./js/script.js"></script>
   <script src="./js/project.js"></script>
 
