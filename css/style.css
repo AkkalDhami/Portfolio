@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+}
 .button-57 {
   position: relative;
   overflow: hidden;
@@ -68,7 +74,7 @@
 .social-button {
   appearance: none;
   background-color: inherit;
-  border: .5px solid #ec570d;
+  border: 0.5px solid #ec570d;
   box-sizing: border-box;
   /* color: #ffffff; */
   cursor: pointer;
@@ -111,7 +117,7 @@
   content: "";
   height: 100%;
   left: 0;
- 
+
   position: absolute;
   top: 0;
   transform: translateZ(0);
@@ -128,7 +134,6 @@
 .social-button:after {
   background-color: #ffffff;
 }
-
 
 .social-button span {
   z-index: 1;
@@ -419,11 +424,11 @@
 }
 
 .toast.success .toast-icon {
-  color: #e1790a;
+  color: #ea580c;
 }
 
 .toast.success .toast-progress-bar {
-  background-color: #e1790a;
+  background-color: #ea580c;
 }
 
 .tab-btn::after {
@@ -437,7 +442,8 @@
   transition: width 0.3s ease;
 }
 
-.tab-btn.tab-active {
+.tab-btn.tab-active,
+.tab-btn.dark .tab-active {
   color: #ea580c;
 }
 
@@ -969,7 +975,112 @@ body.sidebar-open {
   overflow: hidden;
 }
 
+.nav-link:hover {
+  color: #ea580c;
+}
+
 .nav-link.active {
+  color: #ec5d15;
+  background-color: #ea5a0c1b;
+}
+
+.code-container {
+  color: #e6f5d6;
+  font-family: "Consolas", "Monaco", monospace;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #586e4c;
+  tab-size: 2;
+}
+
+.keyword {
+  color: #f05b10;
+  font-weight: 800;
+}
+.object {
+  color: #f05c25;
+  font-weight: 600;
+}
+.dark .string{
+  color: #0ee52e;
+}
+.string {
+  color: #22b432;
+}
+
+.property {
+  color: #ea580c;
+}
+
+.variable {
+  color: #e87045;
+}
+
+.wrapper {
+  color: #0e6dea;
+}
+
+.array {
+  color: #de8711;
+}
+.comma {
+  color: #433e3e;
+}
+.dark .comma {
   color: #ffffff;
-  background-color: #ea580c;
+}
+.bracket {
+  color: #5a8c4a;
+}
+
+.operator {
+  color: #ff6b35;
+}
+
+.highlight {
+  /* background-color: #1F2E1A; */
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.comment {
+  color: #5a8c4a;
+  font-style: italic;
+}
+
+.shake {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+.borderError {
+  border-color: #ef4444 !important;
+}
+
+/* Disable button styles */
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
