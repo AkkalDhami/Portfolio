@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
+::selection {
+  color: #fff;
+  background: #ea580c;
+}
+
 body {
   font-family: "Nunito", sans-serif;
   /* font-family: 'Poppins', sans-serif; */
@@ -74,7 +79,7 @@ body {
 .social-button {
   appearance: none;
   background-color: inherit;
-  border: 0.5px solid #ec570d;
+  border: 0.5px solid #e77238;
   box-sizing: border-box;
   /* color: #ffffff; */
   cursor: pointer;
@@ -933,6 +938,12 @@ input.form-input-error:focus {
   }
 }
 
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+.font-nunito {
+  font-family: "Nunito", sans-serif;
+}
 /* Mobile Sidebar Styles */
 .mobile-nav-link {
   display: flex;
@@ -983,7 +994,13 @@ body.sidebar-open {
   color: #ec5d15;
   background-color: #ea5a0c1b;
 }
-
+.contactBtn {
+  background: linear-gradient(45deg, #ec570d, #ca5312);
+  transition: all 0.3s ease;
+  &:hover {
+    background: linear-gradient(45deg, #ca5312, #ec570d);
+  }
+}
 .code-container {
   color: #e6f5d6;
   font-family: "Consolas", "Monaco", monospace;
@@ -1001,7 +1018,7 @@ body.sidebar-open {
   color: #f05c25;
   font-weight: 600;
 }
-.dark .string{
+.dark .string {
   color: #0ee52e;
 }
 .string {
