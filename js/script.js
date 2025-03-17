@@ -160,7 +160,7 @@ function showToastNotify(message, type) {
   progressBar.offsetHeight; // Force reflow
 
   // Set message and icon
-  messageEl.textContent = message;
+  messageEl.innerHTML = message;
   if (type === "success") {
     iconEl.innerHTML = '<i class="fas fa-check-circle"></i>';
     toast.className = "toast success";
@@ -180,6 +180,13 @@ function showToastNotify(message, type) {
       toast.classList.remove("show", "slide-in", "slide-out");
     }, 300);
   }, 3000);
+  document.querySelector(".toast-close").addEventListener("click", () => {
+    const toast = document.getElementById("toast");
+    toast.classList.add("slide-out");
+    setTimeout(() => {
+      toast.classList.remove("show", "slide-in", "slide-out");
+    }, 300);
+  });
 }
 
 
@@ -262,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
       await new Promise(resolve => setTimeout(resolve, 2000));
 
       showToastNotify(
-        "Your message has been sent successfully. We will get back to you soon.",
+        "Your message has been sent successfully.<br> I will get back to you as soon as possible.",
         "success"
       );
       clearInput();
@@ -291,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function setLoadingState(isLoading) {
     submitButton.disabled = isLoading;
     submitButton.innerHTML = isLoading
-      ? `<div class="flex items-center gap-2">
+      ? `<div class="flex items-center gap-4">
                 <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -388,3 +395,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
