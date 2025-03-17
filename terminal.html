@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akkal Dhami - Terminal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+        .terminal-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .glow {
+            text-shadow: 0 0 10px currentColor;
+        }
+
+        .binary-bg {
+            opacity: 0.55;
+        }
+
+        .mainContainer {
+            scrollbar-width: thin;
+            scrollbar-color: transparent transparent;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                scrollbar-color: #00ff00 #000000;
+            }
+        }
+
+        ::selection {
+            background-color: #00ff00;
+            color: #000000;
+        }
+
+        /* ::-webkit-scrollbar {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body class="bg-gray-900 text-green-400 terminal-font">
+    <!-- Binary Background Canvas -->
+    <canvas id="binaryCanvas" class="fixed top-0 left-0 -z-10 binary-bg"></canvas>
+
+    <div class="relative mainContainer z-10 max-w-[1000px] mx-auto px-4 py-8">
+        <div id="terminal" class="bg-black/80 backdrop-blur-sm rounded-lg shadow-2xl border border-green-400/30">
+            <!-- Terminal Header -->
+            <div
+                class="terminal-header sticky top-0 bg-black/80 p-4 border-b border-green-400/30 flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <div class="code-lines gap-2 flex items-center">
+                        <span class="w-3 h-3 rounded-full bg-orange-600"></span>
+                        <span class="w-3 h-3 rounded-full bg-blue-600"></span>
+                        <span class="w-3 h-3 rounded-full bg-[#0ee52e]"></span>
+                    </div>
+                    <div id="date">23 Sep 2023</div>
+                </div>
+
+                <div class="theme-buttons flex gap-2">
+                    <button onclick="changeTheme('default')"
+                        class="theme-btn px-2 py-1 rounded text-xs border border-green-400/30 hover:bg-green-400/10">
+                        DEFAULT
+                    </button>
+                    <button onclick="changeTheme('monokai')"
+                        class="theme-btn px-2 py-1 rounded text-xs border border-purple-300/30 hover:bg-purple-300/10">
+                        MONOKAI
+                    </button>
+                    <button onclick="changeTheme('dracula')"
+                        class="theme-btn px-2 py-1 rounded text-xs border border-pink-300/30 hover:bg-pink-300/10">
+                        DRACULA
+                    </button>
+                </div>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="h-[calc(100vh-200px)] overflow-y-auto p-4 pt-2">
+                <div class="output mb-4 terminal-font">
+                    <div class="text-5xl my-3 font-bold glow">akkal dhami</div>
+                    <span class="glow text-xl">welcome to my terminal portfolio!</span>
+                </div>
+                <div class="output mb-4 terminal-font">
+                    <span class="glow">type 'help' or 'ls' to see available commands.</span>
+                </div>
+                <div id="history">
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[16px] my-1.5">
+                        <span class="opacity-90">▸ ls or help</span><span>show available commands</span>
+                        <span class="opacity-90">▸ about</span><span>about me</span>
+                        <span class="opacity-90">▸ skill</span><span>technical proficiencies</span>
+                        <span class="opacity-90">▸ project</span><span>my projects</span>
+                        <span class="opacity-90">▸ theme</span><span>show available themes</span>
+                        <span class="opacity-90">▸ contact</span><span>contact information</span>
+                        <span class="opacity-90">▸ clear</span><span>reset terminal</span>
+                        <span class="opacity-90">▸ game</span><span>play number guessing game</span>
+                        <span class="opacity-90">▸ time</span><span>show current time</span>
+                    </div>
+                    <div class="my-4">
+                        <p>press <kbd>ctrl</kbd> + <kbd>k</kbd> to kill the terminal</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Prompt -->
+            <div class="prompt flex items-center space-x-2 border-t border-green-400/30 p-4">
+                <span class="text-[#00ff00] glow">➜</span>
+                <input type="text" id="input" autofocus
+                    class="flex-1 bg-transparent text-[#00ff00] focus:outline-none terminal-font glow placeholder-[#00ff00]/70"
+                    placeholder="type 'help' or 'ls' for commands" autocomplete="off" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Binary Background Animation
+        const binaryCanvas = document.getElementById('binaryCanvas');
+        const ctx = binaryCanvas.getContext('2d');
+        let matrixColor = '#00ff00';
+        let drops = [];
+
+        function resizeCanvas() {
+            binaryCanvas.width = window.innerWidth;
+            binaryCanvas.height = window.innerHeight;
+            drops = Array(Math.floor(binaryCanvas.width / 20)).fill(1);
+        }
+
+        function drawBinaryBackground() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, binaryCanvas.width, binaryCanvas.height);
+            ctx.fillStyle = matrixColor;
+            ctx.font = '14px JetBrains Mono';
+
+            drops.forEach((drop, i) => {
+                const char = Math.random() > 0.5 ? '0' : '1';
+                ctx.fillText(char, i * 20, drop * 20);
+                if (drop * 20 > binaryCanvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            });
+        }
+
+
+        // Date Display
+        const date = document.getElementById('date');
+        function getFormattedDate(date) {
+            let day = date
+                .toLocaleDateString("en-GB", { dateStyle: "full" })
+                .split(" ")[0];
+            const day2 = date.toLocaleDateString("en-GB", { dateStyle: "medium" });
+            return `${day} ${day2}`;
+        }
+
+        function updateDate() {
+            const now = new Date();
+            const formattedDate = getFormattedDate(now);
+            date.textContent = formattedDate.toLocaleLowerCase();
+        }
+        updateDate();
+
+        // Theme Configuration
+        const themes = {
+            'default': {
+                bg: 'bg-gray-900',
+                text: 'text-[#00ff00]',
+                code: '#00ff00',
+                border: 'border-[#00ff00]/30'
+            },
+            'monokai': {
+                bg: 'bg-[#272822]',
+                text: 'text-[#f8f8f2]',
+                code: '#f8f8f2',
+                border: 'border-[#f8f8f2]/30'
+            },
+            'dracula': {
+                bg: 'bg-[#282a36]',
+                text: 'text-[#f8f8f2]',
+                code: '#f8f8f2',
+                border: 'border-[#f8f8f2]/30'
+            }
+        };
+
+        function changeTheme(themeName) {
+            const theme = themes[themeName];
+            if (theme) {
+                document.body.className = `${theme.bg} ${theme.text} terminal-font`;
+                document.getElementById('terminal').className = `bg-black/80 backdrop-blur-sm rounded-lg shadow-2xl ${theme.border} ${theme.text} ${theme.bg}`;
+                document.querySelector('.terminal-header').className = `terminal-header sticky top-0 bg-black/80 p-4 border-b ${theme.border} flex justify-between items-center`;
+                document.querySelector('.prompt').className = `prompt flex items-center space-x-2 border-t ${theme.border} p-4`;
+                matrixColor = theme.code;
+            }
+        }
+
+        // Contact Form State Management
+        let contactState = {
+            active: false,
+            currentStep: 0,
+            data: { name: '', email: '', message: '' },
+            steps: ['name', 'email', 'message', 'submit']
+        };
+
+        function resetContactState() {
+            contactState = {
+                active: false,
+                currentStep: 0,
+                data: { name: '', email: '', message: '' },
+                steps: ['name', 'email', 'message', 'submit']
+            };
+        }
+
+        function validateField(field, value) {
+            if (field === 'name' && value.trim().length < 3) return 'Name must be at least 3 characters';
+            if (field === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Invalid email address';
+            if (field === 'message' && value.trim().length < 10) return 'Message must be at least 10 characters';
+            return null;
+        }
+
+        function displayContactForm() {
+            const input = document.getElementById('input');
+            const prompt = document.querySelector('.prompt span');
+            const currentStep = contactState.steps[contactState.currentStep];
+
+            if (currentStep === 'submit') {
+                prompt.textContent = '➜ Type "submit" to send the message';
+                input.placeholder = 'Type "submit" to confirm';
+                return;
+            }
+
+            prompt.textContent = `➜ Enter your ${currentStep}:`;
+            input.placeholder = `Type your ${currentStep} here`;
+        }
+
+        function handleContactInput(value) {
+            const currentStep = contactState.steps[contactState.currentStep];
+            const error = validateField(currentStep, value);
+
+            if (error) {
+                addOutput(`<i class="ri-close-line"></i> ${error}`, 'error');
+                return;
+            }
+
+            contactState.data[currentStep] = value.trim();
+            contactState.currentStep++;
+
+            if (contactState.currentStep >= contactState.steps.length) {
+                addOutput('<i class="ri-check-line"></i> All fields filled! Type "submit" to send the message.', 'success');
+                displayContactForm();
+            } else {
+                displayContactForm();
+            }
+        }
+
+        function handleBackward() {
+            if (contactState.currentStep > 0) {
+                contactState.currentStep--;
+                displayContactForm();
+            }
+        }
+
+        function handleForward() {
+            if (contactState.currentStep < contactState.steps.length - 1) {
+                const currentStep = contactState.steps[contactState.currentStep];
+                if (!contactState.data[currentStep]) {
+                    addOutput('<i class="ri-close-line"></i> Please fill the current field first', 'error');
+                    return;
+                }
+                contactState.currentStep++;
+                displayContactForm();
+            }
+        }
+
+        function submitContactForm() {
+            addOutput('<i class="ri-check-line"></i> Message submitted successfully!', 'success');
+            addOutput('Thank you for reaching out!', 'info');
+            resetContactState();
+            displayDefaultPrompt();
+        }
+
+        function displayDefaultPrompt() {
+            const input = document.getElementById('input');
+            const prompt = document.querySelector('.prompt span');
+            prompt.textContent = '➜';
+            input.placeholder = 'type "help" for commands';
+        }
+
+
+        // Terminal Functionality
+        const commands = {
+            'ls': () => `<div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[16px]">
+               <span class="opacity-90">▸ ls or help</span><span>show available commands</span>
+                <span class="opacity-90">▸ about</span><span>about me</span>
+                <span class="opacity-90">▸ skill</span><span>technical proficiencies</span>
+                <span class="opacity-90">▸ project</span><span>my projects</span>
+                <span class="opacity-90">▸ theme</span><span>show available themes</span>
+                <span class="opacity-90">▸ contact</span><span>contact information</span>
+                <span class="opacity-90">▸ clear</span><span>reset terminal</span>
+                <span class="opacity-90">▸ game</span><span>play number guessing game</span>
+                <span class="opacity-90">▸ time</span><span>show current time</span>
+            </div>`,
+
+            'help': () => `
+            <div class="mb-4">
+              <p>press <kbd>ctrl</kbd> + <kbd>k</kbd> to kill the terminal</p>
+            </div>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[16px]">
+                <span class="opacity-90">▸ ls or help</span><span>show available commands</span>
+                <span class="opacity-90">▸ about</span><span>about me</span>
+                <span class="opacity-90">▸ skill</span><span>technical proficiencies</span>
+                <span class="opacity-90">▸ project</span><span>my projects</span>
+                <span class="opacity-90">▸ theme</span><span>show available themes</span>
+                <span class="opacity-90">▸ contact</span><span>contact information</span>
+                <span class="opacity-90">▸ clear</span><span>reset terminal</span>
+                <span class="opacity-90">▸ game</span><span>play number guessing game</span>
+                <span class="opacity-90">▸ time</span><span>show current time</span>
+            </div>`,
+            'contact': () => {
+                contactState.active = true;
+                displayContactForm();
+                return `
+                <div class="mb-4">
+                    <h2 text-xl font-bold>contact me: </h2>
+                    <div class="grid grid-cols-2 gap-x-1 gap-y-2 text-[16px] my-2">
+                        <span class="opacity-90">▸ name</span><span>akkal dhami</span>
+                        <span class="opacity-90">▸ email</span><span>akkaldhami21@gmail.com</span>
+                        <span class="opacity-90">▸ contact</span><span>+977-9828122071</span>
+                        <span class="opacity-90">▸ github</span><span><a target="_blank" href="https://github.com/AkkalDhami">https://github.com/AkkalDhami</a></span>
+                    </div>
+                </div>
+
+               <div class="my-3 font-semibold"> type your 'name', 'email' and 'message' to fill the form.<br> or <br> press ctrl + k to clear the form.</div>
+
+                <div class="my-3 font-semibold">Use the following commands to navigate the form: </div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[16px] my-2">
+                    <span class="opacity-90">▸ back</span><span>Go back</span>
+                    <span class="opacity-90">▸ forward</span><span>Go forward</span>
+                </div>
+                `;
+            },
+            'clear': clearTerminal,
+            'theme': () => `Available themes: ${Object.keys(themes).join(', ')}`,
+            'about': () => `<div class="mb-4">
+                <h2 class="text-xl font-bold">about me: </h2>
+                <div class="my-4">
+                    <p>
+                        Hello! I'm Akkal Dhami, a passionate and dedicated  <strong>Frontend Developer</strong> with a strong foundation in <strong>HTML</strong>, <strong>CSS</strong> and <strong>JavaScript</strong>. I have a deep understanding of user interfaces and user experience, and I enjoy creating visually appealing and functional websites. I'm a quick learner and always seeking new challenges to enhance my skills.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[16px] my-2">
+                    <span class="opacity-90">▸ name</span><span>akkal dhami</span>
+                    <span class="opacity-90">▸ email</span><span>akkaldhami21@gmail.com</span>
+                    <span class="opacity-90">▸ contact</span><span>+977-9828122071</span>
+                    <span class="opacity-90">▸ github</span><span><a target="_blank" href="https://github.com/AkkalDhami">https://github.com/AkkalDhami</a></span>
+                </div>
+            </div>`,
+            'skill': () => `
+            <div class="mb-4">
+                <h2 text-xl font-bold>skills & technologies: </h2>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[16px] my-2">
+                    <span class="opacity-90">▸ frontend</span><span class="flex gap-x-2"><p class="glow">#html5</p><p class="glow">#css3</p> <p class="glow">#javascript</p> <p class="glow">#tailwind-css</p></span>
+                    <span class="opacity-90">▸ backend</span><span class="flex gap-x-2"><p class="glow">#nodejs</p> <p class="glow">#express</p></span>
+                    <span class="opacity-90">▸ databases</span><span class="flex gap-x-2"><p class="glow">#mysql</p> <p class="glow">#mongodb</p></span>
+                    <span class="opacity-90">▸ version control</span><span class="flex gap-x-2"><p class="glow">#git</p> <p class="glow">#github</p></span>
+                    <span class="opacity-90">▸ code editor</span><span class="flex gap-x-2"><p class="glow">#vscode</p> <p class="glow">#winsurf</p> <p class="glow">#cursor</p></span>
+                    <span class="opacity-90">▸ operating system</span><span class="flex gap-x-2"><p class="glow">#windows</p></span>
+                    <span class="opacity-90">▸ api testing</span><span class="flex gap-x-2"><p class="glow">#postman</p></span>
+                </div>
+            </div>
+            `,
+            'project': () => `
+            <div class="mb-4">
+                <h2 class="text-xl font-bold">my projects: </h2>
+                   <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[16px] my-2">
+                    <span class="opacity-90">▸ <a target="_blank" href="https://nepkart.vercel.app">nepkart</a></span><span class="flex gap-x-2">e commerce website</span>
+                    <span class="opacity-90">▸ <a target="_blank" href="https://dishhdashh.vercel.app">dishhdashh</a></span><span class="flex gap-x-2">food delivery website</span>
+                    <span class="opacity-90">▸ <a target="_blank" href="https://portfolio-akkal.vercel.app/">portfolio</a></span><span class="flex gap-x-2">personal portfolio</span>
+                </div>
+            </div>
+            `,
+
+            'game': () => {
+                return `
+                <div class="mb-4">
+                    <p>Number Guessing Game will start soon</p>
+                </div>
+                `
+            },
+            'time': () => {
+                return `
+                <div class="mb-4">
+                    <p>${new Date().toLocaleTimeString()}</p>
+                </div>
+                `
+            },
+        };
+
+
+        // number guessing game
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+
+        function guessNumber() {
+            const input = document.getElementById('input');
+            const guess = parseInt(input.value);
+
+            if (guess === secretNumber) {
+                addOutput(`You guessed the number in ${attempts} attempts!`);
+                addOutput(`The secret number was: ${secretNumber}`);
+                attempts = 0;
+                secretNumber = Math.floor(Math.random() * 100) + 1;
+            } else if (guess < secretNumber) {
+                addOutput('Too low! Try again.');
+            } else {
+                addOutput('Too high! Try again.');
+            }
+
+            attempts++;
+        }
+
+
+        function clearTerminal() {
+            history.innerHTML = '';
+            return '';
+        }
+
+        // Terminal Logic
+        const history = document.getElementById('history');
+        const input = document.getElementById('input');
+
+        function addOutput(message, type = 'info') {
+            const output = document.createElement('div');
+            output.className = `output mb-4 terminal-font ${type === 'error' ? 'text-[#e50b0b]' : ''}`;
+            output.innerHTML = `${type === 'error' ? '<samp.>' : ''}${message}${type === 'error' ? '</samp>' : ''}`;
+            history.appendChild(output);
+            history.scrollTop = history.scrollHeight;
+        }
+
+        function processCommand(cmd) {
+            if (contactState.active) {
+                if (cmd === 'back') {
+                    handleBackward();
+                    return;
+                }
+                if (cmd === 'forward') {
+                    handleForward();
+                    return;
+                }
+
+                if (contactState.currentStep === contactState.steps.length - 1) {
+                    if (cmd === 'submit') {
+                        submitContactForm();
+                    } else {
+                        addOutput('<i class="ri-close-line"></i> Type "submit" to send message or "back" to edit fields', 'error');
+                    }
+                    return;
+                }
+                handleContactInput(cmd);
+                return;
+            }
+
+            if (commands[cmd]) {
+                addOutput(commands[cmd]());
+            } else if (cmd) {
+                addOutput(`<i class="ri-close-line"></i> command not found: ${cmd}`, 'error');
+            }
+        }
+
+        // Add keyboard shortcut handler
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                input.value = '';
+                if (contactState.active) {
+                    resetContactState();
+                    displayDefaultPrompt();
+                }
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+                clearTerminal();
+            }
+        });
+
+        function addCommandToHistory(cmd) {
+            const commandLine = document.createElement('div');
+            commandLine.className = 'command mb-2 terminal-font opacity-70';
+            commandLine.innerHTML = `<span class="mr-2 glow">➜</span> ${cmd}`;
+            history.appendChild(commandLine);
+        }
+
+        // Event Listeners
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = input.value.trim().toLowerCase();
+                if (cmd) {
+                    addCommandToHistory(cmd);
+                    processCommand(cmd);
+                    input.value = '';
+                }
+            }
+        });
+
+        // Animation Loop
+        function animate() {
+            drawBinaryBackground();
+            requestAnimationFrame(animate);
+        }
+
+        // Initial Setup
+        resizeCanvas();
+        animate();
+        changeTheme('default');
+        window.addEventListener('resize', resizeCanvas);
+        document.addEventListener('click', () => input.focus());
+    </script>
+</body>
+
+</html>
