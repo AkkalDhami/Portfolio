@@ -397,3 +397,24 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// custom cursor
+const cursor = document.getElementById('cursor');
+
+document.addEventListener('mousemove', (e) => {
+  const { clientX: x, clientY: y } = e;
+
+  // Move the custom cursor
+  cursor.style.transform = `translate(${x - 25}px, ${y - 25}px)`;
+
+  // Create a trail
+  const trail = document.createElement('div');
+  trail.className = 'cursor-trail';
+  trail.style.left = `${x}px`;
+  trail.style.top = `${y}px`;
+  document.body.appendChild(trail);
+
+  // Remove trail after animation
+  setTimeout(() => {
+    trail.remove();
+  }, 500);
+});
