@@ -67,7 +67,7 @@ let skills = [
     image: "../assets/image/express.png",
     image2: "../assets/image/express-dark.png",
     title: "Express.js",
-    duration: "3000",
+    duration: "1600",
     color: "#fff",
     icon: '<img src="../assets/image/expressLoggo.png" alt="expressjs logo"/>',
   },
@@ -76,7 +76,7 @@ let skills = [
     image2: "../assets/image/mongo.png",
     title: '<span class="text-blue-400">My</span><span class="text-orange-500">SQL</span>',
     duration: "3400",
-    color: "",
+    color: "#f97316",
     icon: '<img src="./assets/image/logo-mysq.png" class="w-[60px]" alt="monogdbLogo logo" />',
   },
   {
@@ -102,10 +102,12 @@ skills.forEach((skill) => {
   let skillCard = `
   <div data-aos="fade-up" data-aos-duration="${skill.duration}" class="skill-card h-[220px] bg-white dark:bg-gray-700 p-6 rounded-md flex items-center justify-center flex-col bg-[url('${skill?.image2}')] dark:bg-[url('${skill?.image}')]  bg-cover bg-left-top bg-no-repeat relative group overflow-hidden">
   <div class="absolute inset-0 bg-black opacity-[0.3]"></div>
-  <div class="language-icon relative flex items-center justify-center z-10 w-[80px] h-[80px]  sm:w-[90px] sm:h-[90px] rounded-full dark:bg-[#4e4848] bg-[#fffffff2] group-hover:scale-105 opacity-90 transition-all">
+  <div class="language-icon relative flex items-center justify-center z-10 w-[80px] h-[80px]  sm:w-[90px] sm:h-[90px] rounded-full dark:bg-[#4e4848] bg-[#fffffff2]  group-hover:scale-105 opacity-100 transition-all">
   ${skill.icon} 
   </div>
-  <h3 class="text-xl bg-[#fffffff2] dark:bg-[#4e4848] px-[0.6rem] py-[0.1rem] rounded-[1.5rem]  relative z-40 mt-6 text-[${skill.color}] font-bold">${skill.title}</h3>
+  <h3 class="text-xl bg-[#ffffff] dark:bg-[#4e4848] border-[1.8px] border-[${skill.color}] px-[0.6rem] py-[0.1rem] rounded-[1.5rem]  relative z-50 mt-6 text-[${skill.title === 'Express.js' ? '#000' : skill.color}] dark:text-[${skill.title === 'Express.js' ? '#fff' : skill.color}] font-bold">
+  ${skill.title}
+  </h3>
 </div>
   `;
   skillsContainer.insertAdjacentHTML("beforeend", skillCard);
