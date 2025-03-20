@@ -411,7 +411,7 @@ function displayProjects() {
 function displayTime() {
     return `
         <div class="mb-4">
-             <p>${new Date().toLocaleTimeString()}</p>
+             <p><span class="key">current time: </span>${new Date().toLocaleTimeString()}</p>
         </div>               
         `
 }
