@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Developer Portfolio</title>
   <link rel="stylesheet" href="./src/output.css" />
-  <link rel="stylesheet" href="./css/prism.css" />
+  <link rel="stylesheet" href="./css/button.css" />
   <link rel="stylesheet" href="./css/toggle.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,6 +28,7 @@
       <a href="/" class="text-2xl font-nunito font-bold text-orange-500">Akkal
         Dhami</a>
       <div class="hidden md:flex gap-6">
+        <a href="#hero" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Home</a>
         <a href="#about" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">About</a>
         <a href="#projects" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Projects</a>
         <a href="#skills" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Skills</a>
@@ -67,6 +68,10 @@
         </button>
       </div>
       <div class="flex flex-col gap-6">
+        <a href="#hero" class="mobile-nav-link nav-link">
+          <i class="fas fa-home mr-3"></i>
+          Home
+        </a>
         <a href="#about" class="mobile-nav-link nav-link">
           <i class="fas fa-user mr-3"></i>
           About
@@ -132,10 +137,12 @@
           </h1>
         </div>
 
+
         <div class="typewriter" data-aos="zoom-in" data-aos-duration="1500">
           <span class="text-2xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold">
             I am
-            <span class="text-orange-600 dark:text-orange-600 typewriter-text">Frontend Developer</span>
+            <span class="text-orange-600 dark:text-orange-600 typewriter-text" id="typewriter-text">Frontend
+              Developer</span>
           </span>
         </div>
 
@@ -144,6 +151,18 @@
           clean code and innovative solutions. Let's turn your ideas into
           reality.
         </p>
+        <!-- 
+        <a class="cv-container">
+          <div class="cv-center">
+            <button class="cv-btn">
+              <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+              </svg>
+              <span>Let's Connect</span>
+            </button>
+          </div>
+        </a> -->
 
         <div class="flex flex-col sm:items-start items-center gap-4 justify-center md:justify-start">
           <a href="#contact" data-aos="fade-left" data-aos-duration="1200" class="button-57" role="button"><span
@@ -154,11 +173,15 @@
             </span>
           </a>
 
+
+
+
           <!-- resume button -->
           <a href="resume.pdf" data-aos="fade-right" data-aos-duration="1500" class="button-57" role="button"><span
               class="text">Download Resume &nbsp; <i
                 class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span><span>Download
               Resume</span></a>
+
         </div>
 
         <div class="mb-12 mt-6">
@@ -216,13 +239,54 @@
     </div>
   </section>
 
+  <!-- #471b03 -->
+
+  <div class="slider-container relative max-w-[1400px] mx-auto w-full overflow-hidden py-12">
+    <div class="slider-track flex">
+      <!-- Original Items -->
+      <div class="flex items-center space-x-12 px-4" id="original-items">
+        <!-- HTML -->
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="tech-icon h-20 w-20" alt="HTML">
+
+        <!-- CSS -->
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="tech-icon h-20 w-20" alt="CSS">
+
+        <!-- JavaScript -->
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="tech-icon h-20 w-20" alt="JavaScript">
+
+
+        <!-- React -->
+        <img src="https://cdn-icons-png.flaticon.com/512/1183/1183672.png" class="tech-icon h-20 w-20" alt="React">
+        <!-- Node.js -->
+        <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" class="tech-icon h-20 w-20" alt="Node.js">
+
+
+        <p class="text-7xl dark:text-white font-normal text-black">ex</p>
+        <!-- Git -->
+        <img src="https://cdn-icons-png.flaticon.com/512/4494/4494748.png" class="tech-icon h-20 w-20" alt="Git">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/919/919847.png" class="tech-icon h-20 w-20" alt="Tailwind CSS">
+
+
+        <!-- Tailwind CSS -->
+        <img src="./assets/image/tailwindcss.png" class="tech-icon h-20 w-20" alt="Tailwind CSS">
+
+        <!-- MongoDB -->
+        <img src="./assets/image/MongoDB_Logomark_SpringGreen.png" class="tech-icon object-contain h-20 w-20"
+          alt="MongoDB">
+        <img src="./assets/image/postman.svg" class="tech-icon object-contain h-20 w-20" alt="">
+        <img src="./assets/image/vscode.svg" class="tech-icon object-contain h-20 w-20" alt="">
+      </div>
+    </div>
+  </div>
+
   <section id="about" class="py-20 transition-colors duration-300 overflow-hidden">
     <div class="container max-w-[1200px] mx-auto px-4">
       <div data-aos="fade-up" class="section-heading-container" data-text="ABOUT">
         <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold">About Me</h2>
       </div>
       <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid md:grid-cols-2 gap-12">
           <!-- Left Column - Image -->
           <div data-aos="fade-up" class="relative max-w-[600px] mx-auto">
             <div class="rounded-2xl overflow-hidden shadow-xl group">
@@ -345,7 +409,7 @@
 
               <div id="education" class="tab-content hidden">
                 <div class="space-y-8">
-                
+
                   <div class="group">
                     <div class="flex items-center gap-4 mb-2">
                       <i
@@ -372,68 +436,225 @@
     </div>
   </section>
 
-  <section id="projects" class="py-20 max-w-[1200px] mx-auto">
+  <section id="projects" class="py-20 max-w-screen mx-auto">
     <div class="container mx-auto px-4 relative">
       <div data-aos="fade-up" class="section-heading-container" data-text="PROJECTS">
         <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold">My Projects</h2>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-          <img src="./assets/image/image.png" alt="Project 1" class="w-full" />
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              A full-stack e-commerce solution built with React and Node.js.
+
+      <!-- <div class="center-line absolute top-16 left-1/2 hidden md:block transform -translate-x-1/2 bg-orange-500 w-[4px] h-full"></div> -->
+      <div class="w-full flex flex-col lg:flex-row justify-between gap-12 mt-16">
+        <div class="max-w-full relative">
+          <!-- <img src="./assets/project/nepkart.webp" alt="Project 1" class="object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]" /> -->
+
+          <!-- <div class="center-line absolute top-0 right-0 hidden md:block transform -translate-x-1/2 bg-orange-500 w-1/2 h-[4px]"></div> -->
+        </div>
+        <!-- <div class=" relative">
+          <div class="group">
+            <div class="flex items-center gap-4 mb-2">
+              <i class="fas fa-laptop-code text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
+              <h3 class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
+                NepKart
+              </h3>
+            </div>
+            <p class="text-gray-700 dark:text-gray-300">
+              Leading development teams and architecting solutions.
+            <p class="text-gray-700 dark:text-gray-300">
+              Leading development teams and architecting solutions.
+            <p class="text-gray-700 dark:text-gray-300">
+              Leading development teams and architecting solutions.
+            <p class="text-gray-700 dark:text-gray-300">
+              Leading development teams and architecting solutions.
+            <p class="text-gray-700 dark:text-gray-300">
+              Leading development teams and architecting solutions.
+            <p class="text-gray-700 dark:text-gray-300">
+              Leading development teams and architecting solutions.
+            <p class="text-gray-700 dark:text-gray-300">
+              Leading development teams and architecting solutions.
+              Leading development teams and architecting solutions.
+              Leading development teams and architecting solutions.
+              Leading development teams and architecting solutions.
+              Leading development teams and architecting solutions.
+              Leading development teams and architecting solutions.
             </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <div class="tech-tag" data-tooltip="HTML5">
-                <i class="fab fa-html5"></i>
-              </div>
-              <div class="tech-tag" data-tooltip="CSS3">
-                <i class="fab fa-css3-alt"></i>
-              </div>
-              <div class="tech-tag" data-tooltip="JavaScript">
-                <i class="fab fa-js"></i>
-              </div>
-              <div class="tech-tag" data-tooltip="React">
-                <i class="fab fa-react"></i>
-              </div>
-              <div class="tech-tag" data-tooltip="Node.js">
-                <i class="fab fa-node-js"></i>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <a target="_blank" href="https://nepkart.vercel.app/"
-                class="flex items-center border-2 border-transparent gap-2 bg-orange-600 text-white px-4 py-2 rounded hover:border-orange-600 hover:bg-transparent hover:text-gray-800 dark:hover:text-white transition-colors">
-                <span>Live Demo</span>
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-              <a href="#"
-                class="flex items-center border-2 border-orange-600 gap-2 text-gray-800 dark:text-white px-4 py-2 rounded hover:border-transparent dark:hover:bg-orange-600 hover:text-white hover:bg-orange-600 transition-colors">
-                <span>View Code</span>
-                <i class="fa-solid fa-eye"></i>
-              </a>
-            </div>
           </div>
         </div> -->
 
 
-
-        <!-- <img src="./assets/project/nepkart.webp" alt=""> -->
+        <!-- <img src="./assets/project/nepkart.webp" class="w-[800px]" alt=""> -->
       </div>
       <h3 class="text-4xl text-orange-500 text-center font-bold">Under development</h3>
     </div>
   </section>
 
-  <section id="skills" class="py-20 ">
-    <div class="container max-w-[1200px] mx-auto px-4">
+
+
+  <section id="skills" class="py-20">
+    <div class="container max-w-[1200px] mx-auto px-4 overflow-hidden">
       <div class="section-heading-container" data-text="SKILLS">
-        <h2 data-aos="fade-up" class="section-heading text-4xl font-bold">
+        <h2 data-aos="fade-up" class="section-heading font-poppins text-4xl font-bold">
           Skills & Technologies
         </h2>
       </div>
-      <div id="skillsContainer" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Frontend Technologies -->
+      <div class="mb-12" data-aos="fade-right">
+        <div class="flex items-center mb-4">
+          <h3 class="text-2xl font-semibold text-gray-800 font-poppins dark:text-gray-100">Frontend Technologies</h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div
+            class="border border-[#ef8264] bg-[#e8b3a42b] dark:bg-[#150906] hover:border-[#e34f26] rounded-lg px-3 py-3  shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="100">
+            <div class="flex items-center justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[50px] h-[50px] rounded-md">
+              <i class="fab fa-html5 text-4xl text-[#e34f26]"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">HTML</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Structure</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#99b4f340] border border-[#88a7f153] dark:bg-[#051d569a] hover:border-[#2944f1] rounded-lg px-3 py-3  shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="200">
+            <div
+              class="flex items-center justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[50px] h-[50px] rounded-md">
+              <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">CSS</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Styling</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#fafad24f] border border-[#f3ecbbcd] hover:border-[#f7df1e] rounded-lg px-3 py-3  dark:bg-[#222209] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="300">
+            <div class="flex items-center justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[50px] h-[50px] rounded-md">
+              <i class="fab fa-js text-4xl text-[#f7df1e]"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">JavaScript</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Functionality</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#9ee5ee30] border border-[#58b7ea] hover:border-[#1da1f2] rounded-lg px-3 py-3  dark:bg-[#0c2427] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="400">
+            <!-- tailwind -->
+            <div
+              class="flex items-center justify-center bg-[#9ee5ee4c] p-1 dark:bg-[#274549] w-[50px] h-[50px] rounded-md">
+              <img src="./assets/image/tailwindcss.png" alt="">
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Tailwind</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">CSS Framework</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Backend Technologies -->
+      <div class="mb-12" data-aos="fade-left">
+        <div class="flex items-center mb-8">
+          <h3 class="text-2xl font-semibold font-poppins text-gray-800 dark:text-white">Backend Technologies</h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+          <div
+            class="bg-[#95ed9521] border border-[#7fe67f] hover:border-[#339933] rounded-lg px-3 py-3  dark:bg-[#042404] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="100">
+            <i class="fab fa-node-js text-5xl text-[#339933]"></i>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Node.js</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Backend Framework</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#fff] border border-[#8e918e] hover:border-[#dfeadf] rounded-lg px-3 py-3  dark:bg-[#111] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="200">
+            <p class="text-7xl dark:text-white font-normal text-black">ex</p>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Express.js</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Backend Framework</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="mb-12" data-aos="fade-right">
+        <div class="flex items-center mb-8">
+          <h3 class="text-2xl font-semibold font-poppins text-gray-800 dark:text-white">Tools I Use</h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+          <div
+            class="bg-[#f1c7bb40] border border-[#f08c6e] hover:border-[#dd4a1d] rounded-lg px-3 py-3  dark:bg-[#240d06] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="100">
+            <i class="fab fa-git text-5xl text-[#dd4a1d]"></i>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Git</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Version Control</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white border border-[#969392] hover:border-[#e2e0df] rounded-lg px-3 py-3  dark:bg-[#000] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="200">
+            <i class="fab fa-github text-5xl text-[#000000] dark:text-white"></i>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">GitHub</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Code Repository</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#a0cce92d] border border-[#6dbef3] hover:border-[#007acc] rounded-lg px-3 py-3  dark:bg-[#062234] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="300">
+            <img src="./assets/image/vscode.svg" class="w-12" alt="">
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">VS Code</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Code Editor</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#e8b8a238] border border-[#f1a381] hover:border-[#f37036] rounded-lg px-3 py-3  dark:bg-[#240d06] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="400">
+            <img src="./assets/image/postman.svg" class="w-12" alt="">
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Postman</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">API Testing</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#fff] border border-[#cd7ce8] hover:border-[#b82fe6] rounded-lg px-3 py-3  dark:bg-[#000] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="500">
+            <img src="./assets/image/icons8-figma-48.png" class="w-12" alt="">
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Figma</h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">Design</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#fff] border border-[#7a7575] hover:border-[#dcd9d9] rounded-lg px-3 py-3  dark:bg-[#000] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="600">
+            <img src="./assets/image/cursor.png" class="block dark:hidden" alt="">
+            <img src="./assets/image/cursor-dark.png" class="hidden dark:block  alt="">
+            <div>
+              <h4 class=" text-lg font-semibold text-gray-800 dark:text-white ">Cursor AI</h4>
+              <p class=" text-gray-600 text-[18px] dark:text-gray-200">AI Code Editor</p>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -594,7 +815,7 @@
 
   <footer class="py-8 border-t border-gray-400 font-poppins">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col space-y-2 md:flex-row justify-between items-center">
+      <div class="flex flex-col space-y-6  justify-between items-center">
         <div class="mb-4 md:mb-0">
           <p>&copy; 2025 Akkal Dhami | All rights reserved.</p>
         </div>
@@ -612,10 +833,7 @@
             <span> <i class="fa-brands fa-twitter"></i></span>
           </a>
         </div>
-        <div class="flex gap-4">
-          <a href="#" class="px-2 py-3 rounded transition-colors">Privacy Policy</a>
-          <a href="#" class="px-2 py-3 rounded transition-colors">Terms of Service</a>
-        </div>
+
       </div>
     </div>
   </footer>
@@ -635,7 +853,9 @@
     });
   </script>
   <script src="./js/script.js"></script>
-  <script src="./js/project.js"></script>
+  <!-- <script src="./js/project.js"></script> -->
+  <script src="./js/typing.js"></script>
+  <script src="./js/scrolling.js"></script>
 
 </body>
 
