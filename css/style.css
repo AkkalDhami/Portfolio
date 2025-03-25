@@ -1126,8 +1126,6 @@ button:disabled {
   pointer-events: none;
 }
 
-
-
 @keyframes fadeOut {
   from {
     opacity: 0.7;
@@ -1136,5 +1134,36 @@ button:disabled {
   to {
     opacity: 0;
     transform: scale(0.5);
+  }
+}
+
+/* typing effect */
+.cursor {
+  border-right: 3px solid #ed6809;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.final-message {
+  border-right: none;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00ff00;
   }
 }
