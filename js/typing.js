@@ -1,9 +1,7 @@
 const typingEffect = (() => {
     const texts = [
-        "full-stack developer.",
         "web developer.",
-        "front-end developer.",
-        "back-end developer.",
+        "front end developer.",
     ];
     
     const element = document.getElementById('typewriter-text');
