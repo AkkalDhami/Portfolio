@@ -120,16 +120,16 @@
     class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40">
   </div>
 
-  <section id="hero" class="max-w-[1400px] min-h-screen mx-auto flex items-center justify-center pt-20 overflow-hidden">
+  <section id="hero" class="max-w-[1400px] min-h-screen mx-auto items-center flexjustify-center pt-20 overflow-hidden">
 
-    <div class="mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+    <div class="mx-auto px-4 flex flex-col mt-4 lg:flex-row  gap-12">
       <div class=" text-center mt-6 md:text-left space-y-8 fadeIn">
-        <div class="space-y-4">
+        <div class="space-y-3">
           <p data-aos="fade-down"
-            class="text-orange-600 text-[20px] dark:text-orange-500 font-semibold tracking-wide uppercase">
+            class="text-orange-600 font-poppins mb-3 text-[24px] dark:text-orange-500 font-semibold tracking-wide uppercase">
             Welcome to my portfolio
           </p>
-          <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
+          <h1 data-aos="fade-up" class="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white">
             <span data-aos="fade-down" data-aos-duration="1800"> Hi, I'm</span>
             <span class="relative inline-block">
               <span class="text-orange-600 dark:text-orange-600">Akkal Dhami</span>
@@ -139,48 +139,32 @@
 
 
         <div class="typewriter" data-aos="zoom-in" data-aos-duration="1500">
-          <span class="text-2xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold">
+          <span class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 font-bold">
             I am
-            <span class="text-orange-600 dark:text-orange-600 typewriter-text" id="typewriter-text">Frontend
+            <span class="text-orange-600 dark:text-orange-600 text-2xl typewriter-text" id="typewriter-text">Frontend
               Developer</span>
           </span>
         </div>
 
-        <p data-aos="fade-up" class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl">
+        <p data-aos="fade-up" class="text-gray-600 dark:text-gray-400 text-[20px] leading-relaxed max-w-xl">
           Passionate about crafting exceptional digital experiences through
           clean code and innovative solutions. Let's turn your ideas into
           reality.
         </p>
-        <!-- 
-        <a class="cv-container">
-          <div class="cv-center">
-            <button class="cv-btn">
-              <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-              </svg>
-              <span>Let's Connect</span>
-            </button>
-          </div>
-        </a> -->
 
-        <div class="flex flex-col sm:items-start items-center gap-4 justify-center md:justify-start">
-          <a href="#contact" data-aos="fade-left" data-aos-duration="1200" class="button-57" role="button"><span
-              class="text">Let's Connect &nbsp; <i
-                class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
-            <span class="flex gap-2">
-              Connect with me
-            </span>
+
+        <div class="flex flex-col sm:items-start items-center space-y-3.5 justify-center md:justify-start">
+          <a href="#contact" data-aos="fade-left" data-aos-duration="1200"
+            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-transparent hover:border-orange-600 hover:bg-transparent duration-300 bg-orange-500 rounded-full text-xl text-white hover:text-black hover:dark:text-white"
+            role="button">Let's Connect &nbsp; <i
+              class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
           </a>
 
-
-
-
           <!-- resume button -->
-          <a href="resume.pdf" data-aos="fade-right" data-aos-duration="1500" class="button-57" role="button"><span
-              class="text">Download Resume &nbsp; <i
-                class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span><span>Download
-              Resume</span></a>
+          <a href="resume.pdf" data-aos="fade-right" data-aos-duration="1500"
+            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300  rounded-full text-xl text-black dark:text-white hover:text-white"
+            role="button">Download CV &nbsp; <i
+              class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
 
         </div>
 
@@ -281,7 +265,8 @@
   <section id="about" class="py-20 transition-colors duration-300 overflow-hidden">
     <div class="container max-w-[1200px] mx-auto px-4">
       <div data-aos="fade-up" class="section-heading-container" data-text="ABOUT">
-        <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold font-poppins">About Me</h2>
+        <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold font-poppins">About
+          Me</h2>
       </div>
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-12">
@@ -437,10 +422,11 @@
   <section id="projects" class="py-20 max-w-[1400px] mx-auto">
     <div class="mx-auto px-4 relative">
       <div data-aos="fade-up" class="section-heading-container" data-text="PROJECTS">
-        <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold font-poppins">My Projects</h2>
+        <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold font-poppins">My
+          Projects</h2>
       </div>
       <!-- Project Cards -->
-      <div id="project-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
+      <div id="project-cards" class="relative mt-16">
 
         <div class="w-full relative flex flex-col lg:flex-row justify-between gap-12 mt-32">
           <div class="project-card-wrapper relative group mx-auto" data-aos="zoom-in" data-aos-duration="1000">
@@ -448,6 +434,7 @@
               <a href="https://nepkart.vercel.app/" target="_blank" class="drop-shadow-[0_0px_39px_#dc681870]">
                 <img src="./assets/project/nepkart (2)-min.webp" alt="Project 1"
                   class="z-50 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]" />
+
 
                 <a href="https://nepkart.vercel.app/" target="_blank"
                   class="tooltip absolute px-3 py-2 rounded-lg bg-orange-500 top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2  w-[128px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-orange-500 duration-300">
@@ -519,16 +506,16 @@
               <!-- Live Preview Button -->
               <a href="https://nepkart.vercel.app/" target="_blank" class="flex-1">
                 <button
-                  class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-[#c1d5f28f] text-[#0961f0] rounded-md  dark:bg-[#06074a] dark:text-blue-300 dark:hover:bg-[#0c0d57] transition-colors duration-200 font-medium">
+                  class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4  py-2.5 bg-[#c1d5f28f] text-[#0961f0] rounded-md  dark:bg-[#06074a] dark:text-blue-300 dark:hover:bg-[#0c0d57] transition-colors duration-200 font-medium">
                   <i class="fas fa-link text-xltext-blue-500"></i>
                   <span>Live Preview</span>
                 </button>
               </a>
 
               <!-- Source Code Button -->
-              <a href="#" class="flex-1" target="_blank">
+              <a href="#" class="flex-1 privateRepo" target="_blank">
                 <button
-                  class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
+                  class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4  py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
                   <i class="ri-code-s-slash-line text-xl group-hover:text-orange-500"></i>
                   <span>Source Code</span>
                 </button>
@@ -544,22 +531,21 @@
         </div>
 
         <div class="w-full relative flex flex-col lg:flex-row-reverse justify-between gap-12 mt-32">
-          <div class="project-card-wrapper relative group mx-auto sm:ml-auto" data-aos="zoom-in"
-            data-aos-duration="1300">
+          <div class="project-card-wrapper relative group mx-auto" data-aos="zoom-in" data-aos-duration="1000">
             <div>
-              <a href="https://dishhdashh.vercel.app/" target="_blank" class="drop-shadow-[0_0px_39px_#0067ffba]">
+              <a href="https://dishhdashh.vercel.app/" target="_blank" class="drop-shadow-[0_0px_39px_#dc681870]">
                 <img src="./assets/project/dishhdashh.webp" alt="Project 2" class="" />
 
+
                 <a href="https://dishhdashh.vercel.app/" target="_blank"
-                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#0d6efd] top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0d6efd] duration-300">
+                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#0d6efd] top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2  flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0d6efd] duration-300">
                   <span class="text-xl font-semibold text-white">DishhDashh</span>
                   <i class="ri-external-link-line text-white text-xl"></i>
                 </a>
               </a>
             </div>
           </div>
-
-          <div data-aos="fade-up" data-aos-duration="1200" class="project-desc  mx-auto">
+          <div data-aos="fade-up" data-aos-duration="1100" class="project-desc z-10  mx-auto sm:mr-auto">
             <div class="project-desc-inner flex flex-col space-y-2 mb-6">
               <h2 class="text-3xl font-bold text-[#0d6efd] font-poppins">DishhDashh</h2>
               <p class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
@@ -567,15 +553,17 @@
               </p>
               <ul class="text-gray-600 flex space-y-2 flex-col text-[20px] dark:text-gray-300  list-disc pl-6">
                 <li>
-                  <span>Developed a food delivery website using HTML, Tailwind CSS, and JavaScript.</span>
+                  Developed a food delivery website using HTML, Tailwind CSS, and JavaScript.
                 </li>
-                <li>
-                  <span>Implemented a responsive design and interactive elements like sliders and modals.</span>
+
+                <li>Implemented a responsive design and interactive elements like sliders and modals.
                 </li>
-                <li>
-                  <span>Optimized the website for performance and user experience.</span>
+                <li>This project highlights my expertise in creating user-friendly, functional, and visually
+                  appealing web applications.
                 </li>
+              </ul>
             </div>
+            <!-- Tech Stack -->
             <div class="stack flex flex-wrap items-center gap-4 my-4">
               <div
                 class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[70px] h-[70px] rounded-md">
@@ -619,20 +607,21 @@
                 </div>
               </div>
             </div>
-            <div class="flex items-center gap-4 my-8">
+            <!-- live preview and source code -->
+            <div class="flex items-center gap-3 sm:gap-4 my-8">
               <!-- Live Preview Button -->
               <a href="https://dishhdashh.vercel.app/" target="_blank">
                 <button
-                  class="flex items-center justify-center gap-2 px-4 py-2.5 bg-[#c1d5f28f] text-[#0961f0] rounded-md  dark:bg-[#06074a] dark:text-blue-300 dark:hover:bg-[#0c0d57] transition-colors duration-200 font-medium">
+                  class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-[#c1d5f28f] text-[#0961f0] rounded-md  dark:bg-[#06074a] dark:text-blue-300 dark:hover:bg-[#0c0d57] transition-colors duration-200 font-medium">
                   <i class="fas fa-link text-xltext-blue-500"></i>
                   <span>Live Preview</span>
                 </button>
               </a>
 
               <!-- Source Code Button -->
-              <a href="#" target="_blank">
+              <a href="" class="privateRepo">
                 <button
-                  class="flex items-center justify-center gap-2 px-4 py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
+                  class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4  py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
                   <i class="ri-code-s-slash-line text-xl group-hover:text-orange-500"></i>
                   <span>Source Code</span>
                 </button>
@@ -641,8 +630,7 @@
           </div>
         </div>
 
-
-        <div class="flex items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-12 my-4">
+        <div class="flex items-center justify-center w-full gap-2 text-[#ff6a00] my-4">
           <i class="ri-shining-line"></i>
           <i class="ri-shining-line"></i>
           <i class="ri-shining-line"></i>
@@ -656,7 +644,7 @@
                   class="z-50 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] " />
 
                 <a href="https://portfolio-akkal.vercel.app/" target="_blank"
-                  class="tooltip absolute px-3 py-2 rounded-lg bg-orange-500 top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2  flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-orange-500 duration-300">
+                  class="tooltip absolute px-3 py-2 rounded-lg bg-orange-500 top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2  flex items-center gap-2 justify-center w-[220px] sm:w-auto after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-orange-500 duration-300">
                   <span class="text-xl font-semibold text-white">Personal Portfolio</span>
                   <i class="ri-external-link-line text-white text-xl"></i>
                 </a>
@@ -714,16 +702,16 @@
             <div class="flex items-center  gap-4 my-8">
               <a href="https://portfolio-akkal.vercel.app/" target="_blank">
                 <button
-                  class="flex items-center justify-center gap-2 px-4 py-2.5 bg-[#c1d5f28f] text-[#0961f0] rounded-md  dark:bg-[#06074a] dark:text-blue-300 dark:hover:bg-[#0c0d57] transition-colors duration-200 font-medium">
+                  class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-[#c1d5f28f] text-[#0961f0] rounded-md  dark:bg-[#06074a] dark:text-blue-300 dark:hover:bg-[#0c0d57] transition-colors duration-200 font-medium">
                   <i class="fas fa-link text-xltext-blue-500"></i>
                   <span>Live Preview</span>
                 </button>
               </a>
 
               <!-- Source Code Button -->
-              <a href="#" target="_blank">
+              <a href="https://github.com/AkkalDhami/Portfolio/" target="_blank">
                 <button
-                  class="flex items-center justify-center gap-2 px-4 py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
+                  class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
                   <i class="ri-code-s-slash-line text-xl group-hover:text-orange-500"></i>
                   <span>Source Code</span>
                 </button>
@@ -748,8 +736,8 @@
                 <img src="./assets/project/terminal (2).webp" alt="Project 4" class="object-contain z-50" />
 
                 <a href="https://terminal-portfolio-akkal.vercel.app/" target="_blank"
-                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#0d6efd] top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0d6efd] duration-300">
-                  
+                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#0d6efd] top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center w-[170px] sm:w-auto  after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0d6efd] duration-300">
+
                   <span class="text-xl font-semibold text-white">CLI Portfolio</span>
                   <i class="ri-external-link-line text-white text-xl"></i>
                 </a>
@@ -808,16 +796,16 @@
             <div class="flex items-center gap-4 my-8">
               <a href="https://terminal-portfolio-akkal.vercel.app/" target="_blank">
                 <button
-                  class="flex items-center justify-center gap-2 px-4 py-2.5 bg-[#c1d5f28f] text-[#0961f0] rounded-md  dark:bg-[#06074a] dark:text-blue-300 dark:hover:bg-[#0c0d57] transition-colors duration-200 font-medium">
+                  class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-[#c1d5f28f] text-[#0961f0] rounded-md  dark:bg-[#06074a] dark:text-blue-300 dark:hover:bg-[#0c0d57] transition-colors duration-200 font-medium">
                   <i class="fas fa-link text-xltext-blue-500"></i>
                   <span>Live Preview</span>
                 </button>
               </a>
 
               <!-- Source Code Button -->
-              <a href="#" init="_blank">
+              <a href="https://github.com/AkkalDhami/terminal-portfolio/" target="_blank">
                 <button
-                  class="flex items-center justify-center gap-2 px-4 py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
+                  class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
                   <i class="ri-code-s-slash-line text-xl group-hover:text-orange-500"></i>
                   <span>Source Code</span>
                 </button>
@@ -825,7 +813,6 @@
             </div>
           </div>
         </div>
-
 
         <div class="flex items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
           <i class="ri-shining-line"></i>
@@ -836,7 +823,6 @@
       </div>
 
     </div>
-    <!-- <h3 class="text-4xl text-orange-500 text-center font-bold">Under development</h3> -->
     </div>
   </section>
 
@@ -1206,7 +1192,7 @@
     });
   </script>
   <script src="./js/script.js"></script>
-  <!-- <script src="./js/project.js"></script> -->
+  <script src="./js/project.js"></script>
   <script src="./js/typing.js"></script>
   <script src="./js/scrolling.js"></script>
 
