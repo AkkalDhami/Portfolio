@@ -36,7 +36,7 @@ function closeSidebar() {
 }
 
 mobileMenuBtn.addEventListener("click", openSidebar);
-closeSidebarBtn.addEventListener("click", closeSidebar);
+// closeSidebarBtn.addEventListener("click", closeSidebar);
 sidebarOverlay.addEventListener("click", closeSidebar);
 
 // Close sidebar when clicking a link
