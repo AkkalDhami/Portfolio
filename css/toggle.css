@@ -88,15 +88,18 @@
   height: 0;
 }
 
-
 .slider-track {
   animation: scroll 5s linear infinite;
   width: max-content;
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .slider-container:hover .slider-track {
@@ -110,4 +113,53 @@
 .tech-icon:hover {
   transform: scale(1.16);
   z-index: 10;
+}
+
+.privateRepo {
+  cursor: not-allowed;
+  /* pointer-events: none; */
+  position: relative;
+}
+.privateRepo::before {
+  content: "Private Repo";
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec570d;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.privateRepo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ec570d;
+  transition: all 0.3s ease;
+}
+
+.privateRepo:hover::before {
+  top: -42px;
+  opacity: 1;
+}
+
+.privateRepo:hover::after {
+  top: -12px;
+  opacity: 1;
 }
