@@ -89,7 +89,7 @@
 }
 
 .slider-track {
-  animation: scroll 5s linear infinite;
+  animation: scroll 8s linear infinite;
   width: max-content;
 }
 
@@ -111,13 +111,11 @@
 }
 
 .tech-icon:hover {
-  transform: scale(1.16);
   z-index: 10;
 }
 
 .privateRepo {
   cursor: not-allowed;
-  /* pointer-events: none; */
   position: relative;
 }
 .privateRepo::before {
