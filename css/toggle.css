@@ -125,22 +125,22 @@
   opacity: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 130px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ec570d;
   color: white;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 16px;
+  padding: 8px 5px;
+  border-radius: 28px;
+  font-size: 18px;
   transition: all 0.3s ease;
 }
 
 .privateRepo::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: -8px;
   opacity: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -158,6 +158,6 @@
 }
 
 .privateRepo:hover::after {
-  top: -12px;
+  top: 1px;
   opacity: 1;
 }
