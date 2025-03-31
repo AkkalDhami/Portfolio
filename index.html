@@ -125,10 +125,11 @@
     class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40">
   </div>
 
-  <section id="hero" class="max-w-[1400px] min-h-screen mx-auto items-center flexjustify-center pt-[66px] overflow-hidden">
+  <section id="hero"
+    class="max-w-[1400px] min-h-screen mx-auto items-center flexjustify-center pt-[66px] overflow-hidden">
 
     <div class="mx-auto px-4 flex flex-col mt-4 lg:flex-row  gap-12">
-      <div class=" text-center mt-6 md:text-left space-y-8 fadeIn">
+      <div class=" text-center mt-6 md:text-left space-y-6 fadeIn">
         <div class="space-y-3">
           <p data-aos="fade-down"
             class="text-orange-600 font-poppins mb-3 text-[24px] dark:text-orange-500 font-semibold tracking-wide uppercase">
@@ -157,6 +158,13 @@
           reality.
         </p>
 
+        <div class="available flex items-center font-poppins gap-3">
+          <span class="w-3 overflow-hidden glow block h-3 rounded-full"></span>
+          <p data-aos="fade-up"
+            class="text-gray-600 font-bold first-letter:capitalize  dark:text-gray-400 text-[20px] leading-relaxed max-w-xl">
+            available for work: <span class="text-orange-600 font-semibold dark:text-orange-600">Yes</span>
+          </p>
+        </div>
 
         <div class="flex flex-col sm:items-start items-center space-y-3.5 justify-center md:justify-start">
           <a href="#contact" data-aos="fade-left" data-aos-duration="1200"
@@ -174,7 +182,7 @@
 
         </div>
 
-        <div class="mb-12 mt-6">
+        <div class="mb-12 mt-3">
           <div class="flex justify-center md:justify-start gap-6">
             <a data-aos="fade-up" data-aos-duration="1000" href="#" class="social-button" title="Email">
               <span><i class="fas fa-envelope"></i></span>
@@ -231,12 +239,11 @@
     </div>
   </section>
 
-  <!-- #471b03 -->
-
-  <div class="slider-container relative max-w-[1400px] mx-auto w-full overflow-hidden py-12">
+  <!-- slider -->
+  <div class="slider-container relative max-w-[1400px] mx-auto w-full h-[300px] overflow-hidden py-12">
     <div class="slider-track flex">
       <!-- Original Items -->
-      <div class="flex items-center space-x-12 mt-8 px-4" id="original-items">
+      <div class="flex items-center space-x-14 mt-8 px-4" id="original-items">
         <!-- HTML -->
         <div
           class="p-4 hover:scale-110 duration-300 group relative bg-[#ea5a0c1b] dark:bg-[#2a1c18] rounded-full h-20 w-20  flex items-center justify-center">
@@ -245,6 +252,9 @@
             class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[97%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
             <span class="text-[18px] font-semibold text-white">HTML</span>
           </div>
+          <p
+            class="absolute tooltip-bottom-text group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#e34f26] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            HTML</p>
         </div>
 
 
@@ -256,7 +266,11 @@
             class="tooltip absolute px-3 py-2 rounded-full  bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[80px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
             <span class="text-xl font-semibold text-white">CSS</span>
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[80px] border-[#2965f1] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            CSS</p>
         </div>
+
         <!-- JavaScript -->
         <div
           class="bg-[#f5eeb674] dark:bg-[#514d2d] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20  flex items-center justify-center">
@@ -266,6 +280,9 @@
             class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
             <span class="text-xl font-semibold text-black">JavaScript</span>
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px]  border-[#ffdf00] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            JavaScript</p>
 
         </div>
 
@@ -277,6 +294,9 @@
             class="tooltip absolute px-3 py-2 rounded-full bg-[#339933]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#339933] duration-300">
             <span class="text-xl font-semibold text-white">Node.js</span>
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#339933] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Node.js</p>
 
         </div>
 
@@ -288,6 +308,9 @@
             <span class="text-xl font-semibold text-white dark:text-black">Express.js</span>
 
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#111] dark:border-white rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Express.js</p>
         </div>
 
         <!-- Git -->
@@ -298,8 +321,13 @@
             class="tooltip absolute px-3 py-2 rounded-full bg-[#f34f29]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[70px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#f34f29] duration-300">
             <span class="text-xl font-semibold text-white">Git</span>
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[70px] border-[#f34f29] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Git</p>
 
         </div>
+
+        <!-- GitHub -->
         <div
           class="bg-[#e9e6e6]  dark:bg-[#000] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20  flex items-center justify-center">
           <img src="./assets/image/github-logo.png" class="tech-icon object-contain" alt="GitHub">
@@ -307,7 +335,9 @@
             class="tooltip absolute px-3 py-2 rounded-full bg-[#111] dark:bg-white  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#111] dark:after:border-t-white duration-300">
             <span class="text-xl font-semibold text-white dark:text-black">GitHub</span>
           </div>
-
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#111] dark:border-white rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            GitHub</p>
         </div>
 
         <!-- Tailwind CSS -->
@@ -318,8 +348,12 @@
             class="tooltip absolute px-3 py-2 rounded-full bg-[#06b6d4]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#06b6d4] duration-300">
             <span class="text-xl font-semibold text-white">Tailwind CSS</span>
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center w-[150px] border-[2px] border-[#06b6d4] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Tailwind CSS</p>
 
         </div>
+
         <!-- MongoDB -->
         <div
           class="bg-[#ceefc9a9] dark:bg-[#1b2b18] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20  flex items-center justify-center">
@@ -329,9 +363,12 @@
             class="tooltip absolute px-3 py-2 rounded-full bg-[#4DB33D]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#4DB33D] duration-300">
             <span class="text-xl font-semibold text-white">MongoDB</span>
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#4DB33D] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            MongoDB</p>
         </div>
 
-
+        <!-- Postman -->
         <div
           class="bg-[#e8b8a238] dark:bg-[#240d06] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20  flex items-center justify-center">
           <img src="./assets/image/Postman.svg" class="tech-icon object-contain" alt="postman">
@@ -339,8 +376,12 @@
             class="tooltip absolute px-3 py-2 rounded-full bg-[#f37036]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#f37036] duration-300">
             <span class="text-xl font-semibold text-white">Postman</span>
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#f37036] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Postman</p>
         </div>
 
+        <!-- VS Code -->
         <div
           class="bg-[#a0cce92d] dark:bg-[#062234] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20  flex items-center justify-center">
           <img src="./assets/image/vscode.svg" class="tech-icon object-contain" alt="vs code">
@@ -348,6 +389,9 @@
             class="tooltip absolute px-2.5 py-2 rounded-full bg-[#007acc]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[110px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#007acc] duration-300">
             <span class="text-xl font-semibold text-white">VS Code</span>
           </div>
+          <p
+            class="tooltip-bottom-text  absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[110px] border-[#007acc] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            VS Code</p>
         </div>
 
       </div>
@@ -732,7 +776,7 @@
           <div class="project-card-wrapper relative group mx-auto" data-aos="zoom-in" data-aos-duration="1000">
             <div>
               <a href="https://portfolio-akkal.vercel.app/" target="_blank" class="drop-shadow-[0_0px_39px_#dc681870]">
-                <img src="./assets/project/portfolio (2).webp" alt="Project 3"
+                <img src="./assets/project/portfolio.webp" alt="Project 3"
                   class="z-50 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] " />
 
                 <a href="https://portfolio-akkal.vercel.app/" target="_blank"
@@ -1113,11 +1157,6 @@
         <h2 data-aos="fade-up" class="section-heading font-poppins text-4xl font-bold">GitHub Stats</h2>
       </div>
 
-
-      <p data-aos="fade-up" class="text-gray-600 text-[20px] dark:text-gray-200 mb-8">
-        Here are some of my GitHub stats and activity graphs. You can find my projects and contributions on my GitHub
-        profile.
-      </p>
       <div class="flex relative items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
         <a href="https://github.com/AkkalDhami" target="_blank"
           class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300  rounded-full text-xl text-orange-600 hover:text-white"
@@ -1129,19 +1168,19 @@
       </div>
 
 
-
       <!-- Stats Container -->
       <div class="min-h-screen p-8  transition-colors duration-300">
         <div class="mx-auto max-w-7xl">
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
             <!-- GitHub Stats Card -->
             <div data-aos="zoom-in" class="group relative h-full">
               <div
-                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
               </div>
               <div
-                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <img src="https://github-readme-stats.vercel.app/api?username=AkkalDhami&show_icons=true&theme=github"
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img src="https://github-readme-stats.vercel.app/api?username=AkkalDhami&show_icons=true&theme=tokyonight"
                   data-light-theme="github" data-dark-theme="radical" class="object-cover rounded-lg theme-image"
                   alt="GitHub Stats">
               </div>
@@ -1149,12 +1188,12 @@
             <!-- Profile Summary Card -->
             <div data-aos="zoom-in" class="group relative h-full md:col-span-2">
               <div
-                class="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+                class="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
               </div>
               <div
-                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
                 <img
-                  src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AkkalDhami&theme=github"
+                  src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AkkalDhami&theme=tokyonight"
                   data-light-theme="github" data-dark-theme="radical" class="w-full h-auto rounded-lg theme-image"
                   alt="Profile Details">
               </div>
@@ -1163,10 +1202,10 @@
             <!-- Activity Graph Card -->
             <div data-aos="zoom-in" class="group relative h-full md:col-span-2">
               <div
-                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
               </div>
               <div
-                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
                 <img src="https://github-readme-activity-graph.vercel.app/graph?username=AkkalDhami&theme=github"
                   data-light-theme="github" data-dark-theme="react" class="w-full h-auto rounded-lg theme-image"
                   alt="Activity Graph">
@@ -1176,12 +1215,12 @@
             <!-- Top Languages Card -->
             <div data-aos="zoom-in" class="group relative h-full">
               <div
-                class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+                class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
               </div>
               <div
-                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
                 <img
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=AkkalDhami&layout=compact&theme=github"
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=AkkalDhami&layout=compact&theme=tokyonight"
                   data-light-theme="github" data-dark-theme="tokyonight" class="w-full h-auto rounded-lg theme-image"
                   alt="Top Languages">
               </div>
@@ -1190,24 +1229,19 @@
             <!-- Streak Stats Card -->
             <div data-aos="zoom-in" class="group relative h-full">
               <div
-                class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+                class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
               </div>
               <div
-                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <img src="https://github-readme-streak-stats.herokuapp.com/?user=AkkalDhami&theme=github"
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=AkkalDhami&theme=tokyonight"
                   data-light-theme="github" data-dark-theme="dark" class="w-full h-auto rounded-lg theme-image"
                   alt="GitHub Streak">
               </div>
             </div>
 
-
-
           </div>
         </div>
       </div>
-
-
- 
 
     </div>
   </section>
