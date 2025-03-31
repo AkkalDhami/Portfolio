@@ -940,7 +940,7 @@ body.sidebar-open {
 .code-container {
   color: #e6f5d6;
   font-family: "Consolas", "Monaco", monospace;
-  padding: 20px;
+  padding: 14px 20px;
   border-radius: 8px;
   border: 1px solid #586e4c;
   tab-size: 2;
