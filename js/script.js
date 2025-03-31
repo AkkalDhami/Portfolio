@@ -18,6 +18,7 @@ themeToggle.addEventListener('change', () => {
   localStorage.setItem('theme', isChecked ? 'dark' : 'light');
 });
 
+
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const mobileSidebar = document.getElementById("mobileSidebar");
 const sidebarOverlay = document.getElementById("sidebarOverlay");
@@ -418,3 +419,6 @@ document.addEventListener('mousemove', (e) => {
     trail.remove();
   }, 500);
 });
+
+
+
