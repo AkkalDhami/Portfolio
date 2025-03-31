@@ -118,8 +118,13 @@
   cursor: not-allowed;
   position: relative;
 }
-.privateRepo::before {
-  content: "Private Repo";
+.publicRepo {
+  cursor: pointer;
+  position: relative;
+}
+.privateRepo::before,
+.publicRepo::before {
+  content: attr(data-tooltip);
   position: absolute;
   top: 0;
   opacity: 0;
@@ -131,16 +136,19 @@
   align-items: center;
   background-color: #ec570d;
   color: white;
-  padding: 8px 5px;
+  padding: 8px 10px;
   border-radius: 28px;
   font-size: 18px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.95, -0.11, 0.46, 1.61);
 }
-
-.privateRepo::after {
+.publicRepo::before {
+  min-width: 160px;
+}
+.privateRepo::after,
+.publicRepo::after {
   content: "";
   position: absolute;
-  top: -8px;
+  top: 36px;
   opacity: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -149,15 +157,20 @@
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid #ec570d;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.95, -0.11, 0.46, 1.61);
 }
 
-.privateRepo:hover::before {
-  top: -42px;
+.privateRepo:hover::before,
+.publicRepo:hover::before {
+  top: -52px;
   opacity: 1;
 }
 
+.publicRepo:hover::after,
 .privateRepo:hover::after {
-  top: 1px;
+  top: -10px;
   opacity: 1;
+}
+.tooltip {
+  transition: all 0.4s cubic-bezier(0.95, -0.11, 0.46, 1.61);
 }
