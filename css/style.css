@@ -1102,3 +1102,20 @@ button:disabled {
     border-color: #00ff00;
   }
 }
+
+.glow {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    background-color: #0fc70f;
+    transform: scale(1);
+    box-shadow: 0 0 8px 2px #0fc70f;
+  }
+  to {
+    background-color: #0fc70f;
+    transform: scale(1.04);
+    box-shadow: 0 0 20px 2px #0fc70f;
+  }
+}
