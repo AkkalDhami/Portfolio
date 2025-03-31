@@ -33,6 +33,7 @@
         <a href="#about" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">About</a>
         <a href="#projects" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Projects</a>
         <a href="#skills" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Skills</a>
+        <a href="#github" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Github</a>
         <a href="#contact" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Contact</a>
       </div>
 
@@ -84,6 +85,10 @@
         <a href="#skills" class="mobile-nav-link nav-link">
           <i class="fas fa-tools mr-3"></i>
           Skills
+        </a>
+        <a href="#github" class="mobile-nav-link nav-link">
+          <i class="fab fa-github mr-3"></i>
+          Github
         </a>
         <a href="#contact" class="mobile-nav-link nav-link">
           <i class="fas fa-envelope mr-3"></i>
@@ -598,7 +603,7 @@
               </a>
 
               <!-- Source Code Button -->
-              <a href="#" class="flex-1 privateRepo" target="_blank">
+              <a href="#" data-tooltip="Private Repo" class="flex-1 privateRepo" target="_blank">
                 <button
                   class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4  py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
                   <i class="ri-code-s-slash-line text-xl group-hover:text-orange-500"></i>
@@ -654,7 +659,7 @@
                 class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[70px] h-[70px] rounded-md">
                 <i class="fab fa-html5 text-5xl text-[#e34f26]"></i>
                 <div
-                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
+                  class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
                   <span class="text-xl font-semibold text-white">HTML</span>
                 </div>
               </div>
@@ -662,7 +667,7 @@
                 class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[70px] h-[70px] rounded-md">
                 <i class="fab fa-css3-alt text-5xl text-[#2965f1]"></i>
                 <div
-                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
+                  class="tooltip absolute px-3 py-2 rounded-full bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
                   <span class="text-xl font-semibold text-white">CSS</span>
                 </div>
               </div>
@@ -671,7 +676,7 @@
                 <img src="./assets/image/js-logo.png" alt="js">
 
                 <div
-                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#ffdf00]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[110px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
+                  class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[110px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
                   <span class="text-xl font-semibold text-black">JavaScript</span>
                 </div>
               </div>
@@ -679,7 +684,7 @@
                 class="flex p-2 group items-center relative justify-center bg-[#b0d0f05d] dark:bg-[#374e66] w-[70px] h-[70px] rounded-md">
                 <img src="./assets/image/swiper-logo.svg" alt="swipper js">
                 <div
-                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#0080ff]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[130px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0080ff] duration-300">
+                  class="tooltip absolute px-3 py-2 rounded-full bg-[#0080ff]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[130px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0080ff] duration-300">
                   <span class="text-xl font-semibold text-white">Swipper JS</span>
                 </div>
               </div>
@@ -687,7 +692,7 @@
                 class="flex p-2 group items-center relative justify-center bg-[#9ee5ee4c] dark:bg-[#274549] w-[70px] h-[70px] rounded-md">
                 <img src="./assets/image/tailwindcss.png" alt="tailwind logo">
                 <div
-                  class="tooltip absolute px-3 py-2 rounded-lg bg-[#06b6d4]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#1da1f2] duration-300">
+                  class="tooltip absolute px-3 py-2 rounded-full bg-[#06b6d4]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#1da1f2] duration-300">
                   <span class="text-xl font-semibold text-white">Tailwind CSS</span>
                 </div>
               </div>
@@ -704,7 +709,7 @@
               </a>
 
               <!-- Source Code Button -->
-              <a href="" class="privateRepo">
+              <a href="" data-tooltip="Private Repo" class="privateRepo">
                 <button
                   class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4  py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
                   <i class="ri-code-s-slash-line text-xl group-hover:text-orange-500"></i>
@@ -794,7 +799,8 @@
               </a>
 
               <!-- Source Code Button -->
-              <a href="https://github.com/AkkalDhami/Portfolio/" target="_blank">
+              <a class="publicRepo" data-tooltip="Get Source Code" href="https://github.com/AkkalDhami/Portfolio/"
+                target="_blank">
                 <button
                   class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
                   <i class="ri-code-s-slash-line text-xl group-hover:text-orange-500"></i>
@@ -843,31 +849,31 @@
             </div>
             <div class="stack flex flex-wrap items-center gap-4 my-4">
               <div
-              class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[70px] h-[70px] rounded-md">
-              <i class="fab fa-html5 text-5xl text-[#e34f26]"></i>
-              <div
-                class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
-                <span class="text-xl font-semibold text-white">HTML</span>
+                class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[70px] h-[70px] rounded-md">
+                <i class="fab fa-html5 text-5xl text-[#e34f26]"></i>
+                <div
+                  class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
+                  <span class="text-xl font-semibold text-white">HTML</span>
+                </div>
               </div>
-            </div>
-            <div
-              class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[70px] h-[70px] rounded-md">
-              <i class="fab fa-css3-alt text-5xl text-[#2965f1]"></i>
               <div
-                class="tooltip absolute px-3 py-2 rounded-full  bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
-                <span class="text-xl font-semibold text-white">CSS</span>
+                class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[70px] h-[70px] rounded-md">
+                <i class="fab fa-css3-alt text-5xl text-[#2965f1]"></i>
+                <div
+                  class="tooltip absolute px-3 py-2 rounded-full  bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
+                  <span class="text-xl font-semibold text-white">CSS</span>
+                </div>
               </div>
-            </div>
-            <div
-              class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[70px] h-[70px] rounded-md">
-              <img src="./assets/image/js-logo.png" alt="js">
+              <div
+                class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[70px] h-[70px] rounded-md">
+                <img src="./assets/image/js-logo.png" alt="js">
 
-              <div
-                class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
-                <span class="text-xl font-semibold text-black">JavaScript</span>
+                <div
+                  class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00]  opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2  w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
+                  <span class="text-xl font-semibold text-black">JavaScript</span>
+                </div>
               </div>
-            </div>
-    
+
               <div
                 class="flex p-2 group items-center relative justify-center bg-[#9ee5ee4c] dark:bg-[#274549] w-[70px] h-[70px] rounded-md">
                 <img src="./assets/image/tailwindcss.png" class="w-[400px]" alt="tailwind logo">
@@ -888,7 +894,8 @@
               </a>
 
               <!-- Source Code Button -->
-              <a href="https://github.com/AkkalDhami/terminal-portfolio/" target="_blank">
+              <a class="publicRepo" data-tooltip="Get Source Code"
+                href="https://github.com/AkkalDhami/terminal-portfolio/" target="_blank">
                 <button
                   class="flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2 bg-[#f2d4c18f] text-orange-500 rounded-md  dark:bg-[#ea5a0c1b] dark:hover:bg-[#ea5a0c4b] transition-colors duration-200 font-medium">
                   <i class="ri-code-s-slash-line text-xl group-hover:text-orange-500"></i>
@@ -986,12 +993,15 @@
         <div class="flex items-center mb-8">
           <h3 class="text-2xl font-semibold font-poppins text-gray-800 dark:text-white">Backend Technologies</h3>
         </div>
+        <!-- #95ed9521 -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
           <div
             class="bg-[#95ed9521] dark:bg-[#042404] border border-[#7fe67f] hover:border-[#339933] rounded-lg px-3 py-3  shadow-md flex items-center gap-3 transition-all duration-300"
             data-aos="zoom-in" data-aos-delay="100">
-            <i class="fab fa-node-js text-5xl text-[#339933]"></i>
+            <div class="flex items-center justify-center bg-[#d5fdd5] dark:bg-[#063506] rounded-md px-2 py-1">
+              <i class="fab fa-node-js text-5xl text-[#339933]"></i>
+            </div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Node.js</h4>
               <p class="text-gray-600 text-[18px] dark:text-gray-200">Backend Framework</p>
@@ -999,9 +1009,11 @@
           </div>
 
           <div
-            class="bg-[#fff] dark:bg-[#111] border border-[#8e918e] hover:border-[#dfeadf] rounded-lg px-3 py-3  shadow-md flex items-center gap-3 transition-all duration-300"
+            class="bg-[#fff] dark:bg-[#111] border border-[#8e918e] hover:border-[#dfeadf] rounded-lg px-3 py-1  shadow-md flex items-center gap-3 transition-all duration-300"
             data-aos="zoom-in" data-aos-delay="200">
-            <p class="text-7xl dark:text-white font-normal text-black">ex</p>
+            <div class="flex items-center justify-center bg-[#f5f5f5] dark:bg-[#000] rounded-md px-2 py-1">
+              <p class="text-5xl dark:text-white font-normal text-black">ex</p>
+            </div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Express.js</h4>
               <p class="text-gray-600 text-[18px] dark:text-gray-200">Backend Framework</p>
@@ -1021,7 +1033,10 @@
           <div
             class="bg-[#f1c7bb40] border border-[#f08c6e] hover:border-[#dd4a1d] rounded-lg px-3 py-3  dark:bg-[#240d06] shadow-md flex items-center gap-3 transition-all duration-300"
             data-aos="zoom-in" data-aos-delay="100">
-            <i class="fab fa-git text-5xl text-[#dd4a1d]"></i>
+
+            <div class="flex items-center justify-center bg-[#f1c7bb40] dark:bg-[#371307] px-2 py-1 rounded-md">
+              <i class="fab fa-git text-4xl text-[#dd4a1d]"></i>
+            </div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Git</h4>
               <p class="text-gray-600 text-[18px] dark:text-gray-200">Version Control</p>
@@ -1031,7 +1046,9 @@
           <div
             class="bg-white border border-[#969392] hover:border-[#e2e0df] rounded-lg px-3 py-3  dark:bg-[#000] shadow-md flex items-center gap-3 transition-all duration-300"
             data-aos="zoom-in" data-aos-delay="200">
-            <i class="fab fa-github text-5xl text-[#000000] dark:text-white"></i>
+
+            <div class="flex items-center justify-center bg-[#f5f5f5] dark:bg-[#222121] px-2 py-1 rounded-md"><i
+                class="fab fa-github text-5xl text-[#000000] dark:text-white"></i></div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">GitHub</h4>
               <p class="text-gray-600 text-[18px] dark:text-gray-200">Code Repository</p>
@@ -1041,7 +1058,9 @@
           <div
             class="bg-[#a0cce92d] dark:bg-[#062234] border border-[#6dbef3] hover:border-[#007acc] rounded-lg px-3 py-3  shadow-md flex items-center gap-3 transition-all duration-300"
             data-aos="zoom-in" data-aos-delay="300">
-            <img src="./assets/image/vscode.svg" class="w-12" alt="">
+            <div class="flex items-center justify-center bg-[#a0cce92d] dark:bg-[#082d45] px-2 py-1.5 rounded-md">
+              <img src="./assets/image/vscode.svg" class="w-12" alt="vscode logo">
+            </div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">VS Code</h4>
               <p class="text-gray-600 text-[18px] dark:text-gray-200">Code Editor</p>
@@ -1051,7 +1070,9 @@
           <div
             class="bg-[#e8b8a238] border border-[#f1a381] hover:border-[#f37036] rounded-lg px-3 py-3  dark:bg-[#240d06] shadow-md flex items-center gap-3 transition-all duration-300"
             data-aos="zoom-in" data-aos-delay="400">
-            <img src="./assets/image/Postman.svg" class="w-12" alt="">
+
+            <div class="flex items-center justify-center bg-[#e8b8a238] dark:bg-[#371307] px-2 py-1 rounded-md"> <img
+                src="./assets/image/Postman.svg" class="w-12" alt="postman logo"></div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800 dark:text-white ">Postman</h4>
               <p class="text-gray-600 text-[18px] dark:text-gray-200">API Testing</p>
@@ -1080,6 +1101,112 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- github -->
+  <section id="github" class="py-20">
+    <div class="container max-w-[1200px] mx-auto px-4 overflow-hidden">
+      <div class="section-heading-container" data-text="GITHUB">
+        <h2 data-aos="fade-up" class="section-heading font-poppins text-4xl font-bold">GitHub Stats</h2>
+      </div>
+
+
+      <p data-aos="fade-up" class="text-gray-600 text-[20px] dark:text-gray-200 mb-8">
+        Here are some of my GitHub stats and activity graphs. You can find my projects and contributions on my GitHub
+        profile.
+      </p>
+      <div class="flex relative items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
+        <a href="https://github.com/AkkalDhami" target="_blank"
+          class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300  rounded-full text-xl text-orange-600 hover:text-white"
+          role="button">
+          <span> View My Github Profile</span>
+          <i class="ml-2 ri-github-fill text-2xl group-hover:text-white"></i>
+
+        </a>
+      </div>
+
+
+
+      <!-- Stats Container -->
+      <div class="min-h-screen p-8  transition-colors duration-300">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <!-- GitHub Stats Card -->
+            <div data-aos="zoom-in" class="group relative h-full">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img src="https://github-readme-stats.vercel.app/api?username=AkkalDhami&show_icons=true&theme=github"
+                  data-light-theme="github" data-dark-theme="radical" class="object-cover rounded-lg theme-image"
+                  alt="GitHub Stats">
+              </div>
+            </div>
+            <!-- Profile Summary Card -->
+            <div data-aos="zoom-in" class="group relative h-full md:col-span-2">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img
+                  src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AkkalDhami&theme=github"
+                  data-light-theme="github" data-dark-theme="radical" class="w-full h-auto rounded-lg theme-image"
+                  alt="Profile Details">
+              </div>
+            </div>
+
+            <!-- Activity Graph Card -->
+            <div data-aos="zoom-in" class="group relative h-full md:col-span-2">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=AkkalDhami&theme=github"
+                  data-light-theme="github" data-dark-theme="react" class="w-full h-auto rounded-lg theme-image"
+                  alt="Activity Graph">
+              </div>
+            </div>
+
+            <!-- Top Languages Card -->
+            <div data-aos="zoom-in" class="group relative h-full">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=AkkalDhami&layout=compact&theme=github"
+                  data-light-theme="github" data-dark-theme="tokyonight" class="w-full h-auto rounded-lg theme-image"
+                  alt="Top Languages">
+              </div>
+            </div>
+
+            <!-- Streak Stats Card -->
+            <div data-aos="zoom-in" class="group relative h-full">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=AkkalDhami&theme=github"
+                  data-light-theme="github" data-dark-theme="dark" class="w-full h-auto rounded-lg theme-image"
+                  alt="GitHub Streak">
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+ 
+
     </div>
   </section>
 
@@ -1242,17 +1369,17 @@
         <div class="mb-4 md:mb-0">
           <p>&copy; 2025 Akkal Dhami | All rights reserved.</p>
         </div>
-        <div class="flex gap-6 my-2.5">
-          <a href="#" class="social-button" title="Email">
+        <div class="flex my-social-links gap-6 my-2.5">
+          <a data-socialLink="Emailref=" #" class="social-button" title="Email">
             <span><i class="fas fa-envelope"></i></span>
           </a>
-          <a href="#" class="social-button" title="LinkedIn">
+          <a data-socialLink="LinkedIn" href="#" class="social-button" title="LinkedIn">
             <span> <i class="fab fa-linkedin-in"></i></span>
           </a>
-          <a href="#" class="social-button" title="GitHub">
+          <a data-socialLink="Github" href="#" class="social-button" title="GitHub">
             <span> <i class="fab fa-github"></i></span>
           </a>
-          <a href="#" class="social-button" title="Twitter">
+          <a data-socialLink="Twitter" href="#" class="social-button" title="Twitter">
             <span> <i class="fa-brands fa-twitter"></i></span>
           </a>
         </div>
@@ -1279,6 +1406,7 @@
   <script src="./js/project.js"></script>
   <script src="./js/typing.js"></script>
   <script src="./js/scrolling.js"></script>
+
 
 </body>
 
