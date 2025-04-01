@@ -101,22 +101,28 @@
         <h3 class="text-emerald-600 dark:text-green-500 mb-4 text-[18px] font-semibold">
           CONNECT WITH ME
         </h3>
-        <div class="flex gap-4">
-          <a data-socialLink="Email " href=" #" class="social-button" target="_blank" style="--bg-color: #ea580c;"
+        <div class="flex space-x-1 gap-4">
+          <a data-aos="fade-up" data-aos-duration="1000" href="#"
+            class="border-[2px] border-gray-400 w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
             title="Email">
-            <i class="fas fa-envelope"></i>
+            <i class="fas text-2xl fa-envelope"></i>
+
           </a>
-          <a data-socialLink="LinkedIn" href="#" style="--bg-color: #0077b5;" target="_blank" class="social-button"
+          <a data-aos="fade-down" data-aos-duration="1200" href="#"
+            class="border-[2px] border-[#0077b5] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
             title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
+            <i class="fab text-2xl fa-linkedin-in"></i>
+
           </a>
-          <a data-socialLink="Github" href="https://github.com/AkkalDhami" target="_blank" class="social-button"
-            style="--bg-color: #333;" title="GitHub">
-            <i class="fa-brands fa-github"></i>
+          <a data-aos="fade-up" data-aos-duration="1400" href="https://github.com/AkkalDhami" target="_blank"
+            class="border-[2px] border-[#333] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
+            title="GitHub">
+            <i class="fab text-2xl fa-github"></i>
           </a>
-          <a data-socialLink="Twitter" href="#" class="social-button" target="_blank" style="--bg-color: #1DA1F2;"
+          <a data-aos="fade-down" data-aos-duration="1600" href="#"
+            class="border-[2px] border-[#1DA1F2] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
             title="Twitter">
-            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands text-2xl fa-twitter"></i>
           </a>
         </div>
       </div>
@@ -128,6 +134,7 @@
     class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40">
   </div>
 
+  <!-- Hero Section -->
   <section id="hero"
     class="max-w-[1400px] min-h-screen mx-auto items-center flexjustify-center pt-[66px] overflow-hidden">
 
@@ -210,9 +217,9 @@
       <div class="flex justify-center mb-12 w-auto">
         <div class="code-container flex flex-col">
           <div class="code-lines gap-2 flex mb-2 items-center">
-            <span class="w-3 h-3 rounded-full bg-orange-600"></span>
-            <span class="w-3 h-3 rounded-full bg-blue-600"></span>
-            <span class="w-3 h-3 rounded-full bg-[#0ee52e]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#0ee52e]"></span>
           </div>
           <pre class="cyber-theme text-wrap"><span class="keyword">const</span> <span class="variable">about</span> <span class="comma">=</span> <span class="array"><span class="wrapper">[</span></span>
   <span class="object"><span class="wrapper">{</span></span>
@@ -404,6 +411,7 @@
     </div>
   </div>
 
+  <!-- About -->
   <section id="about" class="py-20 transition-colors duration-300 overflow-hidden">
     <div class="container max-w-[1200px] mx-auto px-4">
       <div data-aos="fade-up" class="section-heading-container" data-text="ABOUT">
@@ -561,6 +569,7 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="py-20 max-w-[1400px] mx-auto">
     <div class="mx-auto px-4 relative">
       <div data-aos="fade-up" class="section-heading-container" data-text="PROJECTS">
@@ -970,6 +979,7 @@
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills" class="py-20">
     <div class="container max-w-[1200px] mx-auto px-4 overflow-hidden">
       <div class="section-heading-container" data-text="SKILLS">
@@ -1258,7 +1268,7 @@
         <h2 data-aos="fade-down" class="section-heading font-poppins text-4xl font-bold">Get In Touch</h2>
       </div>
 
-      <div class="grid p-10 md:grid-cols-2 gap-12 overflow-hidden">
+      <div class="grid p-0 sm:p-10 md:grid-cols-2 gap-12 overflow-hidden">
         <!-- Left Column - Contact Info -->
         <div>
           <h2 data-aos="fade-right" class="text-4xl font-bold mb-6 font-poppins">Contact Me</h2>
@@ -1408,11 +1418,12 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <footer class="py-8 border-t border-gray-400 font-poppins">
     <div class="container mx-auto px-4">
       <div class="flex flex-col space-y-6  justify-between items-center">
         <div class="mb-4 md:mb-0">
-          <p>&copy; 2025 Akkal Dhami | All rights reserved.</p>
+          <p>&copy; 2025 <a href="/" class="font-bold text-[#ea580c]">Akkal Dhami</a> | All rights reserved.</p>
         </div>
         <div class="flex my-social-links gap-6 my-2.5">
           <a data-socialLink="Email " href=" #" class="social-button" target="_blank" style="--bg-color: #ea580c;"
