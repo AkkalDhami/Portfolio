@@ -74,9 +74,6 @@ body {
   opacity: 1;
 }
 
-.social-button:hover i {
-  color: var(--bg-color);
-}
 @keyframes typing {
   from {
     width: 0;
