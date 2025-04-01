@@ -3,7 +3,7 @@ const html = document.documentElement;
 // Select the toggle input and body
 const themeToggle = document.querySelector('#themeToggle input');
 const body = document.body;
-
+const closeSidebarBtn = document.getElementById("closeSidebarBtn");
 // Check localStorage for theme preference
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme) {
@@ -24,20 +24,28 @@ const mobileSidebar = document.getElementById("mobileSidebar");
 const sidebarOverlay = document.getElementById("sidebarOverlay");
 const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
+// Function to open the sidebar
 function openSidebar() {
   mobileSidebar.classList.remove("translate-x-full");
   sidebarOverlay.classList.remove("opacity-0", "pointer-events-none");
   document.body.classList.add("sidebar-open");
+
+  // Add focus to the first link for accessibility
+  if (mobileNavLinks.length > 0) {
+    mobileNavLinks[0].focus();
+  }
 }
 
+// Function to close the sidebar
 function closeSidebar() {
   mobileSidebar.classList.add("translate-x-full");
-  sidebarOverlay.classList.add("opacity-0", "pointer-end-events-none");
+  sidebarOverlay.classList.add("opacity-0", "pointer-events-none");
   document.body.classList.remove("sidebar-open");
 }
 
+// Event listeners for opening and closing the sidebar
 mobileMenuBtn.addEventListener("click", openSidebar);
-// closeSidebarBtn.addEventListener("click", closeSidebar);
+closeSidebarBtn.addEventListener("click", closeSidebar);
 sidebarOverlay.addEventListener("click", closeSidebar);
 
 // Close sidebar when clicking a link
@@ -47,9 +55,16 @@ mobileNavLinks.forEach((link) => {
 
     // Remove active class from all links
     mobileNavLinks.forEach((l) => l.classList.remove("active"));
-    // Add active class to clicked link
+    // Add active class to the clicked link
     link.classList.add("active");
   });
+});
+
+// Close sidebar on pressing the Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && document.body.classList.contains("sidebar-open")) {
+    closeSidebar();
+  }
 });
 
 // Update active link based on scroll position
