@@ -11,83 +11,72 @@ body {
   /* cursor: none; */
 }
 
-/* CSS */
+
 .social-button {
-  appearance: none;
-  background-color: inherit;
-  border: 0.5px solid #e77238;
-  box-sizing: border-box;
-  /* color: #ffffff; */
-  cursor: pointer;
-  display: inline-block;
-  font-family: Clarkson, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1em;
-  margin: 0;
-  height: 52px;
-  width: 52px;
+  text-wrap: wrap;
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
-  border-radius: 50%;
-  opacity: 1;
-  outline: 0;
+  justify-content: center;
   position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-rendering: geometricprecision;
-  text-transform: uppercase;
-  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
-    background-color 100ms cubic-bezier(0.694, 0, 0.335, 1),
-    color 100ms cubic-bezier(0.694, 0, 0.335, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  white-space: nowrap;
+  border-radius: 50%;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 10px;
+  transition: 0.3s cubic-bezier(0.58, -0.2, 0.59, 1.21);
+  border: 2px solid transparent;
+  border: 2px solid var(--bg-color);
+  &:hover {
+    border: 2px solid var(--bg-color);
+    box-shadow: 0 0 16px 1px var(--bg-color);
+  }
 }
-
-.social-button:before {
-  animation: opacityFallbackOut 0.5s step-end forwards;
-  backface-visibility: hidden;
-  background-color: #ef552a;
-  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+.social-button i {
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.58, -0.2, 0.65, 1.62);
+}
+.social-button::after {
+  content: attr(data-socialLink);
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  background-color: var(--bg-color);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 25px;
+  min-width: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s cubic-bezier(0.58, -0.2, 0.65, 1.62);
+}
+.social-button::before {
   content: "";
-  height: 100%;
-  left: 0;
-
   position: absolute;
   top: 0;
-  transform: translateZ(0);
-  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
-    -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  width: 100%;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-color);
+  transition: 0.3s cubic-bezier(0.58, -0.2, 0.65, 1.62);
 }
 
-.social-button:hover:before {
-  animation: opacityFallbackIn 0s step-start forwards;
-  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+.social-button:hover::after {
+  top: -64px;
+  opacity: 1;
+}
+.social-button:hover::before {
+  top: -35px;
+  opacity: 1;
 }
 
-.social-button:after {
-  background-color: #ffffff;
+.social-button:hover i {
+  color: var(--bg-color);
 }
-
-.social-button span {
-  z-index: 1;
-  position: relative;
-  color: #ea580c;
-  font-size: 20px;
-  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.social-button:hover span {
-  color: #ffffff;
-}
-
 @keyframes typing {
   from {
     width: 0;
