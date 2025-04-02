@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,36 +13,59 @@
             border-radius: 4px;
             transition: all 0.1s ease;
         }
+
         .food {
             background: radial-gradient(circle, #EF4444, #DC2626);
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
         }
+
         .dark .snake {
             background: linear-gradient(45deg, #34D399, #10B981);
         }
+
         .dark .food {
             background: radial-gradient(circle, #F87171, #EF4444);
         }
+
         .game-grid {
             background: linear-gradient(45deg, #F3F4F6, #E5E7EB);
         }
+
         .dark .game-grid {
             background: linear-gradient(45deg, #1F2937, #374151);
         }
+
         .roast-notification {
             animation: slideIn 0.5s ease-out forwards, slideOut 0.5s ease-in 4.5s forwards;
         }
+
         @keyframes slideIn {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
+
         @keyframes slideOut {
-            from { transform: translateY(0); opacity: 1; }
-            to { transform: translateY(-100%); opacity: 0; }
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
         }
     </style>
 </head>
+
 <body class="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300 font-sans">
     <div class="container mx-auto p-6 max-w-3xl">
         <!-- Header -->
@@ -50,10 +74,12 @@
                 <i class="fas fa-dragon text-emerald-500"></i> Snake Pro
             </h1>
             <div class="flex gap-4">
-                <button id="theme-toggle" class="p-2.5 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+                <button id="theme-toggle"
+                    class="p-2.5 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
                     <i class="fas fa-moon text-lg"></i>
                 </button>
-                <button id="mute-toggle" class="p-2.5 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+                <button id="mute-toggle"
+                    class="p-2.5 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
                     <i class="fas fa-volume-up text-lg"></i>
                 </button>
             </div>
@@ -62,17 +88,20 @@
         <!-- Game Container -->
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 relative overflow-hidden">
             <!-- Start Screen -->
-            <div id="start-screen" class="absolute inset-0 bg-opacity-90 bg-gray-100 dark:bg-gray-800 flex flex-col items-center justify-center z-10">
+            <div id="start-screen"
+                class="absolute inset-0 bg-opacity-90 bg-gray-100 dark:bg-gray-800 flex flex-col items-center justify-center z-10">
                 <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Welcome to Snake Pro</h2>
                 <div class="mb-6">
                     <label class="block text-gray-700 dark:text-gray-200 mb-2">Difficulty:</label>
-                    <select id="difficulty" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white">
+                    <select id="difficulty"
+                        class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white">
                         <option value="100">Easy</option>
                         <option value="70">Medium</option>
                         <option value="40">Hard</option>
                     </select>
                 </div>
-                <button id="start-btn" class="px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-all duration-300 flex items-center gap-2">
+                <button id="start-btn"
+                    class="px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-all duration-300 flex items-center gap-2">
                     <i class="fas fa-play"></i> Start Game
                 </button>
             </div>
@@ -100,7 +129,8 @@
             <canvas id="gameCanvas" class="w-full game-grid rounded-lg shadow-inner" width="480" height="480"></canvas>
 
             <!-- Controls Info -->
-            <div class="mt-6 text-gray-600 dark:text-gray-300 text-sm flex justify-center gap-6 bg-gray-100 dark:bg-gray-700 py-3 rounded-lg">
+            <div
+                class="mt-6 text-gray-600 dark:text-gray-300 text-sm flex justify-center gap-6 bg-gray-100 dark:bg-gray-700 py-3 rounded-lg">
                 <div class="flex items-center gap-1"><i class="fas fa-arrow-up"></i> Up</div>
                 <div class="flex items-center gap-1"><i class="fas fa-arrow-down"></i> Down</div>
                 <div class="flex items-center gap-1"><i class="fas fa-arrow-left"></i> Left</div>
@@ -110,10 +140,12 @@
 
         <!-- Action Buttons -->
         <div class="mt-6 flex gap-4">
-            <button id="restart-btn" class="flex-1 py-3 bg-emerald-500 dark:bg-emerald-600 text-white rounded-lg hover:bg-emerald-600 dark:hover:bg-emerald-700 transition-all duration-300 flex items-center justify-center gap-2">
+            <button id="restart-btn"
+                class="flex-1 py-3 bg-emerald-500 dark:bg-emerald-600 text-white rounded-lg hover:bg-emerald-600 dark:hover:bg-emerald-700 transition-all duration-300 flex items-center justify-center gap-2">
                 <i class="fas fa-redo"></i> Restart
             </button>
-            <button id="pause-btn" class="flex-1 py-3 bg-blue-500 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2">
+            <button id="pause-btn"
+                class="flex-1 py-3 bg-blue-500 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2">
                 <i class="fas fa-pause"></i> Pause
             </button>
         </div>
@@ -121,7 +153,8 @@
         <!-- Audio Elements -->
         <audio id="eat-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
         <audio id="game-over-sound" src="https://www.soundjay.com/misc/sounds/fail-buzzer-01.mp3"></audio>
-        <audio id="background-music" loop src="https://www.soundjay.com/background/sounds/arcade-music-loop.mp3"></audio>
+        <audio id="background-music" loop
+            src="https://www.soundjay.com/background/sounds/arcade-music-loop.mp3"></audio>
     </div>
 
     <script>
@@ -163,8 +196,8 @@
         const themeToggle = document.getElementById('theme-toggle');
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark');
-            themeToggle.innerHTML = document.body.classList.contains('dark') 
-                ? '<i class="fas fa-sun text-lg"></i>' 
+            themeToggle.innerHTML = document.body.classList.contains('dark')
+                ? '<i class="fas fa-sun text-lg"></i>'
                 : '<i class="fas fa-moon text-lg"></i>';
         });
 
@@ -172,8 +205,8 @@
         const muteToggle = document.getElementById('mute-toggle');
         muteToggle.addEventListener('click', () => {
             isMuted = !isMuted;
-            muteToggle.innerHTML = isMuted 
-                ? '<i class="fas fa-volume-mute text-lg"></i>' 
+            muteToggle.innerHTML = isMuted
+                ? '<i class="fas fa-volume-mute text-lg"></i>'
                 : '<i class="fas fa-volume-up text-lg"></i>';
             backgroundMusic.muted = isMuted;
             eatSound.muted = isMuted;
@@ -242,14 +275,14 @@
 
             // Draw snake
             snake.forEach((segment, index) => {
-                ctx.fillStyle = document.body.classList.contains('dark') 
+                ctx.fillStyle = document.body.classList.contains('dark')
                     ? `hsl(160, 50%, ${50 - index * 2}%)`
                     : `hsl(160, 50%, ${40 - index * 2}%)`;
                 ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
             });
 
             // Draw food with pulse animation
-            ctx.fillStyle = document.body.classList.contains('dark') 
+            ctx.fillStyle = document.body.classList.contains('dark')
                 ? '#F87171' : '#EF4444';
             ctx.beginPath();
             const foodSize = gridSize * (0.8 + Math.sin(Date.now() / 200) * 0.1);
@@ -293,7 +326,7 @@
                 `Score: ${score} - High Score: ${highScore}. Maybe stick to tic-tac-toe?`
             ];
             const roast = roasts[Math.floor(Math.random() * roasts.length)];
-            
+
             const notification = document.createElement('div');
             notification.className = 'roast-notification bg-red-500 dark:bg-red-600 text-white p-4 text-center font-bold rounded-b-lg shadow-lg';
             notification.textContent = roast;
@@ -334,8 +367,8 @@
         function togglePause() {
             if (!gameStarted) return;
             isPaused = !isPaused;
-            pauseBtn.innerHTML = isPaused 
-                ? '<i class="fas fa-play"></i> Resume' 
+            pauseBtn.innerHTML = isPaused
+                ? '<i class="fas fa-play"></i> Resume'
                 : '<i class="fas fa-pause"></i> Pause';
             if (!isMuted) {
                 if (isPaused) {
@@ -373,4 +406,5 @@
         difficultyDisplay.textContent = difficultySelect.options[difficultySelect.selectedIndex].text; // Initial display
     </script>
 </body>
+
 </html>
