@@ -164,48 +164,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function showToastNotify(message, type) {
-  const toast = document.getElementById("toast");
-  const messageEl = toast.querySelector(".toast-message");
-  const iconEl = toast.querySelector(".toast-icon");
-  const progressBar = toast.querySelector(".toast-progress-bar");
 
-  // Reset animations
-  toast.classList.remove("slide-in", "slide-out");
-  progressBar.style.animation = "none";
-  progressBar.offsetHeight; // Force reflow
-
-  // Set message and icon
-  messageEl.innerHTML = message;
-  if (type === "success") {
-    iconEl.innerHTML = '<i class="fas fa-check-circle"></i>';
-    toast.className = "toast success";
-  } else {
-    iconEl.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
-    toast.className = "toast error";
-  }
-
-  // Start animations
-  progressBar.style.animation = "progress 3s linear forwards";
-  toast.classList.add("show", "slide-in");
-
-  // Hide toast after 3 seconds
-  setTimeout(() => {
-    toast.classList.add("slide-out");
-    setTimeout(() => {
-      toast.classList.remove("show", "slide-in", "slide-out");
-    }, 300);
-  }, 3000);
-  document.querySelector(".toast-close").addEventListener("click", () => {
-    const toast = document.getElementById("toast");
-    toast.classList.add("slide-out");
-    setTimeout(() => {
-      toast.classList.remove("show", "slide-in", "slide-out");
-    }, 300);
-  });
+function removeToast(toast) {
+  toast.classList.add("hide");
+  if (toast.timeoutId) clearTimeout(toast.timeoutId); 
+  setTimeout(() => toast.remove(), 500); 
 }
 
 
+function showToast(message, type) {
+  const toast = document.createElement("div");
+  toast.className = `toast ${type} bg-[#f5f5f5] dark:bg-[#201e1d]`;
+  toast.innerHTML = `<div class="column ">
+                     
+          <i class="text-white ${type === 'success' ? 'ri-checkbox-circle-fill' : type === 'error' ? 'ri-error-warning-fill' : 'fa-solid fa-triangle-exclamation'}"></i>
+                       <span>${message}</span>
+                    </div>
+                    <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
+  document.querySelector("#toastContainer").appendChild(toast);
+  toast.timeoutId = setTimeout(() => removeToast(toast), 4000);
+}
 // Contact Form
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
@@ -273,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!isValid) {
-      showToastNotify("Please fill in all the required fields correctly.", "error");
+      showToast("Please fill in all the required fields correctly.", "error");
       return;
     }
 
@@ -281,17 +259,16 @@ document.addEventListener("DOMContentLoaded", () => {
     setLoadingState(true);
 
     try {
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
 
-      showToastNotify(
-        "Your message has been sent successfully.<br> I will get back to you as soon as possible.",
+      showToast(
+        "Message sent successfully!",
         "success"
       );
       clearInput();
       setLoadingState(false);
     } catch (error) {
-      showToastNotify("Failed to send message. Please try again.", "error");
+      showToast("Failed to send message. Please try again.", "error");
     }
   });
 
