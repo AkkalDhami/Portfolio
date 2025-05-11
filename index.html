@@ -1,301 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Akkal Dhami</title>
-    <link rel="stylesheet" href="./src/output.css" />
-    <link rel="stylesheet" href="./css/button.css" />
-    <link rel="stylesheet" href="./css/toggle.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet" />
-    <script src="./js/prism.js" defer></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-      };
-    </script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Akkal Dhami</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="stylesheet" href="./css/button.css" />
+  <link rel="stylesheet" href="./css/toggle.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-  <body
-    class="dark-mode-transition bg-white dark:bg-[#0d160b] text-gray-800 dark:text-white">
-    <nav
-      class="fixed top-0 left-0 w-full font-poppins bg-white dark:bg-[#0d160b] dark:shadow-[0_2px_10px_rgba(250,250,250,0.5)] shadow-md z-50">
-      <div class="max-w-[1280px] mx-auto flex items-center justify-between p-4">
-        <a href="/" class="text-2xl font-nunito font-bold text-orange-500"
-          >Akkal Dhami</a
-        >
-        <div class="hidden md:flex gap-6">
-          <a
-            href="#hero"
-            class="nav-link active px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors"
-            >About</a
-          >
-          <a
-            href="#projects"
-            class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors"
-            >Projects</a
-          >
-          <a
-            href="#skills"
-            class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors"
-            >Skills</a
-          >
-          <a
-            href="#github"
-            class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors"
-            >Github</a
-          >
-          <a
-            href="#contact"
-            class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors"
-            >Contact</a
-          >
-        </div>
 
-        <div class="flex items-center gap-4">
-          <label class="ui-switch" id="themeToggle">
-            <input type="checkbox" />
-            <div class="slider">
-              <div class="circle"></div>
-            </div>
-          </label>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-          <button id="mobileMenuBtn" class="md:hidden text-xl">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
+<body class="dark-mode-transition bg-white dark:bg-[#0d160b] text-gray-800 dark:text-white">
+  <nav
+    class="fixed top-0 left-0 w-full font-poppins bg-white dark:bg-[#0d160b] dark:shadow-[0_2px_10px_rgba(250,250,250,0.5)] shadow-md z-50">
+    <div class="max-w-[1280px] mx-auto flex items-center justify-between p-4">
+      <a href="/" class="text-2xl font-nunito font-bold text-orange-500">Akkal Dhami</a>
+      <div class="hidden md:flex gap-6">
+        <a href="#hero" class="nav-link active px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Home</a>
+        <a href="#about" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">About</a>
+        <a href="#projects" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Projects</a>
+        <a href="#skills" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Skills</a>
+        <a href="#github" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Github</a>
+        <a href="#contact" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Contact</a>
       </div>
-    </nav>
 
-    <div class="custom-cursor" id="cursor">
-      <div class="inner-cursor"></div>
-    </div>
-
-    <!-- Mobile Sidebar -->
-    <div
-      id="mobileSidebar"
-      class="fixed top-0 font-poppins right-0 w-[300px] h-full bg-white dark:bg-[#0d160b] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-      <div class="p-6">
-        <div class="flex justify-between items-center mb-8">
-          <button
-            id="closeSidebarBtn"
-            class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors">
-            <i class="fas fa-times text-2xl"></i>
-          </button>
-        </div>
-        <div class="flex flex-col gap-6">
-          <a href="#hero" class="mobile-nav-link nav-link">
-            <i class="fas fa-home mr-3"></i>
-            Home
-          </a>
-          <a href="#about" class="mobile-nav-link nav-link">
-            <i class="fas fa-user mr-3"></i>
-            About
-          </a>
-          <a href="#projects" class="mobile-nav-link nav-link">
-            <i class="fas fa-code mr-3"></i>
-            Projects
-          </a>
-          <a href="#skills" class="mobile-nav-link nav-link">
-            <i class="fas fa-tools mr-3"></i>
-            Skills
-          </a>
-          <a href="#github" class="mobile-nav-link nav-link">
-            <i class="fab fa-github mr-3"></i>
-            Github
-          </a>
-          <a href="#contact" class="mobile-nav-link nav-link">
-            <i class="fas fa-envelope mr-3"></i>
-            Contact
-          </a>
-        </div>
-
-        <!-- Social Links in Sidebar -->
-        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <h3
-            class="text-emerald-600 dark:text-green-500 mb-4 text-[18px] font-semibold">
-            CONNECT WITH ME
-          </h3>
-          <div class="flex space-x-1 gap-4">
-            <a
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              href="#"
-              class="border-[2px] border-gray-400 w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
-              title="Email">
-              <i class="fas text-2xl fa-envelope"></i>
-            </a>
-            <a
-              data-aos="fade-down"
-              data-aos-duration="1200"
-              href="#"
-              class="border-[2px] border-[#0077b5] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
-              title="LinkedIn">
-              <i class="fab text-2xl fa-linkedin-in"></i>
-            </a>
-            <a
-              data-aos="fade-up"
-              data-aos-duration="1400"
-              href="https://github.com/AkkalDhami"
-              target="_blank"
-              class="border-[2px] border-[#333] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
-              title="GitHub">
-              <i class="fab text-2xl fa-github"></i>
-            </a>
-            <a
-              data-aos="fade-down"
-              data-aos-duration="1600"
-              href="#"
-              class="border-[2px] border-[#1DA1F2] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
-              title="Twitter">
-              <i class="fa-brands text-2xl fa-twitter"></i>
-            </a>
+      <div class="flex items-center gap-4">
+        <label class="ui-switch" id="themeToggle">
+          <input type="checkbox" />
+          <div class="slider">
+            <div class="circle"></div>
           </div>
+        </label>
+
+        <button id="mobileMenuBtn" class="md:hidden text-xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="custom-cursor" id="cursor">
+    <div class="inner-cursor"></div>
+  </div>
+
+  <!-- Mobile Sidebar -->
+  <div id="mobileSidebar"
+    class="fixed top-0 font-poppins right-0 w-[300px] h-full bg-white dark:bg-[#0d160b] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <button id="closeSidebarBtn"
+          class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a href="#hero" class="mobile-nav-link nav-link">
+          <i class="fas fa-home mr-3"></i>
+          Home
+        </a>
+        <a href="#about" class="mobile-nav-link nav-link">
+          <i class="fas fa-user mr-3"></i>
+          About
+        </a>
+        <a href="#projects" class="mobile-nav-link nav-link">
+          <i class="fas fa-code mr-3"></i>
+          Projects
+        </a>
+        <a href="#skills" class="mobile-nav-link nav-link">
+          <i class="fas fa-tools mr-3"></i>
+          Skills
+        </a>
+        <a href="#github" class="mobile-nav-link nav-link">
+          <i class="fab fa-github mr-3"></i>
+          Github
+        </a>
+        <a href="#contact" class="mobile-nav-link nav-link">
+          <i class="fas fa-envelope mr-3"></i>
+          Contact
+        </a>
+      </div>
+
+      <!-- Social Links in Sidebar -->
+      <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <h3 class="text-emerald-600 dark:text-green-500 mb-4 text-[18px] font-semibold">
+          CONNECT WITH ME
+        </h3>
+        <div class="flex space-x-1 gap-4">
+          <a data-aos="fade-up" data-aos-duration="1000" href="#"
+            class="border-[2px] border-gray-400 w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
+            title="Email">
+            <i class="fas text-2xl fa-envelope"></i>
+          </a>
+          <a data-aos="fade-down" data-aos-duration="1200" href="#"
+            class="border-[2px] border-[#0077b5] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
+            title="LinkedIn">
+            <i class="fab text-2xl fa-linkedin-in"></i>
+          </a>
+          <a data-aos="fade-up" data-aos-duration="1400" href="https://github.com/AkkalDhami" target="_blank"
+            class="border-[2px] border-[#333] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
+            title="GitHub">
+            <i class="fab text-2xl fa-github"></i>
+          </a>
+          <a data-aos="fade-down" data-aos-duration="1600" href="#"
+            class="border-[2px] border-[#1DA1F2] w-9 h-9 p-[1.3rem] flex items-center justify-center rounded-full"
+            title="Twitter">
+            <i class="fa-brands text-2xl fa-twitter"></i>
+          </a>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Overlay -->
-    <div
-      id="sidebarOverlay"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+  <!-- Overlay -->
+  <div id="sidebarOverlay"
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+  </div>
 
-    <!-- Hero Section -->
-    <section
-      id="hero"
-      class="max-w-[1400px] min-h-screen mx-auto items-center flex justify-center pt-[72px] overflow-hidden">
-      <div class="mx-auto px-4 flex flex-col mt-4 lg:flex-row gap-12">
-        <div class="text-center mt-6 md:text-left space-y-6 fadeIn">
-          <div class="space-y-3">
-            <p
-              data-aos="fade-down"
-              class="text-orange-600 font-poppins mb-3 text-[24px] dark:text-orange-500 font-semibold tracking-wide uppercase">
-              Welcome to my portfolio
-            </p>
-            <h1
-              data-aos="fade-up"
-              class="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white">
-              <span data-aos="fade-down" data-aos-duration="1800">
-                Hi, I'm</span
-              >
-              <span class="relative inline-block">
-                <span class="text-orange-600 dark:text-orange-600"
-                  >Akkal Dhami</span
-                >
-              </span>
-            </h1>
-          </div>
-
-          <div class="typewriter" data-aos="zoom-in" data-aos-duration="1500">
-            <span
-              class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 font-bold">
-              I am
-              <span
-                class="text-orange-600 dark:text-orange-600 text-2xl typewriter-text"
-                id="typewriter-text"
-                >Frontend Developer</span
-              >
-            </span>
-          </div>
-
-          <p
-            data-aos="fade-up"
-            class="text-gray-600 dark:text-gray-400 text-[20px] leading-relaxed max-w-xl">
-            Passionate about crafting exceptional digital experiences through
-            clean code and innovative solutions. Let's turn your ideas into
-            reality.
+  <!-- Hero Section -->
+  <section id="hero"
+    class="max-w-[1400px] min-h-screen mx-auto items-center flex justify-center pt-[72px] overflow-hidden">
+    <div class="mx-auto px-4 flex flex-col mt-4 lg:flex-row gap-12">
+      <div class="text-center mt-6 md:text-left space-y-6 fadeIn">
+        <div class="space-y-3">
+          <p data-aos="fade-down"
+            class="text-orange-600 font-poppins mb-3 text-[24px] dark:text-orange-500 font-semibold tracking-wide uppercase">
+            Welcome to my portfolio
           </p>
-
-          <div
-            class="flex flex-col md:items-start items-center space-y-4 justify-center">
-            <a
-              href="#contact"
-              data-aos="fade-left"
-              data-aos-duration="1200"
-              class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-transparent hover:border-orange-600 hover:bg-transparent duration-300 bg-orange-500 rounded-full text-xl text-white hover:text-orange-600 hover:dark:text-white"
-              role="button"
-              >Let's Connect &nbsp;
-              <i
-                class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-            </a>
-
-            <!-- resume button -->
-            <a
-              href="resume.pdf"
-              data-aos="fade-right"
-              data-aos-duration="1500"
-              class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300 rounded-full text-xl text-orange-600 hover:text-white"
-              role="button"
-              >Download CV &nbsp;
-              <i class="ri-download-line"></i>
-            </a>
-          </div>
-
-          <div class="mb-12 mt-3">
-            <div class="flex my-social-links gap-6 my-2.5">
-              <a
-                data-socialLink="Email"
-                href="mailto:dhamiakkal21@gmail.com, aavashdhami21@gmail.com"
-                class="social-button"
-                target="_blank"
-                style="--bg-color: #ea580c"
-                title="Email">
-                <i class="fas fa-envelope"></i>
-              </a>
-              <a
-                data-socialLink="LinkedIn"
-                href="#"
-                style="--bg-color: #0077b5"
-                target="_blank"
-                class="social-button"
-                title="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                data-socialLink="Github"
-                href="https://github.com/AkkalDhami"
-                target="_blank"
-                class="social-button"
-                style="--bg-color: #333"
-                title="GitHub">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a
-                data-socialLink="Twitter"
-                href="#"
-                class="social-button"
-                target="_blank"
-                style="--bg-color: #1da1f2"
-                title="Twitter">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-            </div>
-          </div>
+          <h1 data-aos="fade-up" class="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white">
+            <span data-aos="fade-down" data-aos-duration="1800">
+              Hi, I'm</span>
+            <span class="relative inline-block">
+              <span class="text-orange-600 dark:text-orange-600">Akkal Dhami</span>
+            </span>
+          </h1>
         </div>
 
-        <div class="hidden sm:flex justify-center mb-12 w-auto">
-          <div class="code-container flex flex-col">
-            <div class="code-lines gap-2 flex mb-2 items-center">
-              <span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0ee52e]"></span>
-            </div>
-            <pre
-              class="cyber-theme text-wrap"><span class="keyword">const</span> <span class="variable">about</span> <span class="comma">=</span> <span class="array"><span class="wrapper">[</span></span>
+        <div class="typewriter" data-aos="zoom-in" data-aos-duration="1500">
+          <span class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 font-bold">
+            I am
+            <span class="text-orange-600 dark:text-orange-600 text-2xl typewriter-text" id="typewriter-text">Frontend
+              Developer</span>
+          </span>
+        </div>
+
+        <p data-aos="fade-up" class="text-gray-600 dark:text-gray-400 text-[20px] leading-relaxed max-w-xl">
+          Passionate about crafting exceptional digital experiences through
+          clean code and innovative solutions. Let's turn your ideas into
+          reality.
+        </p>
+
+        <div class="flex flex-col md:items-start items-center space-y-4 justify-center">
+          <a href="#contact" data-aos="fade-left" data-aos-duration="1200"
+            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-transparent hover:border-orange-600 hover:bg-transparent duration-300 bg-orange-500 rounded-full text-xl text-white hover:text-orange-600 hover:dark:text-white"
+            role="button">Let's Connect &nbsp;
+            <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+          </a>
+
+          <!-- resume button -->
+          <a href="resume.pdf" data-aos="fade-right" data-aos-duration="1500"
+            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300 rounded-full text-xl text-orange-600 hover:text-white"
+            role="button">Download CV &nbsp;
+            <i class="ri-download-line"></i>
+          </a>
+        </div>
+
+        <div class="mb-12 mt-3">
+          <div class="flex my-social-links gap-6 my-2.5">
+            <a data-socialLink="Email" href="mailto:dhamiakkal21@gmail.com, aavashdhami21@gmail.com"
+              class="social-button" target="_blank" style="--bg-color: #ea580c" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a data-socialLink="LinkedIn" href="#" style="--bg-color: #0077b5" target="_blank" class="social-button"
+              title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a data-socialLink="Github" href="https://github.com/AkkalDhami" target="_blank" class="social-button"
+              style="--bg-color: #333" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a data-socialLink="Twitter" href="#" class="social-button" target="_blank" style="--bg-color: #1da1f2"
+              title="Twitter">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden sm:flex justify-center mb-12 w-auto">
+        <div class="code-container flex flex-col">
+          <div class="code-lines gap-2 flex mb-2 items-center">
+            <span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#0ee52e]"></span>
+          </div>
+          <pre class="cyber-theme text-wrap"><span class="keyword">const</span> <span class="variable">about</span> <span class="comma">=</span> <span class="array"><span class="wrapper">[</span></span>
   <span class="object"><span class="wrapper">{</span></span>
     <span class="property">name</span><span class="comma">: </span><span class="string">'Akkal Dhami'</span><span class="comma">,</span>
     <span class="property">role</span><span class="comma"><span class="comma">: </span></span><span class="string">'Frontend Developer'</span><span class="comma">,</span>
@@ -319,384 +223,324 @@
     <span class="wrapper">}</span><span class="comma">,</span>       
   <span class="object"><span class="wrapper">}</span></span><span class="comma">,</span>
 <span class="array"><span class="wrapper">]</span></span><span class="comma">;</span></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- slider -->
-    <div
-      class="slider-container relative max-w-[1300px] mx-auto w-full h-[300px] overflow-hidden py-12">
-      <div class="slider-track flex">
-        <!-- Original Items -->
-        <div class="flex items-center space-x-14 mt-8 px-4" id="original-items">
-          <!-- HTML -->
-          <div
-            class="p-4 hover:scale-110 duration-300 group relative bg-[#ea5a0c1b] dark:bg-[#2a1c18] rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
-              class="tech-icon object-contain"
-              alt="HTML" />
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[97%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
-              <span class="text-[18px] font-semibold text-white">HTML</span>
-            </div>
-            <p
-              class="absolute tooltip-bottom-text group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#e34f26] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              HTML
-            </p>
-          </div>
-
-          <!-- CSS -->
-          <div
-            class="bg-[#99b4f340] dark:bg-[#3744629c] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
-              class="tech-icon object-contain"
-              alt="CSS" />
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[80px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
-              <span class="text-xl font-semibold text-white">CSS</span>
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[80px] border-[#2965f1] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              CSS
-            </p>
-          </div>
-
-          <!-- JavaScript -->
-          <div
-            class="bg-[#f5eeb674] dark:bg-[#514d2d] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
-              class="tech-icon object-contain"
-              alt="JavaScript" />
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
-              <span class="text-xl font-semibold text-black">JavaScript</span>
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#ffdf00] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              JavaScript
-            </p>
-          </div>
-
-          <!-- Node.js -->
-          <div
-            class="bg-[#95ed9521] dark:bg-[#042404] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <i class="fab fa-node-js text-5xl text-[#339933]"></i>
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#339933] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#339933] duration-300">
-              <span class="text-xl font-semibold text-white">Node.js</span>
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#339933] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              Node.js
-            </p>
-          </div>
-
-          <div
-            class="bg-[#ece9e9] dark:bg-[#212121] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <p class="text-4xl dark:text-white font-normal text-black">ex</p>
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#111] dark:bg-white opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#111] dark:after:border-t-white duration-300">
-              <span class="text-xl font-semibold text-white dark:text-black"
-                >Express.js</span
-              >
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#111] dark:border-white rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              Express.js
-            </p>
-          </div>
-
-          <!-- Git -->
-          <div
-            class="bg-[#f1c7bb40] dark:bg-[#240d06] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/4494/4494748.png"
-              class="tech-icon object-contain"
-              alt="Git" />
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#f34f29] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[70px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#f34f29] duration-300">
-              <span class="text-xl font-semibold text-white">Git</span>
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[70px] border-[#f34f29] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              Git
-            </p>
-          </div>
-
-          <!-- GitHub -->
-          <div
-            class="bg-[#e9e6e6] dark:bg-[#000] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="./assets/image/github-logo.png"
-              class="tech-icon object-contain"
-              alt="GitHub" />
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#111] dark:bg-white opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#111] dark:after:border-t-white duration-300">
-              <span class="text-xl font-semibold text-white dark:text-black"
-                >GitHub</span
-              >
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#111] dark:border-white rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              GitHub
-            </p>
-          </div>
-
-          <!-- Tailwind CSS -->
-          <div
-            class="bg-[#9ee5ee30] dark:bg-[#0c2427] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="./assets/image/tailwindcss.png"
-              class="tech-icon object-contain"
-              alt="Tailwind CSS" />
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#06b6d4] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#06b6d4] duration-300">
-              <span class="text-xl font-semibold text-white">Tailwind CSS</span>
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center w-[150px] border-[2px] border-[#06b6d4] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              Tailwind CSS
-            </p>
-          </div>
-
-          <!-- MongoDB -->
-          <div
-            class="bg-[#ceefc9a9] dark:bg-[#1b2b18] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="./assets/image/MongoDB_Logomark_SpringGreen.png"
-              class="tech-icon object-contain w-[60px] h-[60px]"
-              alt="MongoDB" />
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#4DB33D] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#4DB33D] duration-300">
-              <span class="text-xl font-semibold text-white">MongoDB</span>
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#4DB33D] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              MongoDB
-            </p>
-          </div>
-
-          <!-- Postman -->
-          <div
-            class="bg-[#e8b8a238] dark:bg-[#240d06] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="./assets/image/Postman.svg"
-              class="tech-icon object-contain"
-              alt="postman" />
-            <div
-              class="tooltip absolute px-3 py-2 rounded-full bg-[#f37036] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#f37036] duration-300">
-              <span class="text-xl font-semibold text-white">Postman</span>
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#f37036] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              Postman
-            </p>
-          </div>
-
-          <!-- VS Code -->
-          <div
-            class="bg-[#a0cce92d] dark:bg-[#062234] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
-            <img
-              src="./assets/image/vscode.svg"
-              class="tech-icon object-contain"
-              alt="vs code" />
-            <div
-              class="tooltip absolute px-2.5 py-2 rounded-full bg-[#007acc] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[110px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#007acc] duration-300">
-              <span class="text-xl font-semibold text-white">VS Code</span>
-            </div>
-            <p
-              class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[110px] border-[#007acc] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
-              VS Code
-            </p>
-          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- About -->
-    <section
-      id="about"
-      class="py-20 transition-colors duration-300 overflow-hidden">
-      <div class="container max-w-[1280px] mx-auto px-4">
+  <!-- slider -->
+  <div class="slider-container relative max-w-[1300px] mx-auto w-full h-[300px] overflow-hidden py-12">
+    <div class="slider-track flex">
+      <!-- Original Items -->
+      <div class="flex items-center space-x-14 mt-8 px-4" id="original-items">
+        <!-- HTML -->
         <div
-          data-aos="fade-up"
-          class="section-heading-container"
-          data-text="ABOUT">
-          <h2
-            data-aos="fade-down"
-            data-aos-duration="1500"
-            class="section-heading text-4xl font-bold font-poppins">
-            About Me
-          </h2>
+          class="p-4 hover:scale-110 duration-300 group relative bg-[#ea5a0c1b] dark:bg-[#2a1c18] rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="tech-icon object-contain"
+            alt="HTML" />
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[97%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
+            <span class="text-[18px] font-semibold text-white">HTML</span>
+          </div>
+          <p
+            class="absolute tooltip-bottom-text group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#e34f26] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            HTML
+          </p>
         </div>
-        <div class="container mx-auto px-4">
-          <div class="grid md:grid-cols-2 gap-12">
-            <!-- Left Column - Image -->
-            <div data-aos="fade-up" class="relative max-w-[600px] mx-auto">
-              <div class="rounded-2xl overflow-hidden shadow-xl group">
-                <img
-                  src="./assets/image/developer.jpg"
-                  alt="Profile"
-                  class="w-full h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-500" />
-              </div>
+
+        <!-- CSS -->
+        <div
+          class="bg-[#99b4f340] dark:bg-[#3744629c] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="tech-icon object-contain" alt="CSS" />
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[80px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
+            <span class="text-xl font-semibold text-white">CSS</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[80px] border-[#2965f1] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            CSS
+          </p>
+        </div>
+
+        <!-- JavaScript -->
+        <div
+          class="bg-[#f5eeb674] dark:bg-[#514d2d] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="tech-icon object-contain"
+            alt="JavaScript" />
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
+            <span class="text-xl font-semibold text-black">JavaScript</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#ffdf00] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            JavaScript
+          </p>
+        </div>
+
+        <!-- Node.js -->
+        <div
+          class="bg-[#95ed9521] dark:bg-[#042404] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <i class="fab fa-node-js text-5xl text-[#339933]"></i>
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#339933] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#339933] duration-300">
+            <span class="text-xl font-semibold text-white">Node.js</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#339933] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Node.js
+          </p>
+        </div>
+
+        <div
+          class="bg-[#ece9e9] dark:bg-[#212121] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <p class="text-4xl dark:text-white font-normal text-black">ex</p>
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#111] dark:bg-white opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#111] dark:after:border-t-white duration-300">
+            <span class="text-xl font-semibold text-white dark:text-black">Express.js</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#111] dark:border-white rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Express.js
+          </p>
+        </div>
+
+        <!-- Git -->
+        <div
+          class="bg-[#f1c7bb40] dark:bg-[#240d06] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/4494/4494748.png" class="tech-icon object-contain"
+            alt="Git" />
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#f34f29] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[70px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#f34f29] duration-300">
+            <span class="text-xl font-semibold text-white">Git</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[70px] border-[#f34f29] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Git
+          </p>
+        </div>
+
+        <!-- GitHub -->
+        <div
+          class="bg-[#e9e6e6] dark:bg-[#000] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="./assets/image/github-logo.png" class="tech-icon object-contain" alt="GitHub" />
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#111] dark:bg-white opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#111] dark:after:border-t-white duration-300">
+            <span class="text-xl font-semibold text-white dark:text-black">GitHub</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#111] dark:border-white rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            GitHub
+          </p>
+        </div>
+
+        <!-- Tailwind CSS -->
+        <div
+          class="bg-[#9ee5ee30] dark:bg-[#0c2427] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="./assets/image/tailwindcss.png" class="tech-icon object-contain" alt="Tailwind CSS" />
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#06b6d4] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#06b6d4] duration-300">
+            <span class="text-xl font-semibold text-white">Tailwind CSS</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center w-[150px] border-[2px] border-[#06b6d4] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Tailwind CSS
+          </p>
+        </div>
+
+        <!-- MongoDB -->
+        <div
+          class="bg-[#ceefc9a9] dark:bg-[#1b2b18] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="./assets/image/MongoDB_Logomark_SpringGreen.png" class="tech-icon object-contain w-[60px] h-[60px]"
+            alt="MongoDB" />
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#4DB33D] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#4DB33D] duration-300">
+            <span class="text-xl font-semibold text-white">MongoDB</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] border-[#4DB33D] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            MongoDB
+          </p>
+        </div>
+
+        <!-- Postman -->
+        <div
+          class="bg-[#e8b8a238] dark:bg-[#240d06] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="./assets/image/Postman.svg" class="tech-icon object-contain" alt="postman" />
+          <div
+            class="tooltip absolute px-3 py-2 rounded-full bg-[#f37036] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#f37036] duration-300">
+            <span class="text-xl font-semibold text-white">Postman</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[90px] border-[#f37036] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            Postman
+          </p>
+        </div>
+
+        <!-- VS Code -->
+        <div
+          class="bg-[#a0cce92d] dark:bg-[#062234] p-4 hover:scale-110 duration-300 group relative rounded-full h-20 w-20 flex items-center justify-center">
+          <img src="./assets/image/vscode.svg" class="tech-icon object-contain" alt="vs code" />
+          <div
+            class="tooltip absolute px-2.5 py-2 rounded-full bg-[#007acc] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[110px] flex items-center gap-2 justify-center after:absolute after:top-[98%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#007acc] duration-300">
+            <span class="text-xl font-semibold text-white">VS Code</span>
+          </div>
+          <p
+            class="tooltip-bottom-text absolute group-hover:opacity-0 group-hover:bottom-[-6px] bottom-[-52px] text-center border-[2px] w-[110px] border-[#007acc] rounded-full px-3 py-2 text-[16px] text-black dark:text-white duration-300">
+            VS Code
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="py-20 transition-colors duration-300 overflow-hidden">
+    <div class="container max-w-[1280px] mx-auto px-4">
+      <div data-aos="fade-up" class="section-heading-container" data-text="ABOUT">
+        <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold font-poppins">
+          About Me
+        </h2>
+      </div>
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Left Column - Image -->
+          <div data-aos="fade-up" class="relative max-w-[600px] mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-xl group">
+              <img src="./assets/image/developer.jpg" alt="Profile"
+                class="w-full h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-500" />
             </div>
+          </div>
 
-            <!-- Right Column - Content -->
-            <div>
-              <p
-                data-aos="fade-up"
-                class="text-gray-600 text-[18px] sm:text-[20px] dark:text-gray-400 mb-8">
-                I'm a passionate
-                <span class="font-semibold operator">Frontend Developer</span>
-                with a strong foundation in
-                <span class="font-semibold operator">HTML, CSS</span> and
-                <span class="font-semibold operator"> JavaScript</span>. I have
-                a deep understanding of user interfaces and user experience, and
-                I enjoy creating visually appealing and functional websites. I'm
-                a quick learner and always seeking new challenges to enhance my
-                skills.
-              </p>
+          <!-- Right Column - Content -->
+          <div>
+            <p data-aos="fade-up" class="text-gray-600 text-[18px] sm:text-[20px] dark:text-gray-400 mb-8">
+              I'm a passionate
+              <span class="font-semibold operator">Frontend Developer</span>
+              with a strong foundation in
+              <span class="font-semibold operator">HTML, CSS</span> and
+              <span class="font-semibold operator"> JavaScript</span>. I have
+              a deep understanding of user interfaces and user experience, and
+              I enjoy creating visually appealing and functional websites. I'm
+              a quick learner and always seeking new challenges to enhance my
+              skills.
+            </p>
 
-              <!-- Tabs -->
-              <div class="mb-8">
-                <div
-                  class="flex gap-8 mb-8 border-b border-gray-200 dark:border-gray-700">
-                  <button
-                    data-aos="fade-up"
-                    data-aos-duration="1300"
-                    class="tab-btn text-xl font-semibold relative text-gray-900 dark:text-white pb-4 tab-active"
-                    data-tab="skill">
-                    Skills
-                  </button>
-                  <button
-                    data-aos="fade-up"
-                    data-aos-duration="1600"
-                    class="tab-btn text-xl font-semibold relative text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white pb-4"
-                    data-tab="experience">
-                    Experience
-                  </button>
-                  <!-- <button data-aos="fade-up" data-aos-duration="2000"
+            <!-- Tabs -->
+            <div class="mb-8">
+              <div class="flex gap-8 mb-8 border-b border-gray-200 dark:border-gray-700">
+                <button data-aos="fade-up" data-aos-duration="1300"
+                  class="tab-btn text-xl font-semibold relative text-gray-900 dark:text-white pb-4 tab-active"
+                  data-tab="skill">
+                  Skills
+                </button>
+                <button data-aos="fade-up" data-aos-duration="1600"
+                  class="tab-btn text-xl font-semibold relative text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white pb-4"
+                  data-tab="experience">
+                  Experience
+                </button>
+                <!-- <button data-aos="fade-up" data-aos-duration="2000"
                   class="tab-btn text-xl font-semibold relative text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white pb-4"
                   data-tab="education">
                   Education
                 </button> -->
-                </div>
+              </div>
 
-                <!-- Tab Content -->
-                <div
-                  data-aos="fade-right"
-                  id="skill"
-                  class="tab-content active">
-                  <div class="space-y-8">
-                    <!-- Frontend Development -->
-                    <div class="group">
-                      <div class="flex items-center gap-4 mb-2">
-                        <i
-                          class="fas fa-laptop-code text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
-                        <h3
-                          class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
-                          Frontend Development
-                        </h3>
-                      </div>
-                      <p class="text-gray-700 dark:text-gray-300 pl-10">
-                        HTML, CSS, JavaScript, Tailwind CSS
+              <!-- Tab Content -->
+              <div data-aos="fade-right" id="skill" class="tab-content active">
+                <div class="space-y-8">
+                  <!-- Frontend Development -->
+                  <div class="group">
+                    <div class="flex items-center gap-4 mb-2">
+                      <i class="fas fa-laptop-code text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
+                      <h3 class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
+                        Frontend Development
+                      </h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 pl-10">
+                      HTML, CSS, JavaScript, Tailwind CSS
+                    </p>
+                  </div>
+
+                  <!-- Backend Development -->
+                  <div class="group">
+                    <div class="flex items-center gap-4 mb-2">
+                      <i class="fas fa-server text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
+                      <h3 class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
+                        Backend Development
+                      </h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 pl-10">
+                      Node.js, Express.js
+                    </p>
+                  </div>
+
+                  <!-- Database -->
+                  <div class="group">
+                    <div class="flex items-center gap-4 mb-2">
+                      <i class="fas fa-database text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
+                      <h3 class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
+                        Database
+                      </h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 pl-10">
+                      MongoDB, MySQL
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="experience" class="tab-content hidden">
+                <div class="space-y-8">
+                  <div class="group">
+                    <div class="flex items-center gap-4 mb-2">
+                      <i class="fas fa-briefcase text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
+                      <h3 class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
+                        Frontend Developer
+                      </h3>
+                    </div>
+                    <div class="pl-10">
+                      <p class="text-gray-700 dark:text-gray-300">NepKart</p>
+                      <p class="text-gray-600 dark:text-gray-400">
+                        Leading development teams and architecting solutions.
                       </p>
                     </div>
-
-                    <!-- Backend Development -->
-                    <div class="group">
-                      <div class="flex items-center gap-4 mb-2">
-                        <i
-                          class="fas fa-server text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
-                        <h3
-                          class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
-                          Backend Development
-                        </h3>
-                      </div>
-                      <p class="text-gray-700 dark:text-gray-300 pl-10">
-                        Node.js, Express.js
-                      </p>
+                  </div>
+                  <div class="group">
+                    <div class="flex items-center gap-4 mb-2">
+                      <i class="fas fa-laptop-code text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
+                      <h3 class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
+                        Frontend Developer
+                      </h3>
                     </div>
-
-                    <!-- Database -->
-                    <div class="group">
-                      <div class="flex items-center gap-4 mb-2">
-                        <i
-                          class="fas fa-database text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
-                        <h3
-                          class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
-                          Database
-                        </h3>
-                      </div>
-                      <p class="text-gray-700 dark:text-gray-300 pl-10">
-                        MongoDB, MySQL
+                    <div class="pl-10">
+                      <p class="text-gray-700 dark:text-gray-300">
+                        DishhDashh
+                      </p>
+                      <p class="text-gray-600 dark:text-gray-400">
+                        Developed and maintained web applications.
                       </p>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div id="experience" class="tab-content hidden">
-                  <div class="space-y-8">
-                    <div class="group">
-                      <div class="flex items-center gap-4 mb-2">
-                        <i
-                          class="fas fa-briefcase text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
-                        <h3
-                          class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
-                          Frontend Developer
-                        </h3>
-                      </div>
-                      <div class="pl-10">
-                        <p class="text-gray-700 dark:text-gray-300">NepKart</p>
-                        <p class="text-gray-600 dark:text-gray-400">
-                          Leading development teams and architecting solutions.
-                        </p>
-                      </div>
+              <div id="education" class="tab-content hidden">
+                <div class="space-y-8">
+                  <div class="group">
+                    <div class="flex items-center gap-4 mb-2">
+                      <i
+                        class="fas fa-user-graduate text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
+                      <h3 class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
+                        Bachelor's in Computer Science
+                      </h3>
                     </div>
-                    <div class="group">
-                      <div class="flex items-center gap-4 mb-2">
-                        <i
-                          class="fas fa-laptop-code text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
-                        <h3
-                          class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
-                          Frontend Developer
-                        </h3>
-                      </div>
-                      <div class="pl-10">
-                        <p class="text-gray-700 dark:text-gray-300">
-                          DishhDashh
-                        </p>
-                        <p class="text-gray-600 dark:text-gray-400">
-                          Developed and maintained web applications.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="education" class="tab-content hidden">
-                  <div class="space-y-8">
-                    <div class="group">
-                      <div class="flex items-center gap-4 mb-2">
-                        <i
-                          class="fas fa-user-graduate text-2xl text-orange-500 dark:text-orange-400 transition-colors"></i>
-                        <h3
-                          class="text-orange-500 dark:text-orange-500 text-lg font-semibold transition-colors">
-                          Bachelor's in Computer Science
-                        </h3>
-                      </div>
-                      <div class="pl-10">
-                        <p class="text-gray-700 dark:text-gray-300">
-                          2020 - 2024
-                        </p>
-                        <p class="text-gray-600 dark:text-gray-400">
-                          Kathmandu University
-                        </p>
-                      </div>
+                    <div class="pl-10">
+                      <p class="text-gray-700 dark:text-gray-300">
+                        2020 - 2024
+                      </p>
+                      <p class="text-gray-600 dark:text-gray-400">
+                        Kathmandu University
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -705,1230 +549,954 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 max-w-[1400px] mx-auto">
-      <div class="mx-auto px-4 relative">
-        <div
-          data-aos="fade-up"
-          class="section-heading-container"
-          data-text="PROJECTS">
-          <h2
-            data-aos="fade-down"
-            data-aos-duration="1500"
-            class="section-heading text-4xl font-bold font-poppins">
-            My Projects
-          </h2>
-        </div>
-        <!-- Project Cards -->
-        <div id="project-cards" class="relative mt-16">
-          <div
-            class="w-full relative flex flex-col lg:flex-row justify-between gap-12 mt-32">
-            <div
-              class="project-card-wrapper relative group mx-auto"
-              data-aos="zoom-in"
-              data-aos-duration="1000">
-              <div>
-                <a
-                  href="https://nepkart.vercel.app/"
-                  target="_blank"
-                  class="drop-shadow-[0_0px_39px_#dc681870]">
-                  <img
-                    src="./assets/project/nepkart (2)-min.webp"
-                    alt="Project 1"
-                    class="z-50 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]" />
-
-                  <a
-                    href="https://nepkart.vercel.app/"
-                    target="_blank"
-                    class="tooltip absolute px-3 py-2.5 rounded-full bg-orange-500 top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 w-[135px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-orange-500 duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >NepKart</span
-                    >
-                    <i class="ri-external-link-line text-white text-xl"></i>
-                  </a>
-                </a>
-              </div>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1100"
-              class="project-desc z-10 mx-auto sm:mr-auto">
-              <div class="project-desc-inner flex flex-col space-y-2 mb-6">
-                <h2 class="text-3xl font-bold text-orange-500 font-poppins">
-                  NepKart
-                </h2>
-                <p
-                  class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
-                  E-commerce website
-                </p>
-                <ul
-                  class="text-gray-600 flex space-y-2 flex-col text-[20px] dark:text-gray-300 list-disc pl-6">
-                  <li>
-                    Nepali Bazaar is a modern e-commerce platform I built,
-                    showcasing my skills in HTML, CSS, JavaScript, and
-                    responsive web design.
-                  </li>
-
-                  <li>
-                    It includes interactive elements like countdown timers, and
-                    a responsive layout ensuring seamless navigation across
-                    devices.
-                  </li>
-                </ul>
-              </div>
-              <!-- Tech Stack -->
-              <div
-                class="stack flex items-center gap-4 my-4">
-                <div
-                  class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[60px] h-[60px] rounded-md">
-                  <i class="fab fa-html5 text-4xl text-[#e34f26]"></i>
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
-                    <span class="text-xl font-semibold text-white">HTML</span>
-                  </div>
-                </div>
-                <div
-                  class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[60px] h-[60px] rounded-md">
-                  <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
-                    <span class="text-xl font-semibold text-white">CSS</span>
-                  </div>
-                </div>
-                <div
-                  class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[60px] h-[60px] rounded-md">
-                  <img src="./assets/image/js-logo.png" alt="js" />
-
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
-                    <span class="text-xl font-semibold text-black"
-                      >JavaScript</span
-                    >
-                  </div>
-                </div>
-                <div
-                  class="flex p-2 group items-center relative justify-center bg-[#b0d0f05d] dark:bg-[#374e66] w-[60px] h-[60px] rounded-md">
-                  <img src="./assets/image/swiper-logo.svg" alt="swipper js" />
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#0080ff] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[130px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0080ff] duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >Swipper JS</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- live preview and source code -->
-              <div
-                class="flex items-center sm:w-1/2 gap-2 md:gap-3 sm:gap-4 my-8">
-                <!-- Live Preview Button -->
-                <a
-                  href="https://nepkart.vercel.app/"
-                  target="_blank"
-                  class="flex-1">
-                  <button
-                    class="w-full flex items-center justify-center sm:gap-2 gap-[2px] px-3 sm:px-4 py-2.5 bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 rounded-md transition-colors duration-200 font-medium">
-                    <i class="fas fa-link text-[16px]"></i>
-                    <span>Live Preview</span>
-                  </button>
-                </a>
-
-                <!-- Source Code Button -->
-                <a
-                  href="#"
-                  data-tooltip="Private Repo"
-                  class="flex-1 privateRepo"
-                  target="_blank">
-                  <button
-                    class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 rounded-md transition-colors duration-200 font-medium">
-                    <i
-                      class="ri-code-s-slash-line text-[16px] group-hover:text-orange-500"></i>
-                    <span>Source Code</span>
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="flex items-center justify-center w-full gap-2 text-[#ff6a00] my-4">
-            <i class="ri-shining-line"></i>
-            <i class="ri-shining-line"></i>
-            <i class="ri-shining-line"></i>
-          </div>
-
-          <div
-            class="w-full relative flex flex-col lg:flex-row-reverse justify-between gap-12 mt-32">
-            <div
-              class="project-card-wrapper relative group mx-auto"
-              data-aos="zoom-in"
-              data-aos-duration="1000">
-              <div>
-                <a
-                  href="https://dishhdashh.vercel.app/"
-                  target="_blank"
-                  class="drop-shadow-[0_0px_39px_#dc681870]">
-                  <img
-                    src="./assets/project/dishhdashh.webp"
-                    alt="Project 2"
-                    class="" />
-
-                  <a
-                    href="https://dishhdashh.vercel.app/"
-                    target="_blank"
-                    class="tooltip absolute px-3.5 py-2.5 rounded-full bg-[#0d6efd] top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0d6efd] duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >DishhDashh</span
-                    >
-                    <i class="ri-external-link-line text-white text-xl"></i>
-                  </a>
-                </a>
-              </div>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1100"
-              class="project-desc z-10 mx-auto sm:mr-auto">
-              <div class="project-desc-inner flex flex-col space-y-2 mb-6">
-                <h2 class="text-3xl font-bold text-[#0d6efd] font-poppins">
-                  DishhDashh
-                </h2>
-                <p
-                  class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
-                  Food delivery website
-                </p>
-                <ul
-                  class="text-gray-600 flex space-y-2 flex-col text-[20px] dark:text-gray-300 list-disc pl-6">
-                  <li>
-                    DishhDashh is a food delivery website I developed,
-                    showcasing my skills in HTML, CSS, JavaScript, and
-                    responsive web design.
-                  </li>
-
-                  <li>
-                    Implemented a responsive design and interactive elements
-                    like sliders and modals.
-                  </li>
-                </ul>
-              </div>
-              <!-- Tech Stack -->
-              <div class="stack flex flex-wrap items-center gap-4 my-4">
-                <div
-                  class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[60px] h-[60px] rounded-md">
-                  <i class="fab fa-html5 text-4xl text-[#e34f26]"></i>
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
-                    <span class="text-xl font-semibold text-white">HTML</span>
-                  </div>
-                </div>
-                <div
-                  class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[60px] h-[60px] rounded-md">
-                  <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
-                    <span class="text-xl font-semibold text-white">CSS</span>
-                  </div>
-                </div>
-                <div
-                  class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[60px] h-[60px] rounded-md">
-                  <img src="./assets/image/js-logo.png" alt="js" />
-
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[110px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
-                    <span class="text-xl font-semibold text-black"
-                      >JavaScript</span
-                    >
-                  </div>
-                </div>
-                <div
-                  class="flex p-2 group items-center relative justify-center bg-[#b0d0f05d] dark:bg-[#374e66] w-[60px] h-[60px] rounded-md">
-                  <img src="./assets/image/swiper-logo.svg" alt="swipper js" />
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#0080ff] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[130px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0080ff] duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >Swipper JS</span
-                    >
-                  </div>
-                </div>
-                <div
-                  class="flex p-2 group items-center relative justify-center bg-[#9ee5ee4c] dark:bg-[#274549] w-[60px] h-[60px] rounded-md">
-                  <img
-                    src="./assets/image/tailwindcss.png"
-                    alt="tailwind logo" />
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#06b6d4] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#1da1f2] duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >Tailwind CSS</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- live preview and source code -->
-              <div class="flex items-center gap-3 sm:gap-4 my-8">
-                <!-- Live Preview Button -->
-                <a href="https://dishhdashh.vercel.app/" target="_blank">
-                  <button
-                    class="w-full flex items-center justify-center sm:gap-2 gap-[2px] px-3 sm:px-4 py-2.5 bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 rounded-md transition-colors duration-200 font-medium">
-                    <i class="fas fa-link text-[16px] text-blue-500"></i>
-                    <span>Live Preview</span>
-                  </button>
-                </a>
-
-                <!-- Source Code Button -->
-                <a href="" data-tooltip="Private Repo" class="privateRepo">
-                  <button
-                    class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 rounded-md transition-colors duration-200 font-medium">
-                    <i
-                      class="ri-code-s-slash-line text-[16px] group-hover:text-orange-500"></i>
-                    <span>Source Code</span>
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="flex items-center justify-center w-full gap-2 text-[#ff6a00] my-4">
-            <i class="ri-shining-line"></i>
-            <i class="ri-shining-line"></i>
-            <i class="ri-shining-line"></i>
-          </div>
-
-          <div
-            class="w-full relative flex flex-col lg:flex-row justify-between gap-12 mt-32">
-            <div
-              class="project-card-wrapper relative group mx-auto"
-              data-aos="zoom-in"
-              data-aos-duration="1000">
-              <div>
-                <a
-                  href="https://akkal.vercel.app/"
-                  target="_blank"
-                  class="drop-shadow-[0_0px_39px_#dc681870]">
-                  <img
-                    src="./assets/project/portfolio.webp"
-                    alt="Project 3"
-                    class="z-50 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]" />
-
-                  <a
-                    href="https://akkal.vercel.app/"
-                    target="_blank"
-                    class="tooltip absolute px-3 py-2.5 rounded-full bg-orange-500 top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center w-[220px] sm:w-auto after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-orange-500 duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >Personal Portfolio</span
-                    >
-                    <i class="ri-external-link-line text-white text-xl"></i>
-                  </a>
-                </a>
-              </div>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1100"
-              class="project-desc z-10 mx-auto sm:mr-auto">
-              <div
-                class="project-desc-inner max-w-[1200px] flex flex-col space-y-2 mb-6">
-                <h2 class="text-3xl font-bold text-orange-500 font-poppins">
-                  Personal Portfolio
-                </h2>
-                <p
-                  class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
-                  Personal Portfolio Website
-                </p>
-                <p class="text-gray-600 text-[20px] dark:text-gray-300">
-                  This is my personal portfolio website where I showcase my
-                  projects and skills. It has a user-friendly interface and a
-                  wide range of projects to show off my work.
-                </p>
-              </div>
-              <!-- Tech Stack -->
-              <div class="stack flex flex-wrap items-center gap-4 my-4">
-                <div
-                  class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[60px] h-[60px] rounded-md">
-                  <i class="fab fa-html5 text-4xl text-[#e34f26]"></i>
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
-                    <span class="text-xl font-semibold text-white">HTML</span>
-                  </div>
-                </div>
-                <div
-                  class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[60px] h-[60px] rounded-md">
-                  <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
-                    <span class="text-xl font-semibold text-white">CSS</span>
-                  </div>
-                </div>
-                <div
-                  class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[60px] h-[60px] rounded-md">
-                  <img src="./assets/image/js-logo.png" alt="js" />
-
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
-                    <span class="text-xl font-semibold text-black"
-                      >JavaScript</span
-                    >
-                  </div>
-                </div>
-                <div
-                  class="flex p-2 group items-center relative justify-center bg-[#b0d0f05d] dark:bg-[#374e66] w-[60px] h-[60px] rounded-md">
-                  <img src="./assets/image/swiper-logo.svg" alt="swipper js" />
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#0080ff] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[130px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0080ff] duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >Swipper JS</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- live preview and source code -->
-              <div class="flex items-center gap-2 md:gap-4 my-8">
-                <a href="https://akkal.vercel.app/" target="_blank">
-                  <button
-                    class="w-full flex items-center justify-center sm:gap-2 gap-[2px] px-3 sm:px-4 py-2.5 bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 rounded-md transition-colors duration-200 font-medium">
-                    <i class="fas fa-link text-xltext-blue-500"></i>
-                    <span>Live Preview</span>
-                  </button>
-                </a>
-
-                <!-- Source Code Button -->
-                <a
-                  class="publicRepo"
-                  data-tooltip="Get Source Code"
-                  href="https://github.com/AkkalDhami/Portfolio/"
-                  target="_blank">
-                  <button
-                    class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 rounded-md transition-colors duration-200 font-medium">
-                    <i
-                      class="ri-code-s-slash-line text-[16px] group-hover:text-orange-500"></i>
-                    <span>Source Code</span>
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="flex items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
-            <i class="ri-shining-line"></i>
-            <i class="ri-shining-line"></i>
-            <i class="ri-shining-line"></i>
-          </div>
-
-          <div
-            class="w-full relative flex flex-col lg:flex-row-reverse justify-between gap-12 mt-32">
-            <div
-              class="project-card-wrapper relative group mx-auto sm:ml-auto"
-              data-aos="zoom-in"
-              data-aos-duration="1300">
-              <div>
-                <a
-                  href="https://terminal-portfolio-akkal.vercel.app/"
-                  target="_blank"
-                  class="drop-shadow-[0_0px_39px_#0067ffba]">
-                  <img
-                    src="./assets/project/terminal.webp"
-                    alt="Project 4"
-                    class="object-contain z-50" />
-
-                  <a
-                    href="https://terminal-portfolio-akkal.vercel.app/"
-                    target="_blank"
-                    class="tooltip absolute px-3 py-2.5 rounded-full bg-[#0d6efd] top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center w-[170px] sm:w-auto after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0d6efd] duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >CLI Portfolio</span
-                    >
-                    <i class="ri-external-link-line text-white text-xl"></i>
-                  </a>
-                </a>
-              </div>
-            </div>
-
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1200"
-              class="project-desc mx-auto">
-              <div class="project-desc-inner flex flex-col space-y-2 mb-6">
-                <h2 class="text-3xl font-bold text-[#0d6efd] font-poppins">
-                  Terminal Portfolio
-                </h2>
-                <p
-                  class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
-                  CLI Portfolio Website
-                </p>
-                <p class="text-gray-600 text-[20px] dark:text-gray-300">
-                  This is my terminal portfolio website where I showcase my
-                  projects and skills. It has a user-friendly interface and a
-                  wide range of projects.
-                </p>
-              </div>
-              <div class="stack flex flex-wrap items-center gap-4 my-4">
-                <div
-                  class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[60px] h-[60px] rounded-md">
-                  <i class="fab fa-html5 text-4xl text-[#e34f26]"></i>
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#e34f26] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
-                    <span class="text-xl font-semibold text-white">HTML</span>
-                  </div>
-                </div>
-                <div
-                  class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[60px] h-[60px] rounded-md">
-                  <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#2965f1] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
-                    <span class="text-xl font-semibold text-white">CSS</span>
-                  </div>
-                </div>
-                <div
-                  class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[60px] h-[60px] rounded-md">
-                  <img src="./assets/image/js-logo.png" alt="js" />
-
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
-                    <span class="text-xl font-semibold text-black"
-                      >JavaScript</span
-                    >
-                  </div>
-                </div>
-
-                <div
-                  class="flex p-2 group items-center relative justify-center bg-[#9ee5ee4c] dark:bg-[#274549] w-[60px] h-[60px] rounded-md">
-                  <img
-                    src="./assets/image/tailwindcss.png"
-                    class="w-[400px]"
-                    alt="tailwind logo" />
-                  <div
-                    class="tooltip absolute px-3 py-2 rounded-full bg-[#06b6d4] opacity-0 group-hover:opacity-100 top-10 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#1da1f2] duration-300">
-                    <span class="text-xl font-semibold text-white"
-                      >Tailwind CSS</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Live Preview Button -->
-              <div class="flex items-center gap-2 md:gap-4 my-8">
-                <a
-                  href="https://terminal-portfolio-akkal.vercel.app/"
-                  target="_blank">
-                  <button
-                    class="w-full flex items-center justify-center sm:gap-2 gap-[2px] px-3 sm:px-4 py-2.5 bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 rounded-md transition-colors duration-200 font-medium">
-                    <i class="fas fa-link text-xltext-blue-500"></i>
-                    <span>Live Preview</span>
-                  </button>
-                </a>
-
-                <!-- Source Code Button -->
-                <a
-                  class="privateRepo"
-                  data-tooltip="Private Repo"
-                  href="https://github.com/AkkalDhami/terminal-portfolio/"
-                  target="_blank">
-                  <button
-                    class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 rounded-md transition-colors duration-200 font-medium">
-                    <i
-                      class="ri-code-s-slash-line text-[16px] group-hover:text-orange-500"></i>
-                    <span>Source Code</span>
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="flex items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
-            <i class="ri-shining-line"></i>
-            <i class="ri-shining-line"></i>
-            <i class="ri-shining-line"></i>
-          </div>
-        </div>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 max-w-[1400px] mx-auto">
+    <div class="mx-auto px-4 relative">
+      <div data-aos="fade-up" class="section-heading-container" data-text="PROJECTS">
+        <h2 data-aos="fade-down" data-aos-duration="1500" class="section-heading text-4xl font-bold font-poppins">
+          My Projects
+        </h2>
       </div>
-    </section>
+      <!-- Project Cards -->
+      <div id="project-cards" class="relative mt-16">
+        <div class="w-full relative flex flex-col lg:flex-row justify-between gap-12 mt-32">
+          <div class="project-card-wrapper relative group mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+            <div>
+              <a href="https://nepkart.vercel.app/" target="_blank" class="drop-shadow-[0_0px_39px_#dc681870]">
+                <img src="./assets/project/nepkart (2)-min.webp" alt="Project 1"
+                  class="z-50 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]" />
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-      <div class="container max-w-[1200px] mx-auto px-4 overflow-hidden">
-        <div class="section-heading-container" data-text="SKILLS">
-          <h2
-            data-aos="fade-up"
-            class="section-heading font-poppins text-4xl font-bold">
-            Skills & Technologies
-          </h2>
-        </div>
-        <!-- Frontend Technologies -->
-        <div class="mb-12" data-aos="fade-right">
-          <div class="flex items-center mb-4">
-            <h3
-              class="text-2xl font-semibold text-gray-800 font-poppins dark:text-gray-100">
-              Frontend Technologies
-            </h3>
-          </div>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div
-              class="border border-[#e34f26]/50 bg-[#e34f26]/10 hover:border-[#e34f26] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="100">
-              <div
-                class="flex items-center justify-center bg-[#e34f26]/15 w-[50px] h-[50px] rounded-md">
-                <i class="fab fa-html5 text-4xl text-[#e34f26]"></i>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  HTML
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Structure
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#2944f1]/10 border border-[#2944f1]/50 hover:border-[#2944f1] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="200">
-              <div
-                class="flex items-center justify-center bg-[#99b4f340]/15 w-[50px] h-[50px] rounded-md">
-                <i class="fab fa-css3-alt text-4xl text-[#2944f1]"></i>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  CSS
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Styling
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#f7df1e]/10 border border-[#f7df1e]/50 hover:border-[#f7df1e] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="300">
-              <div
-                class="flex items-center justify-center p-1.5 bg-[#f7df1e]/15 w-[50px] h-[50px] rounded-md">
-                <img src="./assets/image/js-logo.png" alt="js" />
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  JavaScript
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Functionality
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#06b6d4]/10 border border-[#06b6d4]/50 hover:border-[#06b6d4] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="400">
-              <!-- tailwind -->
-              <div
-                class="flex items-center justify-center bg-[#06b6d4]/15 p-1 w-[50px] h-[50px] rounded-md">
-                <img src="./assets/image/tailwindcss.png" alt="tailwind logo" />
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  Tailwind
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  CSS Framework
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Backend Technologies -->
-        <div class="mb-12" data-aos="fade-left">
-          <div class="flex items-center mb-8">
-            <h3
-              class="text-2xl font-semibold font-poppins text-gray-800 dark:text-white">
-              Backend Technologies
-            </h3>
-          </div>
-          <!-- #95ed9521 -->
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div
-              class="bg-[#339933]/10 border border-[#339933]/50 hover:border-[#339933] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="100">
-              <div
-                class="flex items-center justify-center bg-[#339933]/15 rounded-md px-2 py-1">
-                <i class="fab fa-node-js text-5xl text-[#339933]"></i>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  Node.js
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Backend Framework
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#fff] dark:bg-[#111] border border-[#8e918e] hover:border-[#f5f5f5] rounded-lg px-3 py-1 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="200">
-              <div
-                class="flex items-center justify-center bg-[#f5f5f5] dark:bg-[#000] rounded-md px-2 py-1">
-                <p class="text-5xl dark:text-white font-normal text-black">
-                  ex
-                </p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  Express.js
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Backend Framework
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tools -->
-        <div class="mb-12" data-aos="fade-right">
-          <div class="flex items-center mb-8">
-            <h3
-              class="text-2xl font-semibold font-poppins text-gray-800 dark:text-white">
-              Tools I Use
-            </h3>
-          </div>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div
-              class="bg-[#dd4a1d]/10 border border-[#dd4a1d]/50 hover:border-[#dd4a1d] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="100">
-              <div
-                class="flex items-center justify-center bg-[#dd4a1d]/15 px-2 py-1 rounded-md">
-                <i class="fab fa-git text-4xl text-[#dd4a1d]"></i>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  Git
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Version Control
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-white border border-[#969392] hover:border-[#e2e0df] rounded-lg px-3 py-3 dark:bg-[#000] shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="200">
-              <div
-                class="flex items-center justify-center bg-[#f5f5f5] dark:bg-[#222121] px-2 py-2 rounded-md">
-                <i
-                  class="fab fa-github text-4xl text-[#000000] dark:text-white"></i>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  GitHub
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Code Repository
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#23a9f2]/10 border border-[#6dbef3]/50 hover:border-[#23a9f2] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="300">
-              <div
-                class="flex items-center justify-center bg-[#23a9f2]/15 px-2 py-2 rounded-md">
-                <img
-                  src="./assets/image/vscode.svg"
-                  class="w-11"
-                  alt="vscode logo" />
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  VS Code
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Code Editor
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#f37036]/10 border border-[#f37036]/50 hover:border-[#f37036] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="400">
-              <div
-                class="flex items-center justify-center bg-[#f37036]/15 px-2 py-2 rounded-md">
-                <img
-                  src="./assets/image/Postman.svg"
-                  class="w-12"
-                  alt="postman logo" />
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  Postman
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  API Testing
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#cd7ce8]/10 border border-[#cd7ce8]/50 hover:border-[#b82fe6] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="500">
-              <div
-                class="flex items-center justify-center bg-[#b82fe6]/15 px-2 py-2 rounded-md">
-                <img
-                  src="./assets/image/icons8-figma-48.png"
-                  class="w-11"
-                  alt="figma logo" />
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  Figma
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  Design
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#fff] border border-[#7a7575] hover:border-[#dcd9d9] rounded-lg px-3 py-3 dark:bg-[#000] shadow-md flex items-center gap-3 transition-all duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="600">
-              <div
-                class="flex items-center justify-center bg-[#f5f5f5] dark:bg-[#222121] px-2 py-2 rounded-md">
-                <img
-                  src="./assets/image/cursor.png"
-                  class="block dark:hidden w-11"
-                  alt="cursor img" />
-                <img
-                  src="./assets/image/cursor-dark.png"
-                  class="hidden dark:block w-11"
-                  alt="cursor img" />
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
-                  Cursor AI
-                </h4>
-                <p class="text-gray-600 text-[18px] dark:text-gray-200">
-                  AI Code Editor
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- github stats -->
-    <section id="github" class="py-20">
-      <div class="container max-w-[1280px] mx-auto px-4 overflow-hidden">
-        <div class="section-heading-container" data-text="GITHUB STATS">
-          <h2
-            data-aos="fade-up"
-            class="section-heading font-poppins text-4xl font-bold">
-            GitHub Stats
-          </h2>
-        </div>
-
-        <div
-          class="flex relative items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
-          <a
-            href="https://github.com/AkkalDhami"
-            target="_blank"
-            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300 rounded-full text-[18px] sm:text-xl text-orange-600 hover:text-white"
-            role="button">
-            <span> View My Github Profile</span>
-            <i class="ml-2 ri-github-fill text-2xl group-hover:text-white"></i>
-          </a>
-        </div>
-
-        <!-- Stats Container -->
-        <div class="p-1 sm:p-8 transition-colors duration-300">
-          <div class="mx-auto max-w-7xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              <!-- GitHub Stats Card -->
-              <div data-aos="zoom-in" class="group relative h-full">
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300"></div>
-                <div
-                  class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                  <img
-                    src="https://github-readme-stats.vercel.app/api?username=AkkalDhami&show_icons=true&theme=tokyonight"
-                    data-light-theme="github"
-                    data-dark-theme="radical"
-                    class="object-cover rounded-lg theme-image"
-                    alt="GitHub Stats" />
-                </div>
-              </div>
-              <!-- Profile Summary Card -->
-              <div
-                data-aos="zoom-in"
-                class="group relative h-full md:col-span-2">
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300"></div>
-                <div
-                  class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                  <img
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AkkalDhami&theme=tokyonight"
-                    data-light-theme="github"
-                    data-dark-theme="radical"
-                    class="w-full h-auto rounded-lg theme-image"
-                    alt="Profile Details" />
-                </div>
-              </div>
-
-              <!-- Activity Graph Card -->
-              <div
-                data-aos="zoom-in"
-                class="group relative h-full md:col-span-2">
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300"></div>
-                <div
-                  class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                  <img
-                    src="https://github-readme-activity-graph.vercel.app/graph?username=AkkalDhami&theme=github"
-                    data-light-theme="github"
-                    data-dark-theme="react"
-                    class="w-full h-auto rounded-lg theme-image"
-                    alt="Activity Graph" />
-                </div>
-              </div>
-
-              <!-- Top Languages Card -->
-              <div data-aos="zoom-in" class="group relative h-full">
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300"></div>
-                <div
-                  class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                  <img
-                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=AkkalDhami&layout=compact&theme=tokyonight"
-                    data-light-theme="github"
-                    data-dark-theme="tokyonight"
-                    class="w-full h-auto rounded-lg theme-image"
-                    alt="Top Languages" />
-                </div>
-              </div>
-
-              <!-- Streak Stats Card -->
-              <div data-aos="zoom-in" class="group relative h-full">
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300"></div>
-                <div
-                  class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                  <img
-                    src="https://github-readme-streak-stats.herokuapp.com/?user=AkkalDhami&theme=tokyonight"
-                    data-light-theme="github"
-                    data-dark-theme="dark"
-                    class="w-full h-auto rounded-lg theme-image"
-                    alt="GitHub Streak" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="py-10 max-w-[1280px] mx-auto">
-      <div class="container mx-auto px-4">
-        <div class="section-heading-container" data-text="CONTACT">
-          <h2
-            data-aos="fade-down"
-            class="section-heading font-poppins text-4xl font-bold">
-            Get In Touch
-          </h2>
-        </div>
-
-        <div class="grid p-0 sm:p-10 md:grid-cols-2 gap-12">
-          <!-- Left Column - Contact Info -->
-          <div>
-            <h2
-              data-aos="fade-down"
-              class="text-4xl font-bold mb-6 font-poppins">
-              Contact Me
-            </h2>
-            <p data-aos="zoom-in" class="text-gray-600 dark:text-gray-300 mb-8">
-              Feel free to reach out for collaborations, opportunities, or just
-              to say hello! I'll get back to you as soon as possible.
-            </p>
-
-            <div class="space-y-6">
-              <div data-aos="fade-up" class="flex items-center gap-4">
-                <div
-                  class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
-                  <i class="fas fa-user"></i>
-                </div>
-                <div>
-                  <h3 class="font-semibold">Name</h3>
-                  <p class="text-gray-600 dark:text-gray-300">Akkal Dhami</p>
-                </div>
-              </div>
-
-              <div data-aos="fade-up" class="flex items-center gap-4">
-                <div
-                  class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div>
-                  <h3 class="font-semibold">Address</h3>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    Kathmandu, Nepal
-                  </p>
-                </div>
-              </div>
-
-              <div data-aos="fade-up" class="flex items-center gap-4">
-                <div
-                  class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div>
-                  <h3 class="font-semibold">Email</h3>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    akkaldhami21@gmail.com
-                  </p>
-                </div>
-              </div>
-
-              <div data-aos="fade-up" class="flex items-center gap-4">
-                <div
-                  class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div>
-                  <h3 class="font-semibold">Contact</h3>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    +977-9876543210
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="pt-8">
-              <div class="flex my-social-links gap-6 my-2.5">
-                <a
-                  data-socialLink="Email"
-                  href="mailto:dhamiakkal21@gmail.com, aavashdhami21@gmail.com"
-                  class="social-button"
-                  target="_blank"
-                  style="--bg-color: #ea580c"
-                  title="Email">
-                  <i class="fas fa-envelope"></i>
+                <a href="https://nepkart.vercel.app/" target="_blank"
+                  class="tooltip absolute px-3 py-2.5 rounded-full bg-orange-500 top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 w-[135px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-orange-500 duration-300">
+                  <span class="text-xl font-semibold text-white">NepKart</span>
+                  <i class="ri-external-link-line text-white text-xl"></i>
                 </a>
-                <a
-                  data-socialLink="LinkedIn"
-                  href="#"
-                  style="--bg-color: #0077b5"
-                  target="_blank"
-                  class="social-button"
-                  title="LinkedIn">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a
-                  data-socialLink="Github"
-                  href="https://github.com/AkkalDhami"
-                  target="_blank"
-                  class="social-button"
-                  style="--bg-color: #333"
-                  title="GitHub">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a
-                  data-socialLink="Twitter"
-                  href="#"
-                  class="social-button"
-                  target="_blank"
-                  style="--bg-color: #1da1f2"
-                  title="Twitter">
-                  <i class="fa-brands fa-twitter"></i>
-                </a>
-              </div>
+              </a>
             </div>
           </div>
-
-          <!-- Right Column - Contact Form -->
-          <div>
-            <div class="mb-1">
-              <h2
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                class="text-2xl font-poppins sm:text-3xl font-bold mb-2 aos-init aos-animate">
-                Message Me
+          <div data-aos="fade-up" data-aos-duration="1100" class="project-desc z-10 mx-auto sm:mr-auto">
+            <div class="project-desc-inner flex flex-col space-y-2 mb-6">
+              <h2 class="text-3xl font-bold text-orange-500 font-poppins">
+                NepKart
               </h2>
-              <p
-                data-aos="zoom-in"
-                data-aos-duration="1200"
-                class="text-gray-600 dark:text-gray-300 aos-init aos-animate">
-                I'm excited to connect with you! Please fill out the form below
-                and get back to you as soon as possible.
+              <p class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
+                E-commerce website
+              </p>
+              <ul class="text-gray-600 flex space-y-2 flex-col text-[20px] dark:text-gray-300 list-disc pl-6">
+                <li>
+                  Nepali Bazaar is a modern e-commerce platform I built,
+                  showcasing my skills in HTML, CSS, JavaScript, and
+                  responsive web design.
+                </li>
+
+                <li>
+                  It includes interactive elements like countdown timers, and
+                  a responsive layout ensuring seamless navigation across
+                  devices.
+                </li>
+              </ul>
+            </div>
+            <!-- Tech Stack -->
+            <div class="stack flex items-center gap-4 my-4">
+              <div
+                class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[60px] h-[60px] rounded-md">
+                <i class="fab fa-html5 z-10 text-4xl text-[#e34f26]"></i>
+                <div
+                  class="tooltip absolute px-3 py-2 rounded-full  bg-[#e34f26] opacity-0 group-hover:opacity-100 top-[0rem] group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
+                  <span class="text-xl font-semibold text-white">HTML</span>
+                </div>
+              </div>
+              <div
+                class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[60px] h-[60px] rounded-md">
+                <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
+                <div
+                  class="tooltip absolute px-1 py-1.5 rounded-full z-10 bg-[#2965f1] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform -translate-x-1/2 w-[80px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
+                  <span class="text-xl font-semibold text-white">CSS</span>
+                </div>
+              </div>
+              <div
+                class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/js-logo.png" alt="js" />
+
+                <div
+                  class="tooltip absolute px-3 py-1.5 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform z-10 -translate-x-1/2 w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
+                  <span class="text-xl font-semibold text-black">JavaScript</span>
+                </div>
+              </div>
+              <div
+                class="flex p-2 group items-center relative justify-center bg-[#b0d0f05d] dark:bg-[#374e66] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/swiper-logo.svg" alt="swipper js" />
+                <div
+                  class="tooltip absolute px-1 py-1.5 rounded-full bg-[#0080ff] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[130px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0080ff] duration-300">
+                  <span class="text-xl font-semibold text-white">Swipper JS</span>
+                </div>
+              </div>
+            </div>
+            <!-- live preview and source code -->
+            <div class="flex items-center sm:w-1/2 gap-2 md:gap-3 sm:gap-4 my-8">
+              <a href="https://nepkart.vercel.app/" target="_blank" class="flex-1">
+                <button
+                  class="w-full flex items-center justify-center sm:gap-2 gap-[2px] px-3 sm:px-4 py-2.5 bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 rounded-md transition-colors duration-200 font-medium">
+                  <i class="fas fa-link text-[16px]"></i>
+                  <span>Live Preview</span>
+                </button>
+              </a>
+
+              <a href="#" data-tooltip="Private Repo" class="flex-1 privateRepo" target="_blank">
+                <button
+                  class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 rounded-md transition-colors duration-200 font-medium">
+                  <i class="ri-code-s-slash-line text-[16px] group-hover:text-orange-500"></i>
+                  <span>Source Code</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full gap-2 text-[#ff6a00] my-4">
+          <i class="ri-shining-line"></i>
+          <i class="ri-shining-line"></i>
+          <i class="ri-shining-line"></i>
+        </div>
+
+        <div class="w-full relative flex flex-col lg:flex-row-reverse justify-between gap-12 mt-32">
+          <div class="project-card-wrapper relative group mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+            <div>
+              <a href="https://dishhdashh.vercel.app/" target="_blank" class="drop-shadow-[0_0px_39px_#dc681870]">
+                <img src="./assets/project/dishhdashh.webp" alt="Project 2" class="" />
+
+                <a href="https://dishhdashh.vercel.app/" target="_blank"
+                  class="tooltip absolute px-3.5 py-2.5 rounded-full bg-[#0d6efd] top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0d6efd] duration-300">
+                  <span class="text-xl font-semibold text-white">DishhDashh</span>
+                  <i class="ri-external-link-line text-white text-xl"></i>
+                </a>
+              </a>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-duration="1100" class="project-desc z-10 mx-auto sm:mr-auto">
+            <div class="project-desc-inner flex flex-col space-y-2 mb-6">
+              <h2 class="text-3xl font-bold text-[#0d6efd] font-poppins">
+                DishhDashh
+              </h2>
+              <p class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
+                Food delivery website
+              </p>
+              <ul class="text-gray-600 flex space-y-2 flex-col text-[20px] dark:text-gray-300 list-disc pl-6">
+                <li>
+                  DishhDashh is a food delivery website I developed,
+                  showcasing my skills in HTML, CSS, JavaScript, and
+                  responsive web design.
+                </li>
+
+                <li>
+                  Implemented a responsive design and interactive elements
+                  like sliders and modals.
+                </li>
+              </ul>
+            </div>
+            <!-- Tech Stack -->
+            <div class="stack flex flex-wrap items-center gap-4 my-4">
+
+              <div
+                class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[60px] h-[60px] rounded-md">
+                <i class="fab fa-html5 z-10 text-4xl text-[#e34f26]"></i>
+                <div
+                  class="tooltip absolute px-3 py-2 rounded-full  bg-[#e34f26] opacity-0 group-hover:opacity-100 top-[0rem] group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
+                  <span class="text-xl font-semibold text-white">HTML</span>
+                </div>
+              </div>
+              <div
+                class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[60px] h-[60px] rounded-md">
+                <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
+                <div
+                  class="tooltip absolute px-1 py-1.5 rounded-full z-10 bg-[#2965f1] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform -translate-x-1/2 w-[80px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
+                  <span class="text-xl font-semibold text-white">CSS</span>
+                </div>
+              </div>
+              <div
+                class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/js-logo.png" alt="js" />
+
+                <div
+                  class="tooltip absolute px-3 py-1.5 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform z-10 -translate-x-1/2 w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
+                  <span class="text-xl font-semibold text-black">JavaScript</span>
+                </div>
+              </div>
+              <div
+                class="flex p-2 group items-center relative justify-center bg-[#b0d0f05d] dark:bg-[#374e66] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/swiper-logo.svg" alt="swipper js" />
+                <div
+                  class="tooltip absolute px-1 py-1.5 rounded-full bg-[#0080ff] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[130px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0080ff] duration-300">
+                  <span class="text-xl font-semibold text-white">Swipper JS</span>
+                </div>
+              </div>
+
+              <div
+                class="flex p-2 group items-center relative justify-center bg-[#9ee5ee4c] dark:bg-[#274549] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/tailwindcss.png" alt="tailwind logo" />
+                <div
+                  class="tooltip absolute px-1 py-1.5 rounded-full bg-[#06b6d4] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform z-10 -translate-x-1/2 w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#1da1f2] duration-300">
+                  <span class="text-xl font-semibold text-white">Tailwind CSS</span>
+                </div>
+              </div>
+            </div>
+            <!-- live preview and source code -->
+            <div class="flex items-center gap-3 sm:gap-4 my-8">
+              <!-- Live Preview Button -->
+              <a href="https://dishhdashh.vercel.app/" target="_blank">
+                <button
+                  class="w-full flex items-center justify-center sm:gap-2 gap-[2px] px-3 sm:px-4 py-2.5 bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 rounded-md transition-colors duration-200 font-medium">
+                  <i class="fas fa-link text-[16px] text-blue-500"></i>
+                  <span>Live Preview</span>
+                </button>
+              </a>
+
+              <!-- Source Code Button -->
+              <a href="" data-tooltip="Private Repo" class="privateRepo">
+                <button
+                  class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 rounded-md transition-colors duration-200 font-medium">
+                  <i class="ri-code-s-slash-line text-[16px] group-hover:text-orange-500"></i>
+                  <span>Source Code</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full gap-2 text-[#ff6a00] my-4">
+          <i class="ri-shining-line"></i>
+          <i class="ri-shining-line"></i>
+          <i class="ri-shining-line"></i>
+        </div>
+
+        <div class="w-full relative flex flex-col lg:flex-row justify-between gap-12 mt-32">
+          <div class="project-card-wrapper relative group mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+            <div>
+              <a href="https://akkal.vercel.app/" target="_blank" class="drop-shadow-[0_0px_39px_#dc681870]">
+                <img src="./assets/project/portfolio.webp" alt="Project 3"
+                  class="z-50 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]" />
+
+                <a href="https://akkal.vercel.app/" target="_blank"
+                  class="tooltip absolute px-3 py-2.5 rounded-full bg-orange-500 top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center w-[220px] sm:w-auto after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-orange-500 duration-300">
+                  <span class="text-xl font-semibold text-white">Personal Portfolio</span>
+                  <i class="ri-external-link-line text-white text-xl"></i>
+                </a>
+              </a>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-duration="1100" class="project-desc z-10 mx-auto sm:mr-auto">
+            <div class="project-desc-inner max-w-[1200px] flex flex-col space-y-2 mb-6">
+              <h2 class="text-3xl font-bold text-orange-500 font-poppins">
+                Personal Portfolio
+              </h2>
+              <p class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
+                Personal Portfolio Website
+              </p>
+              <p class="text-gray-600 text-[20px] dark:text-gray-300">
+                This is my personal portfolio website where I showcase my
+                projects and skills. It has a user-friendly interface and a
+                wide range of projects to show off my work.
               </p>
             </div>
-
-            <form
-              action="#"
-              class="py-3 px-2 rounded-xl transition-all aos-init aos-animate"
-              id="contactForm">
-              <!-- Name Input -->
+            <!-- Tech Stack -->
+            <div class="stack flex flex-wrap items-center gap-4 my-4">
               <div
-                class="mb-6 aos-init aos-animate"
-                data-aos="zoom-in"
-                data-aos-duration="1000">
-                <label
-                  for="contactUserName"
-                  class="block dark:text-gray-200 text-gray-700 font-[600] mb-2"
-                  >Full Name</label
-                >
-                <input
-                  type="text"
-                  class="w-full text-[16px] p-3 sm:text-[18px] dark:bg-gray-600/10 dark:focus:bg-transparent bg-gray-50 dark:text-gray-600 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"
-                  id="contactUserName"
-                  placeholder="Akkal Dhami" />
+                class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[60px] h-[60px] rounded-md">
+                <i class="fab fa-html5 z-10 text-4xl text-[#e34f26]"></i>
                 <div
-                  id="contactUserNameError"
-                  class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500"></div>
+                  class="tooltip absolute px-3 py-2 rounded-full  bg-[#e34f26] opacity-0 group-hover:opacity-100 top-[0rem] group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
+                  <span class="text-xl font-semibold text-white">HTML</span>
+                </div>
               </div>
-
-              <!-- Email Input -->
               <div
-                class="mb-6 aos-init aos-animate"
-                data-aos="zoom-in"
-                data-aos-duration="1200">
-                <label
-                  for="contactEmail"
-                  class="block dark:text-gray-200 font-[600] text-gray-700 mb-2"
-                  >Email Address</label
-                >
-                <input
-                  type="email"
-                  class="w-full text-[16px] p-3 sm:text-[18px] dark:bg-gray-600/10 dark:focus:bg-transparent bg-gray-50 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"
-                  id="contactEmail"
-                  placeholder="akkaldhami21@gmail.com" />
+                class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[60px] h-[60px] rounded-md">
+                <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
                 <div
-                  id="contactEmailError"
-                  class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500"></div>
+                  class="tooltip absolute px-1 py-1.5 rounded-full z-10 bg-[#2965f1] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform -translate-x-1/2 w-[80px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
+                  <span class="text-xl font-semibold text-white">CSS</span>
+                </div>
               </div>
-
-              <!-- Message Input -->
               <div
-                class="mb-6 aos-init aos-animate"
-                data-aos="zoom-in"
-                data-aos-duration="1000">
-                <label
-                  for="message"
-                  class="block font-[600] dark:text-gray-200 text-gray-700 mb-2"
-                  >Your Message</label
-                >
-                <textarea
-                  placeholder="Type your message here..."
-                  id="message"
-                  rows="5"
-                  class="w-full text-[16px] resize-none p-3 dark:bg-gray-600/10 dark:focus:bg-transparent bg-gray-50 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"></textarea>
-                <div
-                  id="messageError"
-                  class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500"></div>
-              </div>
+                class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/js-logo.png" alt="js" />
 
-              <!-- Submit Button -->
-              <button
-                data-aos="fade-up"
-                type="submit"
-                id="contactbutton"
-                class="w-full contactBtn py-2.5 px-2 text-lg font-medium text-white rounded-md transition-all duration-300 flex items-center justify-center gap-2 group aos-init">
-                <span>Send Message</span>
-                <i
-                  class="ri-send-plane-line group-hover:translate-x-1 rotate-[45deg] transition-transform"></i>
-              </button>
-            </form>
+                <div
+                  class="tooltip absolute px-3 py-1.5 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform z-10 -translate-x-1/2 w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
+                  <span class="text-xl font-semibold text-black">JavaScript</span>
+                </div>
+              </div>
+              <div
+                class="flex p-2 group items-center relative justify-center bg-[#b0d0f05d] dark:bg-[#374e66] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/swiper-logo.svg" alt="swipper js" />
+                <div
+                  class="tooltip absolute px-1 py-1.5 rounded-full bg-[#0080ff] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[130px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0080ff] duration-300">
+                  <span class="text-xl font-semibold text-white">Swipper JS</span>
+                </div>
+              </div>
+            </div>
+            <!-- live preview and source code -->
+            <div class="flex items-center gap-2 md:gap-4 my-8">
+              <a href="https://akkal.vercel.app/" target="_blank">
+                <button
+                  class="w-full flex items-center justify-center sm:gap-2 gap-[2px] px-3 sm:px-4 py-2.5 bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 rounded-md transition-colors duration-200 font-medium">
+                  <i class="fas fa-link text-xltext-blue-500"></i>
+                  <span>Live Preview</span>
+                </button>
+              </a>
+
+              <!-- Source Code Button -->
+              <a class="publicRepo" data-tooltip="Get Source Code" href="https://github.com/AkkalDhami/Portfolio/"
+                target="_blank">
+                <button
+                  class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 rounded-md transition-colors duration-200 font-medium">
+                  <i class="ri-code-s-slash-line text-[16px] group-hover:text-orange-500"></i>
+                  <span>Source Code</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
+          <i class="ri-shining-line"></i>
+          <i class="ri-shining-line"></i>
+          <i class="ri-shining-line"></i>
+        </div>
+
+        <div class="w-full relative flex flex-col lg:flex-row-reverse justify-between gap-12 mt-32">
+          <div class="project-card-wrapper relative group mx-auto sm:ml-auto" data-aos="zoom-in"
+            data-aos-duration="1300">
+            <div>
+              <a href="https://terminal-portfolio-akkal.vercel.app/" target="_blank"
+                class="drop-shadow-[0_0px_39px_#0067ffba]">
+                <img src="./assets/project/terminal.webp" alt="Project 4" class="object-contain z-50" />
+
+                <a href="https://terminal-portfolio-akkal.vercel.app/" target="_blank"
+                  class="tooltip absolute px-3 py-2.5 rounded-full bg-[#0d6efd] top-10 group-hover:-top-[5rem] left-1/2 -z-10 transform -translate-x-1/2 flex items-center gap-2 justify-center w-[170px] sm:w-auto after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#0d6efd] duration-300">
+                  <span class="text-xl font-semibold text-white">CLI Portfolio</span>
+                  <i class="ri-external-link-line text-white text-xl"></i>
+                </a>
+              </a>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-duration="1200" class="project-desc mx-auto">
+            <div class="project-desc-inner flex flex-col space-y-2 mb-6">
+              <h2 class="text-3xl font-bold text-[#0d6efd] font-poppins">
+                Terminal Portfolio
+              </h2>
+              <p class="text-gray-600 font-semibold text-[24px] dark:text-gray-200">
+                CLI Portfolio Website
+              </p>
+              <p class="text-gray-600 text-[20px] dark:text-gray-300">
+                This is my terminal portfolio website where I showcase my
+                projects and skills. It has a user-friendly interface and a
+                wide range of projects.
+              </p>
+            </div>
+            <div class="stack flex flex-wrap items-center gap-4 my-4">
+              <div
+                class="flex group items-center relative justify-center bg-[#f5e2dd] dark:bg-[#2a1c18] w-[60px] h-[60px] rounded-md">
+                <i class="fab fa-html5 z-10 text-4xl text-[#e34f26]"></i>
+                <div
+                  class="tooltip absolute px-3 py-2 rounded-full  bg-[#e34f26] opacity-0 group-hover:opacity-100 top-[0rem] group-hover:-top-[3.5rem] left-1/2 z-10 transform -translate-x-1/2 w-[90px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#e34f26] duration-300">
+                  <span class="text-xl font-semibold text-white">HTML</span>
+                </div>
+              </div>
+              <div
+                class="flex group items-center relative justify-center bg-[#99b4f340] dark:bg-[#3744629c] w-[60px] h-[60px] rounded-md">
+                <i class="fab fa-css3-alt text-4xl text-[#2965f1]"></i>
+                <div
+                  class="tooltip absolute px-1 py-1.5 rounded-full z-10 bg-[#2965f1] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform -translate-x-1/2 w-[80px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#2965f1] duration-300">
+                  <span class="text-xl font-semibold text-white">CSS</span>
+                </div>
+              </div>
+              <div
+                class="flex group items-center relative p-2 justify-center bg-[#f5eeb674] dark:bg-[#514d2d] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/js-logo.png" alt="js" />
+
+                <div
+                  class="tooltip absolute px-3 py-1.5 rounded-full bg-[#ffdf00] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform z-10 -translate-x-1/2 w-[115px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#ffdf00] duration-300">
+                  <span class="text-xl font-semibold text-black">JavaScript</span>
+                </div>
+              </div>
+              <div
+                class="flex p-2 group items-center relative justify-center bg-[#9ee5ee4c] dark:bg-[#274549] w-[60px] h-[60px] rounded-md">
+                <img src="./assets/image/tailwindcss.png" alt="tailwind logo" />
+                <div
+                  class="tooltip absolute px-1 py-1.5 rounded-full bg-[#06b6d4] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform z-10 -translate-x-1/2 w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#1da1f2] duration-300">
+                  <span class="text-xl font-semibold text-white">Tailwind CSS</span>
+                </div>
+              </div>
+            </div>
+            <!-- Live Preview Button -->
+            <div class="flex items-center gap-2 md:gap-4 my-8">
+              <a href="https://terminal-portfolio-akkal.vercel.app/" target="_blank">
+                <button
+                  class="w-full flex items-center justify-center sm:gap-2 gap-[2px] px-3 sm:px-4 py-2.5 bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 rounded-md transition-colors duration-200 font-medium">
+                  <i class="fas fa-link text-xltext-blue-500"></i>
+                  <span>Live Preview</span>
+                </button>
+              </a>
+
+              <!-- Source Code Button -->
+              <a class="privateRepo" data-tooltip="Private Repo"
+                href="https://github.com/AkkalDhami/terminal-portfolio/" target="_blank">
+                <button
+                  class="w-full flex items-center justify-center sm:gap-2 gap-1 px-3 sm:px-4 py-2.5 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 rounded-md transition-colors duration-200 font-medium">
+                  <i class="ri-code-s-slash-line text-[16px] group-hover:text-orange-500"></i>
+                  <span>Source Code</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
+          <i class="ri-shining-line"></i>
+          <i class="ri-shining-line"></i>
+          <i class="ri-shining-line"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20">
+    <div class="container max-w-[1200px] mx-auto px-4 overflow-hidden">
+      <div class="section-heading-container" data-text="SKILLS">
+        <h2 data-aos="fade-up" class="section-heading font-poppins text-4xl font-bold">
+          Skills & Technologies
+        </h2>
+      </div>
+      <!-- Frontend Technologies -->
+      <div class="mb-12" data-aos="fade-right">
+        <div class="flex items-center mb-4">
+          <h3 class="text-2xl font-semibold text-gray-800 font-poppins dark:text-gray-100">
+            Frontend Technologies
+          </h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div
+            class="border border-[#e34f26]/50 bg-[#e34f26]/10 hover:border-[#e34f26] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="100">
+            <div class="flex items-center justify-center bg-[#e34f26]/15 w-[50px] h-[50px] rounded-md">
+              <i class="fab fa-html5 text-4xl text-[#e34f26]"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                HTML
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Structure
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#2944f1]/10 border border-[#2944f1]/50 hover:border-[#2944f1] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="200">
+            <div class="flex items-center justify-center bg-[#99b4f340]/15 w-[50px] h-[50px] rounded-md">
+              <i class="fab fa-css3-alt text-4xl text-[#2944f1]"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                CSS
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Styling
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#f7df1e]/10 border border-[#f7df1e]/50 hover:border-[#f7df1e] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="300">
+            <div class="flex items-center justify-center p-1.5 bg-[#f7df1e]/15 w-[50px] h-[50px] rounded-md">
+              <img src="./assets/image/js-logo.png" alt="js" />
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                JavaScript
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Functionality
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#06b6d4]/10 border border-[#06b6d4]/50 hover:border-[#06b6d4] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="400">
+            <!-- tailwind -->
+            <div class="flex items-center justify-center bg-[#06b6d4]/15 p-1 w-[50px] h-[50px] rounded-md">
+              <img src="./assets/image/tailwindcss.png" alt="tailwind logo" />
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Tailwind
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                CSS Framework
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <div
-      id="toastContainer"
-      class="fixed top-[80px] duration-500 right-[30px]"></div>
+      <!-- Backend Technologies -->
+      <div class="mb-12" data-aos="fade-left">
+        <div class="flex items-center mb-8">
+          <h3 class="text-2xl font-semibold font-poppins text-gray-800 dark:text-white">
+            Backend Technologies
+          </h3>
+        </div>
+        <!-- #95ed9521 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div
+            class="bg-[#339933]/10 border border-[#339933]/50 hover:border-[#339933] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="100">
+            <div class="flex items-center justify-center bg-[#339933]/15 rounded-md px-2 py-1">
+              <i class="fab fa-node-js text-5xl text-[#339933]"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Node.js
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Backend Framework
+              </p>
+            </div>
+          </div>
 
-    <!-- Footer -->
-    <footer class="py-8 border-t border-gray-400 font-poppins">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col space-y-6 justify-between items-center">
-          <div class="mb-4 md:mb-0">
-            <p>
-              &copy; 2025
-              <a href="/" class="font-bold text-[#ea580c]">Akkal Dhami</a> | All
-              rights reserved.
+          <div
+            class="bg-[#fff] dark:bg-[#111] border border-[#8e918e] hover:border-[#f5f5f5] rounded-lg px-3 py-1 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="200">
+            <div class="flex items-center justify-center bg-[#f5f5f5] dark:bg-[#000] rounded-md px-2 py-1">
+              <p class="text-5xl dark:text-white font-normal text-black">
+                ex
+              </p>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Express.js
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Backend Framework
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="mb-12" data-aos="fade-right">
+        <div class="flex items-center mb-8">
+          <h3 class="text-2xl font-semibold font-poppins text-gray-800 dark:text-white">
+            Tools I Use
+          </h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div
+            class="bg-[#dd4a1d]/10 border border-[#dd4a1d]/50 hover:border-[#dd4a1d] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="100">
+            <div class="flex items-center justify-center bg-[#dd4a1d]/15 px-2 py-1 rounded-md">
+              <i class="fab fa-git text-4xl text-[#dd4a1d]"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Git
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Version Control
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white border border-[#969392] hover:border-[#e2e0df] rounded-lg px-3 py-3 dark:bg-[#000] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="200">
+            <div class="flex items-center justify-center bg-[#f5f5f5] dark:bg-[#222121] px-2 py-2 rounded-md">
+              <i class="fab fa-github text-4xl text-[#000000] dark:text-white"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                GitHub
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Code Repository
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#23a9f2]/10 border border-[#6dbef3]/50 hover:border-[#23a9f2] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="300">
+            <div class="flex items-center justify-center bg-[#23a9f2]/15 px-2 py-2 rounded-md">
+              <img src="./assets/image/vscode.svg" class="w-11" alt="vscode logo" />
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                VS Code
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Code Editor
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#f37036]/10 border border-[#f37036]/50 hover:border-[#f37036] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="400">
+            <div class="flex items-center justify-center bg-[#f37036]/15 px-2 py-2 rounded-md">
+              <img src="./assets/image/Postman.svg" class="w-12" alt="postman logo" />
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Postman
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                API Testing
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#cd7ce8]/10 border border-[#cd7ce8]/50 hover:border-[#b82fe6] rounded-lg px-3 py-3 shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="500">
+            <div class="flex items-center justify-center bg-[#b82fe6]/15 px-2 py-2 rounded-md">
+              <img src="./assets/image/icons8-figma-48.png" class="w-11" alt="figma logo" />
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Figma
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                Design
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#fff] border border-[#7a7575] hover:border-[#dcd9d9] rounded-lg px-3 py-3 dark:bg-[#000] shadow-md flex items-center gap-3 transition-all duration-300"
+            data-aos="zoom-in" data-aos-delay="600">
+            <div class="flex items-center justify-center bg-[#f5f5f5] dark:bg-[#222121] px-2 py-2 rounded-md">
+              <img src="./assets/image/cursor.png" class="block dark:hidden w-11" alt="cursor img" />
+              <img src="./assets/image/cursor-dark.png" class="hidden dark:block w-11" alt="cursor img" />
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Cursor AI
+              </h4>
+              <p class="text-gray-600 text-[18px] dark:text-gray-200">
+                AI Code Editor
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- github stats -->
+  <section id="github" class="py-20">
+    <div class="container max-w-[1280px] mx-auto px-4 overflow-hidden">
+      <div class="section-heading-container" data-text="GITHUB STATS">
+        <h2 data-aos="fade-up" class="section-heading font-poppins text-4xl font-bold">
+          GitHub Stats
+        </h2>
+      </div>
+
+      <div class="flex relative items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
+        <a href="https://github.com/AkkalDhami" target="_blank"
+          class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300 rounded-full text-[18px] sm:text-xl text-orange-600 hover:text-white"
+          role="button">
+          <span> View My Github Profile</span>
+          <i class="ml-2 ri-github-fill text-2xl group-hover:text-white"></i>
+        </a>
+      </div>
+
+      <!-- Stats Container -->
+      <div class="p-1 sm:p-8 transition-colors duration-300">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <!-- GitHub Stats Card -->
+            <div data-aos="zoom-in" class="group relative h-full">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img
+                  src="https://github-readme-stats.vercel.app/api?username=AkkalDhami&show_icons=true&theme=tokyonight"
+                  data-light-theme="github" data-dark-theme="radical" class="object-cover rounded-lg theme-image"
+                  alt="GitHub Stats" />
+              </div>
+            </div>
+            <!-- Profile Summary Card -->
+            <div data-aos="zoom-in" class="group relative h-full md:col-span-2">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img
+                  src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AkkalDhami&theme=tokyonight"
+                  data-light-theme="github" data-dark-theme="radical" class="w-full h-auto rounded-lg theme-image"
+                  alt="Profile Details" />
+              </div>
+            </div>
+
+            <!-- Activity Graph Card -->
+            <div data-aos="zoom-in" class="group relative h-full md:col-span-2">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=AkkalDhami&theme=github"
+                  data-light-theme="github" data-dark-theme="react" class="w-full h-auto rounded-lg theme-image"
+                  alt="Activity Graph" />
+              </div>
+            </div>
+
+            <!-- Top Languages Card -->
+            <div data-aos="zoom-in" class="group relative h-full">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=AkkalDhami&layout=compact&theme=tokyonight"
+                  data-light-theme="github" data-dark-theme="tokyonight" class="w-full h-auto rounded-lg theme-image"
+                  alt="Top Languages" />
+              </div>
+            </div>
+
+            <!-- Streak Stats Card -->
+            <div data-aos="zoom-in" class="group relative h-full">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
+              </div>
+              <div
+                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=AkkalDhami&theme=tokyonight"
+                  data-light-theme="github" data-dark-theme="dark" class="w-full h-auto rounded-lg theme-image"
+                  alt="GitHub Streak" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-10 max-w-[1280px] mx-auto">
+    <div class="container mx-auto px-4">
+      <div class="section-heading-container" data-text="CONTACT">
+        <h2 data-aos="fade-down" class="section-heading font-poppins text-4xl font-bold">
+          Get In Touch
+        </h2>
+      </div>
+
+      <div class="grid p-0 sm:p-10 md:grid-cols-2 gap-12">
+        <!-- Left Column - Contact Info -->
+        <div>
+          <h2 data-aos="fade-down" class="text-4xl font-bold mb-6 font-poppins">
+            Contact Me
+          </h2>
+          <p data-aos="zoom-in" class="text-gray-600 dark:text-gray-300 mb-8">
+            Feel free to reach out for collaborations, opportunities, or just
+            to say hello! I'll get back to you as soon as possible.
+          </p>
+
+          <div class="space-y-6">
+            <div data-aos="fade-up" class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Name</h3>
+                <p class="text-gray-600 dark:text-gray-300">Akkal Dhami</p>
+              </div>
+            </div>
+
+            <div data-aos="fade-up" class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Address</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Kathmandu, Nepal
+                </p>
+              </div>
+            </div>
+
+            <div data-aos="fade-up" class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Email</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  akkaldhami21@gmail.com
+                </p>
+              </div>
+            </div>
+
+            <div data-aos="fade-up" class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Contact</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  +977-9876543210
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-8">
+            <div class="flex my-social-links gap-6 my-2.5">
+              <a data-socialLink="Email" href="mailto:dhamiakkal21@gmail.com, aavashdhami21@gmail.com"
+                class="social-button" target="_blank" style="--bg-color: #ea580c" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a data-socialLink="LinkedIn" href="#" style="--bg-color: #0077b5" target="_blank" class="social-button"
+                title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a data-socialLink="Github" href="https://github.com/AkkalDhami" target="_blank" class="social-button"
+                style="--bg-color: #333" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a data-socialLink="Twitter" href="#" class="social-button" target="_blank" style="--bg-color: #1da1f2"
+                title="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Contact Form -->
+        <div>
+          <div class="mb-1">
+            <h2 data-aos="fade-up" data-aos-duration="1000"
+              class="text-2xl font-poppins sm:text-3xl font-bold mb-2 aos-init aos-animate">
+              Message Me
+            </h2>
+            <p data-aos="zoom-in" data-aos-duration="1200"
+              class="text-gray-600 dark:text-gray-300 aos-init aos-animate">
+              I'm excited to connect with you! Please fill out the form below
+              and get back to you as soon as possible.
             </p>
           </div>
-          <div class="flex my-social-links gap-6 my-2.5">
-            <a
-              data-socialLink="Email "
-              href="mailto:dhamiakkal21@gmail.com, aavashdhami21@gmail.com"
-              class="social-button"
-              target="_blank"
-              style="--bg-color: #ea580c"
-              title="Email">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <a
-              data-socialLink="LinkedIn"
-              href="#"
-              style="--bg-color: #0077b5"
-              target="_blank"
-              class="social-button"
-              title="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a
-              data-socialLink="Github"
-              href="https://github.com/AkkalDhami"
-              target="_blank"
-              class="social-button"
-              style="--bg-color: #333"
-              title="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a
-              data-socialLink="Twitter"
-              href="#"
-              class="social-button"
-              target="_blank"
-              style="--bg-color: #1da1f2"
-              title="Twitter">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-          </div>
+
+          <form action="#" class="py-3 px-2 rounded-xl transition-all aos-init aos-animate" id="contactForm">
+            <!-- Name Input -->
+            <div class="mb-6 aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1000">
+              <label for="contactUserName" class="block dark:text-gray-200 text-gray-700 font-[600] mb-2">Full
+                Name</label>
+              <input type="text"
+                class="w-full text-[16px] p-3 sm:text-[18px] dark:bg-gray-600/10 dark:focus:bg-transparent bg-gray-50 dark:text-gray-600 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"
+                id="contactUserName" placeholder="Akkal Dhami" />
+              <div id="contactUserNameError"
+                class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500">
+              </div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="mb-6 aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1200">
+              <label for="contactEmail" class="block dark:text-gray-200 font-[600] text-gray-700 mb-2">Email
+                Address</label>
+              <input type="email"
+                class="w-full text-[16px] p-3 sm:text-[18px] dark:bg-gray-600/10 dark:focus:bg-transparent bg-gray-50 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"
+                id="contactEmail" placeholder="akkaldhami21@gmail.com" />
+              <div id="contactEmailError"
+                class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500">
+              </div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="mb-6 aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1000">
+              <label for="message" class="block font-[600] dark:text-gray-200 text-gray-700 mb-2">Your Message</label>
+              <textarea placeholder="Type your message here..." id="message" rows="5"
+                class="w-full text-[16px] resize-none p-3 dark:bg-gray-600/10 dark:focus:bg-transparent bg-gray-50 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"></textarea>
+              <div id="messageError"
+                class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500">
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button data-aos="fade-up" type="submit" id="contactbutton"
+              class="w-full contactBtn py-2.5 px-2 text-lg font-medium text-white rounded-md transition-all duration-300 flex items-center justify-center gap-2 group aos-init">
+              <span>Send Message</span>
+              <i class="ri-send-plane-line group-hover:translate-x-1 rotate-[45deg] transition-transform"></i>
+            </button>
+          </form>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <button
-      id="backToTop"
-      class="fixed bottom-8 right-8 text-white w-12 h-12 rounded-full shadow-lg hidden transition-all z-10 bg-[#ea580c] hover:bg-[#ea580c] duration-300 items-center justify-center"
-      aria-label="Scroll to top">
-      <span> <i class="fas fa-arrow-up text-xl"></i></span>
-    </button>
+  <div id="toastContainer" class="fixed top-[80px] duration-500 right-[30px]"></div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1200,
-        once: false,
-        offset: 50,
-      });
-    </script>
-    <script src="./js/script.js"></script>
-    <script src="./js/project.js"></script>
-    <script src="./js/typing.js"></script>
-    <script src="./js/scrolling.js"></script>
-  </body>
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-400 font-poppins">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col space-y-6 justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p>
+            &copy; 2025
+            <a href="/" class="font-bold text-[#ea580c]">Akkal Dhami</a> | All
+            rights reserved.
+          </p>
+        </div>
+        <div class="flex my-social-links gap-6 my-2.5">
+          <a data-socialLink="Email " href="mailto:dhamiakkal21@gmail.com, aavashdhami21@gmail.com"
+            class="social-button" target="_blank" style="--bg-color: #ea580c" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a data-socialLink="LinkedIn" href="#" style="--bg-color: #0077b5" target="_blank" class="social-button"
+            title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a data-socialLink="Github" href="https://github.com/AkkalDhami" target="_blank" class="social-button"
+            style="--bg-color: #333" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a data-socialLink="Twitter" href="#" class="social-button" target="_blank" style="--bg-color: #1da1f2"
+            title="Twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop"
+    class="fixed bottom-8 right-8 text-white w-12 h-12 rounded-full shadow-lg hidden transition-all z-10 bg-[#ea580c] hover:bg-[#ea580c] duration-300 items-center justify-center"
+    aria-label="Scroll to top">
+    <span> <i class="fas fa-arrow-up text-xl"></i></span>
+  </button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: false,
+      offset: 50,
+    });
+  </script>
+  <script src="./js/script.js"></script>
+  <script src="./js/project.js"></script>
+  <script src="./js/typing.js"></script>
+  <script src="./js/scrolling.js"></script>
+</body>
+
 </html>
