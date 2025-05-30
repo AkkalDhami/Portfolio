@@ -25,7 +25,6 @@
         <a href="#about" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">About</a>
         <a href="#projects" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Projects</a>
         <a href="#skills" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Skills</a>
-        <a href="#github" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Github</a>
         <a href="#contact" class="nav-link px-[0.75rem] py-[.5rem] rounded-[1.5rem] transition-colors">Contact</a>
       </div>
 
@@ -75,10 +74,7 @@
           <i class="fas fa-tools mr-3"></i>
           Skills
         </a>
-        <a href="#github" class="mobile-nav-link nav-link">
-          <i class="fab fa-github mr-3"></i>
-          Github
-        </a>
+
         <a href="#contact" class="mobile-nav-link nav-link">
           <i class="fas fa-envelope mr-3"></i>
           Contact
@@ -185,14 +181,21 @@
         </div>
       </div>
 
-      <div class="hidden sm:flex justify-center mb-12 w-auto">
-        <div class="code-container flex flex-col">
-          <div class="code-lines gap-2 flex mb-2 items-center">
-            <span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#0ee52e]"></span>
+
+
+
+      <div
+        class="hidden heroSection sm:flex antialiased justify-center rounded-[8px] mb-12 p-[2px] w-auto relative bg-gradient-to-tr from-orange-500/50 to-blue-500/50">
+        <div class="code-container flex flex-col  bg-white dark:bg-[#0d160b]">
+          <div class="code-header flex items-center justify-between mb-2">
+            <div class="code-lines gap-2 flex mb-2 items-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#0ee52e]"></span>
+            </div>
+            <p class="text-sm font-semibold text-gray-600 dark:text-gray-400">portfolio.js</p>
           </div>
-          <pre class="cyber-theme text-wrap"><span class="keyword">const</span> <span class="variable">about</span> <span class="comma">=</span> <span class="array"><span class="wrapper">[</span></span>
+          <pre class="cyber-theme  text-wrap"><span class="keyword">const</span> <span class="variable">about</span> <span class="comma">=</span> <span class="array"><span class="wrapper">[</span></span>
   <span class="object"><span class="wrapper">{</span></span>
     <span class="property">name</span><span class="comma">: </span><span class="string">'Akkal Dhami'</span><span class="comma">,</span>
     <span class="property">role</span><span class="comma"><span class="comma">: </span></span><span class="string">'Frontend Developer'</span><span class="comma">,</span>
@@ -212,7 +215,7 @@
         <span class="property"><a href="https://nepkart.vercel.app/" target="_blank">NepKart</a></span><span class="comma">: </span><span class="string">'<span class="highlight">E-commerce website</span>'</span><span class="comma">,</span>
         <span class="property"><a href="https://dishhdashh.vercel.app/" target="_blank">DishhDashh</a></span><span class="comma">: </span><span class="string">'<span class="highlight">Food delivery website</span>'</span><span class="comma">,</span>
         <span class="property"><a href="https://akkal.vercel.app/" target="_blank">Portfolio</a></span><span class="comma">: </span><span class="string">'<span class="highlight">Personal Portfolio Website</span>'</span><span class="comma">,</span>
-        <span class="string"><a href="https://terminal-portfolio-akkal.vercel.app/" target="_blank">'Terminal Portfolio'</a></span><span class="comma">: </span><span class="string">'<span class="highlight">Personal Terminal Portfolio</span>'</span><span class="comma">,</span>
+        <span class="property"><a href="https://neptask.vercel.app" target="_blank">NepTask</a></span><span class="comma">: </span><span class="string">'<span class="highlight">Task Management System</span>'</span>
     <span class="wrapper">}</span><span class="comma">,</span>       
   <span class="object"><span class="wrapper">}</span></span><span class="comma">,</span>
 <span class="array"><span class="wrapper">]</span></span><span class="comma">;</span></pre>
@@ -1190,99 +1193,7 @@
     </div>
   </section>
 
-  <!-- github stats -->
-  <section id="github" class="py-20">
-    <div class="container max-w-[1280px] mx-auto px-4 overflow-hidden">
-      <div class="section-heading-container" data-text="GITHUB STATS">
-        <h2 data-aos="fade-up" class="section-heading font-poppins text-4xl font-bold">
-          GitHub Stats
-        </h2>
-      </div>
 
-      <div class="flex relative items-center justify-center w-full gap-2 text-[#ff6a00] md:mt-14 my-4">
-        <a href="https://github.com/AkkalDhami" target="_blank"
-          class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300 rounded-full text-[18px] sm:text-xl text-orange-600 hover:text-white"
-          role="button">
-          <span> View My Github Profile</span>
-          <i class="ml-2 ri-github-fill text-2xl group-hover:text-white"></i>
-        </a>
-      </div>
-
-      <!-- Stats Container -->
-      <div class="p-1 sm:p-8 transition-colors duration-300">
-        <div class="mx-auto max-w-7xl">
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            <!-- GitHub Stats Card -->
-            <div data-aos="zoom-in" class="group relative h-full">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
-              </div>
-              <div
-                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <img
-                  src="https://github-readme-stats.vercel.app/api?username=AkkalDhami&show_icons=true&theme=tokyonight"
-                  data-light-theme="github" data-dark-theme="radical" class="object-cover rounded-lg theme-image"
-                  alt="GitHub Stats" />
-              </div>
-            </div>
-            <!-- Profile Summary Card -->
-            <div data-aos="zoom-in" class="group relative h-full md:col-span-2">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
-              </div>
-              <div
-                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <img
-                  src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AkkalDhami&theme=tokyonight"
-                  data-light-theme="github" data-dark-theme="radical" class="w-full h-auto rounded-lg theme-image"
-                  alt="Profile Details" />
-              </div>
-            </div>
-
-            <!-- Activity Graph Card -->
-            <div data-aos="zoom-in" class="group relative h-full md:col-span-2">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
-              </div>
-              <div
-                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <img src="https://github-readme-activity-graph.vercel.app/graph?username=AkkalDhami&theme=github"
-                  data-light-theme="github" data-dark-theme="react" class="w-full h-auto rounded-lg theme-image"
-                  alt="Activity Graph" />
-              </div>
-            </div>
-
-            <!-- Top Languages Card -->
-            <div data-aos="zoom-in" class="group relative h-full">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
-              </div>
-              <div
-                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <img
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=AkkalDhami&layout=compact&theme=tokyonight"
-                  data-light-theme="github" data-dark-theme="tokyonight" class="w-full h-auto rounded-lg theme-image"
-                  alt="Top Languages" />
-              </div>
-            </div>
-
-            <!-- Streak Stats Card -->
-            <div data-aos="zoom-in" class="group relative h-full">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300">
-              </div>
-              <div
-                class="relative h-full p-6 bg-white dark:bg-[#0d160b] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                <img src="https://github-readme-streak-stats.herokuapp.com/?user=AkkalDhami&theme=tokyonight"
-                  data-light-theme="github" data-dark-theme="dark" class="w-full h-auto rounded-lg theme-image"
-                  alt="GitHub Streak" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="contact" class="py-10 max-w-[1280px] mx-auto">
     <div class="container mx-auto px-4">
@@ -1298,14 +1209,19 @@
           <h2 data-aos="fade-down" class="text-4xl font-bold mb-6 font-poppins">
             Contact Me
           </h2>
-          <p data-aos="zoom-in" class="text-gray-600 dark:text-gray-300 mb-8">
+          <p data-aos="zoom-in" class="text-gray-600 dark:text-gray-300 mb-2">
             Feel free to reach out for collaborations, opportunities, or just
             to say hello! I'll get back to you as soon as possible.
+          </p>
+          <p data-aos="zoom-in" data-aos-duration="1200"
+            class="text-gray-600 dark:text-gray-300 aos-init aos-animate mb-3">
+            I'm excited to connect with you! Please fill out the form below
+            and get back to you as soon as possible.
           </p>
 
           <div class="space-y-6">
             <div data-aos="fade-up" class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+              <div class="px-3.5 py-3.5 bg-orange-500/20 rounded-md flex items-center justify-center text-orange-500">
                 <i class="fas fa-user"></i>
               </div>
               <div>
@@ -1315,7 +1231,7 @@
             </div>
 
             <div data-aos="fade-up" class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+              <div class="px-3.5 py-3.5 bg-blue-500/20 rounded-md flex items-center justify-center text-blue-500">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
               <div>
@@ -1327,7 +1243,7 @@
             </div>
 
             <div data-aos="fade-up" class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+              <div class="px-3.5 py-3.5 bg-green-500/20 rounded-md flex items-center justify-center text-green-500">
                 <i class="fas fa-envelope"></i>
               </div>
               <div>
@@ -1339,7 +1255,7 @@
             </div>
 
             <div data-aos="fade-up" class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-[#ea5a0c1b] rounded-full flex items-center justify-center text-[#ec5d15]">
+              <div class="px-3.5 py-3.5 bg-purple-500/20 rounded-md flex items-center justify-center text-purple-500">
                 <i class="fas fa-phone"></i>
               </div>
               <div>
@@ -1350,7 +1266,7 @@
               </div>
             </div>
           </div>
-          <div class="pt-8">
+          <div class="pt-6">
             <div class="flex my-social-links gap-6 my-2.5">
               <a data-socialLink="Email" href="mailto:dhamiakkal21@gmail.com, aavashdhami21@gmail.com"
                 class="social-button" target="_blank" style="--bg-color: #ea580c">
@@ -1377,11 +1293,7 @@
               class="text-2xl font-poppins sm:text-3xl font-bold mb-2 aos-init aos-animate">
               Message Me
             </h2>
-            <p data-aos="zoom-in" data-aos-duration="1200"
-              class="text-gray-600 dark:text-gray-300 aos-init aos-animate">
-              I'm excited to connect with you! Please fill out the form below
-              and get back to you as soon as possible.
-            </p>
+
           </div>
 
           <form action="#" class="py-3 px-2 rounded-xl transition-all aos-init aos-animate" id="contactForm">
@@ -1423,7 +1335,7 @@
             <button data-aos="fade-up" type="submit" id="contactbutton"
               class="w-full contactBtn cursor-pointer py-2.5 px-2 text-lg font-medium text-white rounded-md transition-all duration-300 flex items-center justify-center gap-2 group aos-init">
               <span>Send Message</span>
-              <i class="ri-send-plane-line group-hover:translate-x-1 rotate-[45deg] transition-transform"></i>
+              <i class="ri-send-plane-line ml-2 group-hover:translate-x-1"></i>
             </button>
           </form>
         </div>
@@ -1434,7 +1346,7 @@
   <div id="toastContainer" class="fixed top-[80px] duration-500 right-[30px]"></div>
 
   <!-- Footer -->
-  <footer class="py-8 border-t border-gray-400 font-poppins">
+  <footer class="py-8 border-t border-gray-500/50 font-poppins">
     <div class="container mx-auto px-4">
       <div class="flex flex-col space-y-6 justify-between items-center">
         <div class="mb-4 md:mb-0">
