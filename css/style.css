@@ -772,13 +772,13 @@ body.sidebar-open {
   color: #ec5d15;
   background-color: #ea5a0c1b;
 }
-.contactBtn {
+/* .contactBtn {
   background: linear-gradient(45deg, #ec570d, #ca5312);
   transition: all 0.3s ease;
   &:hover {
     background: linear-gradient(45deg, #ca5312, #ec570d);
   }
-}
+} */
 .code-container {
   color: #e6f5d6;
   font-family: "Consolas", "Monaco", monospace;
