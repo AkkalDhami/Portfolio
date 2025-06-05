@@ -119,15 +119,14 @@
     <div class="mx-auto px-4 flex flex-col mt-4 lg:flex-row gap-12">
       <div class="text-center mt-6 md:text-left space-y-6 fadeIn">
         <div class="space-y-3">
-          <p data-aos="fade-down"
-            class="text-orange-600 font-poppins mb-3 text-[24px] dark:text-orange-500 font-semibold tracking-wide uppercase">
+          <p data-aos="fade-down" class="font-poppins mb-3 text-[24px] font-semibold tracking-wide uppercase">
             Welcome to my portfolio
           </p>
           <h1 data-aos="fade-up" class="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white">
             <span data-aos="fade-down" data-aos-duration="1800">
               Hi, I'm</span>
             <span class="relative inline-block">
-              <span class="text-emerald-600 ">Akkal Dhami</span>
+              <span class="text-orange-600">Akkal Dhami</span>
             </span>
           </h1>
         </div>
@@ -135,8 +134,7 @@
         <div class="typewriter" data-aos="zoom-in" data-aos-duration="1500">
           <span class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 font-bold">
             I am
-            <span class="text-emerald-600 text-2xl typewriter-text" id="typewriter-text">Frontend
-              Developer</span>
+            <span class="text-orange-600 text-2xl typewriter-text" id="typewriter-text">Frontend Developer</span>
           </span>
         </div>
 
@@ -146,16 +144,16 @@
           reality.
         </p>
 
-        <div class="flex flex-col md:items-start items-center space-y-4 justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 max-w-[500px] gap-4">
           <a href="#contact" data-aos="fade-left" data-aos-duration="1200"
-            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-transparent hover:border-emerald-600 hover:bg-transparent duration-300 bg-emerald-500 rounded-full text-xl text-white hover:text-emerald-600 hover:dark:text-white"
+            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold hover:bg-transparent duration-300 bg-gradient-to-r from-orange-600 to-orange-400 rounded-lg text-xl text-white"
             role="button">Let's Connect &nbsp;
             <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
           </a>
 
           <!-- resume button -->
           <a href="resume.pdf" data-aos="fade-right" data-aos-duration="1500"
-            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-orange-600 hover:bg-orange-600 bg-transparent duration-300 rounded-full text-xl text-orange-600 hover:text-white"
+            class="px-4 sm:px-6 group py-3 sm:py-3.5 font-bold border-[3px] border-zinc-500 hover:border-zinc-700 dark:border-zinc-400 dark:hover:border-zinc-100 duration-300 rounded-lg text-xl text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-100"
             role="button">Download CV &nbsp;
             <i class="ri-download-line"></i>
           </a>
@@ -181,19 +179,20 @@
         </div>
       </div>
 
-
       <div
         class="hidden heroSection sm:flex antialiased justify-center rounded-[8px] mb-12 p-[2px] w-auto relative bg-gradient-to-tr from-orange-500/50 to-blue-500/50">
-        <div class="code-container flex flex-col  bg-white dark:bg-[#0d160b]">
+        <div class="code-container flex flex-col bg-white dark:bg-[#0d160b]">
           <div class="code-header flex items-center justify-between mb-2">
             <div class="code-lines gap-2 flex mb-2 items-center">
               <span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
               <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
               <span class="w-2.5 h-2.5 rounded-full bg-[#0ee52e]"></span>
             </div>
-            <p class="text-sm font-semibold text-gray-600 dark:text-gray-400">portfolio.js</p>
+            <p class="text-sm font-semibold text-gray-600 dark:text-gray-400">
+              portfolio.js
+            </p>
           </div>
-          <pre class="cyber-theme  text-wrap"><span class="keyword">const</span> <span class="variable">about</span> <span class="comma">=</span> <span class="array"><span class="wrapper">[</span></span>
+          <pre class="cyber-theme text-wrap"><span class="keyword">const</span> <span class="variable">about</span> <span class="comma">=</span> <span class="array"><span class="wrapper">[</span></span>
   <span class="object"><span class="wrapper">{</span></span>
     <span class="property">name</span><span class="comma">: </span><span class="string">'Akkal Dhami'</span><span class="comma">,</span>
     <span class="property">role</span><span class="comma"><span class="comma">: </span></span><span class="string">'Frontend Developer'</span><span class="comma">,</span>
@@ -204,18 +203,12 @@
         <span class="property">backend</span><span class="comma">: </span><span class="array"><span class="wrapper">[</span></span><span class="array">'Node.js'</span><span class="comma">,</span> <span class="array">'Express.js'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
         <span class="property">database</span><span class="comma">: </span><span class="array"><span class="wrapper">[</span></span><span class="array">'MongoDB'</span><span class="comma">,</span> <span class="array">'MySQL'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
     <span class="wrapper">}</span><span class="comma">,</span>         
-    <span class="property">toolsIused</span><span class="comma">: </span><span class="wrapper">{</span>
-        <span class="string">'code editor'</span><span class="comma">: </span><span class="array"><span class="wrapper">[</span></span><span class="array">'VS Code'</span><span class="comma">,</span> <span class="array">'Windsurf'</span><span class="comma">,</span> <span class="array">'Cursor'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
-        <span class="string">'version control'</span><span class="comma">: </span><span class="array"><span class="wrapper">[</span></span><span class="array">'git'</span><span class="comma">,</span> <span class="array">'github'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
-        <span class="string">'API testing'</span><span class="comma">: </span><span class="array"><span class="wrapper">[</span></span><span class="array">'postman'</span><span class="array"><span class="wrapper">]</span></span><span class="comma">,</span>
-    <span class="wrapper">}</span><span class="comma">,</span>          
     <span class="property">projects</span><span class="comma">: </span><span class="wrapper">{</span>
         <span class="property"><a href="https://nepkart.vercel.app/" target="_blank">NepKart</a></span><span class="comma">: </span><span class="string">'<span class="highlight">E-commerce website</span>'</span><span class="comma">,</span>
         <span class="property"><a href="https://dishhdashh.vercel.app/" target="_blank">DishhDashh</a></span><span class="comma">: </span><span class="string">'<span class="highlight">Food delivery website</span>'</span><span class="comma">,</span>
-        <span class="property"><a href="https://akkal.vercel.app/" target="_blank">Portfolio</a></span><span class="comma">: </span><span class="string">'<span class="highlight">Personal Portfolio Website</span>'</span><span class="comma">,</span>
         <span class="property"><a href="https://neptask.vercel.app" target="_blank">NepTask</a></span><span class="comma">: </span><span class="string">'<span class="highlight">Task Management System</span>'</span>
-    <span class="wrapper">}</span><span class="comma">,</span>       
-  <span class="object"><span class="wrapper">}</span></span><span class="comma">,</span>
+    <span class="wrapper">}</span><span class="comma"></span>       
+  <span class="object"><span class="wrapper">}</span></span><span class="comma"></span>
 <span class="array"><span class="wrapper">]</span></span><span class="comma">;</span></pre>
         </div>
       </div>
@@ -409,26 +402,27 @@
           <div>
             <p data-aos="fade-up" class="text-gray-600 text-[18px] sm:text-[20px] dark:text-gray-400 mb-8">
               I'm a passionate
-              <span class="font-semibold text-emerald-500">Frontend Developer</span> Frontend Developer with a strong
-              foundation
-              in <span class="font-semibold text-emerald-500">HTML, CSS</span> and <span
-                class="font-semibold text-emerald-500">
-                JavaScript</span>, dedicated to
-              crafting visually appealing and intuitive user interfaces. I prioritize seamless user experiences and take
-              pride in building functional, responsive websites. A quick learner by nature, I thrive on challenges that
-              push me to expand my skill set and stay ahead in the ever-evolving tech landscape.
+              <strong class="text-orange-500">Frontend Developer</strong>
+              with a strong foundation in
+              <strong class="text-orange-500">HTML, CSS</strong>
+              and
+              <strong class="text-orange-500"> JavaScript</strong> and the <strong
+                class="text-orange-500">MERN</strong> stack (<strong class="text-orange-500">MongoDB</strong>, <strong
+                class="text-orange-500">Express.js</strong>, <strong class="text-orange-500">React.js</strong>,  <strong class="text-orange-500">Node.js</strong>). I
+              build responsive, high-performance websites and full-stack applications with clean, efficient
+              code and intuitive user interfaces.
             </p>
 
             <!-- Tabs -->
             <div class="mb-8">
               <div class="flex gap-8 mb-8 border-b border-gray-200 dark:border-gray-700">
                 <button data-aos="fade-up" data-aos-duration="1300"
-                  class="tab-btn text-xl font-semibold relative text-gray-900 dark:text-white pb-4 tab-active"
+                  class="tab-btn cursor-pointer dark:hover:text-white hover:text-gray-900  text-xl font-semibold relative text-gray-900 dark:text-white pb-4 tab-active"
                   data-tab="skill">
                   Skills
                 </button>
                 <button data-aos="fade-up" data-aos-duration="1600"
-                  class="tab-btn text-xl font-semibold relative text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white pb-4"
+                  class="tab-btn cursor-pointer text-xl font-semibold relative text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white pb-4"
                   data-tab="experience">
                   Experience
                 </button>
@@ -580,10 +574,14 @@
                 Task Management System
               </p>
               <ul class="text-gray-600 text-[16px] sm:text-[20px] list-disc dark:text-gray-300 pl-6 max-w-4xl">
-                <li>NepTask is a task management system that helps users stay organized by allowing them to add, edit,
-                  and delete tasks.</li>
-                <li>Users can create tasks, set deadlines and priorities, and organize them into categories for easier
-                  navigation.</li>
+                <li>
+                  NepTask is a task management system that helps users stay
+                  organized by allowing them to add, edit, and delete tasks.
+                </li>
+                <li>
+                  Users can create tasks, set deadlines and priorities, and
+                  organize them into categories for easier navigation.
+                </li>
                 <li>
                   <span class="text-blue-500 font-medium px-1">#Smart Scheduling</span>,
                   <span class="text-emerald-500 font-medium px-1">#Advanced Analytics</span>,
@@ -596,9 +594,7 @@
                   <span class="text-purple-500 font-medium px-1">#Interactive Dashboard</span>,
                   <span class="text-pink-500 font-medium px-1">#QuickNote Addition</span>,
                   <span class="text-teal-500 font-medium px-1">#Reminders</span>
-
                 </li>
-
               </ul>
             </div>
             <!-- Tech Stack -->
@@ -638,7 +634,7 @@
               </div>
               <div
                 class="flex p-2 group items-center relative justify-center bg-[#9ee5ee4c] dark:bg-[#274549] w-[60px] h-[60px] rounded-md">
-                <img src="./assets/image/tailwindcss.png" alt="tailwind logo">
+                <img src="./assets/image/tailwindcss.png" alt="tailwind logo" />
                 <div
                   class="tooltip absolute px-1 py-1.5 rounded-full bg-[#06b6d4] opacity-0 group-hover:opacity-100 top-0 group-hover:-top-[3.5rem] left-1/2 transform z-10 -translate-x-1/2 w-[150px] flex items-center gap-2 justify-center after:absolute after:top-[100%] after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-[#1da1f2] duration-300">
                   <span class="text-xl font-semibold text-white">Tailwind CSS</span>
@@ -667,7 +663,6 @@
             </div>
           </div>
         </div>
-
 
         <div class="flex items-center justify-center w-full gap-2 text-[#ff6a00] my-4">
           <i class="ri-shining-line"></i>
@@ -821,8 +816,11 @@
                 Personal Portfolio Website
               </p>
               <ul class="text-gray-600 pl-6 list-disc text-[16px] sm:text-xl dark:text-gray-300">
-                <li> This is my personal portfolio website, designed to showcase my projects and skills with a clean,
-                  user-friendly interface. </li>
+                <li>
+                  This is my personal portfolio website, designed to showcase
+                  my projects and skills with a clean, user-friendly
+                  interface.
+                </li>
                 <li>
                   <span class="text-blue-500 font-medium px-1">#ResponsiveLayout</span>,
                   <span class="text-pink-500 font-medium px-1">#ProjectCards</span>,
@@ -833,7 +831,6 @@
                   <span class="text-red-500 font-medium px-1">#InteractiveButtons</span>,
                   <span class="text-indigo-500 font-medium px-1">#Animations</span>
                 </li>
-
               </ul>
             </div>
             <!-- Tech Stack -->
@@ -927,8 +924,11 @@
                 CLI Portfolio Website
               </p>
               <ul class="text-gray-600 pl-6 list-disc text-[16px] sm:text-xl dark:text-gray-300 max-w-3xl">
-                <li class="text-gray-600 dark:text-gray-200">This is my personal portfolio website, designed to showcase
-                  my projects and skills with a clean, user-friendly interface. </li>
+                <li class="text-gray-600 dark:text-gray-200">
+                  This is my personal portfolio website, designed to showcase
+                  my projects and skills with a clean, user-friendly
+                  interface.
+                </li>
                 <li>
                   <span class="text-green-500 font-medium px-1">#TerminalUI</span>,
                   <span class="text-blue-500 font-medium px-1">#ResponsiveCLI</span>,
@@ -937,7 +937,6 @@
                   <span class="text-red-500 font-medium px-1">#Custom Themes</span>,
                   <span class="text-rose-500 font-medium px-1">#ContactFormCLI</span>
                 </li>
-
               </ul>
             </div>
             <div class="stack flex flex-wrap items-center gap-4 my-4">
@@ -1028,7 +1027,7 @@
                 E-commerce website
               </p>
               <ul
-                class="text-gray-600 flex space-y-2 flex-col  dark:text-gray-300 list-disc pl-6 text-[16px] sm:text-xl max-w-5xl">
+                class="text-gray-600 flex space-y-2 flex-col dark:text-gray-300 list-disc pl-6 text-[16px] sm:text-xl max-w-5xl">
                 <li>
                   Nepali Bazaar is a modern e-commerce platform I built,
                   showcasing my skills in HTML, CSS, JavaScript, and
@@ -1052,7 +1051,6 @@
                   <span class="text-cyan-500 font-medium px-1">#User Reviews</span>,
                   <span class="text-rose-500 font-medium px-1">#CheckoutProcess</span>,
                   <span class="text-amber-500 font-medium px-1">#Order Management</span>
-
                 </li>
               </ul>
             </div>
@@ -1262,7 +1260,7 @@
             data-aos="zoom-in" data-aos-delay="100">
             <div class="flex items-center justify-center bg-green-500/15 px-2 py-2 rounded-md">
               <img src="./assets/image/MongoDB_Logomark_SpringGreen.png" class="w-[50px] object-contain h-[50px]"
-                alt="mongo logo">
+                alt="mongo logo" />
             </div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
@@ -1278,7 +1276,7 @@
             class="bg-[#ff6a00]/10 border border-blue-500/50 hover:border-blue-500 rounded-lg py-2 px-3 shadow-md flex items-center gap-3 transition-all duration-300"
             data-aos="zoom-in" data-aos-delay="200">
             <div class="flex items-center justify-center bg-orange-500/15 px-2 py-2 rounded-md">
-              <img src="./assets/image/logo-mysq.png" class="w-[50px] object-contain h-[50px]" alt="mongo logo">
+              <img src="./assets/image/logo-mysq.png" class="w-[50px] object-contain h-[50px]" alt="mongo logo" />
             </div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
@@ -1291,12 +1289,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-
-
 
       <!-- Tools -->
       <div class="mb-12" data-aos="fade-right">
@@ -1407,8 +1399,6 @@
     </div>
   </section>
 
-
-
   <section id="contact" class="py-10 max-w-[1280px] mx-auto">
     <div class="container mx-auto px-4">
       <div class="section-heading-container" data-text="CONTACT">
@@ -1423,7 +1413,7 @@
           <h2 data-aos="fade-down" class="text-4xl font-bold mb-6 font-poppins">
             Contact Me
           </h2>
-    
+
           <p data-aos="zoom-in" data-aos-duration="1200"
             class="text-gray-600 dark:text-gray-300 aos-init aos-animate mb-3">
             I'm excited to connect with you! Please fill out the form below
@@ -1504,7 +1494,6 @@
               class="text-2xl font-poppins sm:text-3xl font-bold mb-2 aos-init aos-animate">
               Message Me
             </h2>
-
           </div>
 
           <form action="#" class="py-3 px-2 rounded-xl transition-all aos-init aos-animate" id="contactForm">
@@ -1513,7 +1502,7 @@
               <label for="contactUserName" class="block dark:text-gray-200 text-gray-700 font-[600] mb-2">Full
                 Name</label>
               <input type="text"
-                class="w-full text-[16px] p-3 sm:text-[18px] dark:bg-gray-600/10 dark:focus:bg-transparent bg-gray-50  rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"
+                class="w-full text-[16px] p-3 sm:text-[18px] dark:bg-gray-600/10 dark:focus:bg-transparent bg-gray-50 rounded-md focus:ring-[2px] focus:ring-[#ea580c] outline-none transition-all border-[2px] dark:border-gray-600 border-blue-100 focus:bg-transparent dark:focus:border-transparent focus:border-transparent"
                 id="contactUserName" placeholder="Akkal Dhami" />
               <div id="contactUserNameError"
                 class="mt-2 text-[14px] dark:bg-red-950 bg-red-50 py-1 border-l-[3px] hidden border-red-500 pl-4 text-red-500">
@@ -1544,7 +1533,7 @@
 
             <!-- Submit Button -->
             <button data-aos="fade-up" type="submit" id="contactbutton"
-              class="w-full contactBtn bg-gradient-to-r from-emerald-500 to-orange-500 cursor-pointer py-2.5 px-2 text-lg font-medium text-white rounded-md transition-all duration-300 flex items-center justify-center gap-2 group aos-init">
+              class="w-full contactBtn bg-gradient-to-r from-orange-600 to-orange-400 hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-600 cursor-pointer py-2.5 px-2 text-lg font-medium text-white rounded-md transition-all duration-300 flex items-center justify-center gap-2 group aos-init">
               <span>Send Message</span>
               <i class="ri-send-plane-line ml-2 group-hover:translate-x-1"></i>
             </button>
