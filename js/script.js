@@ -53,14 +53,12 @@ mobileNavLinks.forEach((link) => {
   link.addEventListener("click", () => {
     closeSidebar();
 
-    // Remove active class from all links
     mobileNavLinks.forEach((l) => l.classList.remove("active"));
-    // Add active class to the clicked link
+
     link.classList.add("active");
   });
 });
 
-// Close sidebar on pressing the Escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && document.body.classList.contains("sidebar-open")) {
     closeSidebar();
@@ -167,8 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function removeToast(toast) {
   toast.classList.add("hide");
-  if (toast.timeoutId) clearTimeout(toast.timeoutId); 
-  setTimeout(() => toast.remove(), 500); 
+  if (toast.timeoutId) clearTimeout(toast.timeoutId);
+  setTimeout(() => toast.remove(), 500);
 }
 
 
@@ -323,35 +321,53 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Function to handle active navigation state
+// Replace the existing handleNavigation function with this updated version
 function handleNavigation() {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
   window.addEventListener("scroll", () => {
     let current = "";
+    const scrollPosition = window.scrollY + 100; // Add offset for better accuracy
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+
+      // Update the condition to be more precise
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         current = section.getAttribute("id");
       }
     });
 
     navLinks.forEach((link) => {
       link.classList.remove("active");
-      if (link.getAttribute("href").slice(1) === current) {
+      const href = link.getAttribute("href").slice(1); // Remove the # from href
+      if (href === current) {
         link.classList.add("active");
       }
     });
   });
 
-  // Handle click events
+  // Update click handler to use smooth scroll and proper active state
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
-      navLinks.forEach((link) => link.classList.remove("active"));
-      e.currentTarget.classList.add("active");
+      e.preventDefault();
+      const targetId = link.getAttribute("href").slice(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        // Remove active class from all links
+        navLinks.forEach((link) => link.classList.remove("active"));
+        // Add active class to clicked link
+        link.classList.add("active");
+
+        // Smooth scroll to target section
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
     });
   });
 }
